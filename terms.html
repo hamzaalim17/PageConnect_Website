@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — PageConnect.io</title>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1F3A;--navy-deep:#071528;--teal:#2DD4BF;--teal-deep:#14B8A6;--teal-50:#ECFDF8;--blue:#4F9CF9;--white:#FFFFFF;--warm:#F7F9FC;--line:#E2E8F0;--mute:#6B7A90;--f:'Space Grotesk',system-ui,sans-serif;--m:'JetBrains Mono',ui-monospace,monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);background:var(--white);color:var(--navy);-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(7,21,40,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06);padding:0 48px;display:flex;align-items:center;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.wm{font-size:17px;font-weight:600;letter-spacing:-.02em;color:#fff}
+.wm .p{color:var(--blue)}.wm .io{color:var(--teal);font-family:var(--m);font-size:14px}
+.nav-back{margin-left:auto;padding:8px 16px;border-radius:7px;border:1px solid rgba(255,255,255,.2);color:#fff;font:14px/1 var(--f);font-weight:500;text-decoration:none;transition:border-color .15s}
+.nav-back:hover{border-color:rgba(255,255,255,.5)}
+.hero{background:var(--navy-deep);padding:120px 48px 80px;border-bottom:1px solid rgba(255,255,255,.06)}
+.hero-inner{max-width:800px;margin:0 auto}
+.hero-tag{font-family:var(--m);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.hero-tag::before{content:'';width:24px;height:1px;background:var(--teal)}
+.hero-h1{font-size:clamp(32px,5vw,52px);font-weight:700;line-height:1.08;letter-spacing:-.025em;color:#fff;margin-bottom:16px}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.45);font-family:var(--m);letter-spacing:.04em}
+.content{max-width:800px;margin:0 auto;padding:72px 48px 96px}
+.section{margin-bottom:52px}
+.section h2{font-size:20px;font-weight:600;letter-spacing:-.01em;color:var(--navy);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.section p{font-size:15px;line-height:1.8;color:var(--mute);margin-bottom:14px}
+.section p:last-child{margin-bottom:0}
+.section ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.section ul li{font-size:15px;line-height:1.65;color:var(--mute);display:flex;align-items:flex-start;gap:10px}
+.section ul li::before{content:'→';color:var(--teal-deep);flex-shrink:0;font-weight:600}
+.section strong{color:var(--navy)}
+.section a{color:var(--teal-deep);text-decoration:none}
+.section a:hover{text-decoration:underline}
+.highlight-box{background:var(--teal-50);border:1px solid rgba(20,184,166,.2);border-radius:12px;padding:24px 28px;margin-bottom:14px}
+.highlight-box p{color:var(--navy);margin-bottom:0}
+.warning-box{background:#FEF3C7;border:1px solid #FCD34D;border-radius:12px;padding:24px 28px;margin-bottom:14px}
+.warning-box p{color:#92400E;margin-bottom:0;font-size:15px;line-height:1.7}
+.legal-note{background:var(--warm);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:8px;padding:18px 22px;margin-bottom:14px}
+.legal-note p{font-size:14px;color:var(--mute);margin-bottom:0}
+.foot{background:var(--navy-deep);padding:40px 48px;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+.foot p{font-family:var(--m);font-size:11px;color:rgba(255,255,255,.28);letter-spacing:.04em;margin-bottom:10px}
+.foot-links{display:flex;justify-content:center;gap:24px}
+.foot-links a{font-family:var(--m);font-size:11px;color:rgba(255,255,255,.28);text-decoration:none;letter-spacing:.04em;transition:color .12s}
+.foot-links a:hover{color:rgba(255,255,255,.7)}
+@media(max-width:768px){nav{padding:0 20px}.hero{padding:100px 20px 60px}.content{padding:48px 20px 72px}.foot{padding:32px 20px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">
+    <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
+      <path d="M22 14L22 86" stroke="white" stroke-width="12" stroke-linecap="round"/>
+      <path d="M22 14L60 14A28 28 0 0 1 60 70L38 70" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="37" y="44" width="7" height="14" rx="1.5" fill="#2DD4BF"/>
+      <rect x="47" y="36" width="7" height="22" rx="1.5" fill="#2DD4BF"/>
+      <rect x="57" y="28" width="7" height="30" rx="1.5" fill="#2DD4BF"/>
+    </svg>
+    <span class="wm"><span class="p">Page</span>Connect<span class="io">.io</span></span>
+  </a>
+  <a href="/" class="nav-back">← Back to home</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Legal</div>
+    <h1 class="hero-h1">Terms of Service</h1>
+    <p class="hero-sub">Effective date: 19 May 2026 &nbsp;·&nbsp; Last updated: 19 May 2026</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="highlight-box">
+    <p>By using PageConnect, you agree to these terms. Please read them carefully. If you do not agree, do not use the platform.</p>
+  </div>
+
+  <div class="section">
+    <h2>1. About PageConnect</h2>
+    <p>PageConnect ("we", "us", "our") is a web-based order and business management platform for F-commerce and social commerce sellers. It is operated at <a href="https://pageconnect.io">pageconnect.io</a> and accessible via browser on any device.</p>
+    <p>PageConnect is a <strong>management tool only</strong>. We do not sell products, process payments, deliver goods, or facilitate transactions between sellers and their customers.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Eligibility</h2>
+    <p>You must be at least 16 years of age to use PageConnect. By creating an account, you confirm that you meet this requirement and that the information you provide is accurate.</p>
+  </div>
+
+  <div class="section">
+    <h2>3. Seller accounts</h2>
+    <p>To use PageConnect as a seller, you must register with a valid email address and shop name or Facebook page name. You are responsible for:</p>
+    <ul>
+      <li>Maintaining the security of your account and password</li>
+      <li>All activity that occurs under your account</li>
+      <li>The accuracy of data you enter into the platform</li>
+      <li>Compliance with all applicable laws in your country</li>
+    </ul>
+    <p>You may not share your account with others or create multiple accounts for the same business without prior written permission.</p>
+  </div>
+
+  <div class="section">
+    <h2>4. Free trial and subscription</h2>
+    <p>PageConnect offers a <strong>14-day free trial</strong> with all Pro features unlocked. No credit card is required to start the trial.</p>
+    <p>After the trial ends, a <strong>3-day grace period</strong> applies before premium features lock. Your data is never deleted due to non-payment.</p>
+    <p>Subscription plans are billed monthly or annually as selected. Pricing varies by region to ensure accessibility. Prices are displayed in BDT for Bangladesh-based sellers and USD for international sellers.</p>
+    <p>You may cancel your subscription at any time from your account settings. Cancellation takes effect at the end of your current billing period.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. Refund policy</h2>
+    <p id="refunds">We offer refunds in the following circumstances:</p>
+    <ul>
+      <li>Annual plan: a pro-rated refund may be issued if requested within 30 days of payment</li>
+      <li>Monthly plan: no refunds for partial months</li>
+      <li>If PageConnect experiences significant downtime or a platform error that materially affects your use, we will consider a credit or refund on a case-by-case basis</li>
+    </ul>
+    <p>To request a refund, contact <a href="mailto:help@pageconnect.io">help@pageconnect.io</a> with your account details and reason.</p>
+  </div>
+
+  <div class="section">
+    <h2>6. Liability disclaimer — transactions and deliveries</h2>
+    <div class="warning-box">
+      <p><strong>Important:</strong> PageConnect is a management tool only. All transactions, payments, and deliveries are solely between the seller and their customers. Courier and delivery responsibilities rest entirely with the assigned courier company. PageConnect does not facilitate, guarantee, intervene in, or hold any liability for any transaction, payment, delivery, dispute, or loss arising between sellers, customers, and couriers.</p>
+    </div>
+    <p>Sellers are solely responsible for:</p>
+    <ul>
+      <li>The products they sell and their quality</li>
+      <li>Collecting and processing payments from customers</li>
+      <li>Arranging and managing deliveries with couriers</li>
+      <li>Resolving disputes with customers</li>
+      <li>Compliance with consumer protection laws in their jurisdiction</li>
+      <li>Any taxes applicable to their sales</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>7. Acceptable use</h2>
+    <p>You agree not to use PageConnect to:</p>
+    <ul>
+      <li>Sell illegal, counterfeit, or prohibited goods</li>
+      <li>Engage in fraud, deception, or misleading practices</li>
+      <li>Violate the intellectual property rights of others</li>
+      <li>Attempt to access other users' data or accounts</li>
+      <li>Reverse engineer, copy, or resell the PageConnect platform</li>
+      <li>Use the platform for any purpose that violates applicable law</li>
+    </ul>
+    <p>We reserve the right to suspend or terminate accounts that violate these terms without prior notice.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Intellectual property</h2>
+    <p>PageConnect and its design, code, branding, and content are the intellectual property of PageConnect. You may not copy, reproduce, or distribute any part of the platform without written permission.</p>
+    <p>Data you enter into PageConnect — your orders, customers, products — remains yours. We do not claim ownership of your business data.</p>
+  </div>
+
+  <div class="section">
+    <h2>9. Platform availability</h2>
+    <p>We aim to maintain high availability of the PageConnect platform but do not guarantee uninterrupted access. Scheduled maintenance, technical issues, or circumstances beyond our control may cause temporary downtime. We will communicate planned maintenance in advance where possible.</p>
+  </div>
+
+  <div class="section">
+    <h2>10. Limitation of liability</h2>
+    <p>To the maximum extent permitted by law, PageConnect shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the platform, including but not limited to loss of revenue, data, or business opportunity.</p>
+    <p>Our total liability to you for any claim arising from use of the platform shall not exceed the amount you paid to PageConnect in the three months preceding the claim.</p>
+  </div>
+
+  <div class="section">
+    <h2>11. Termination</h2>
+    <p>You may close your account at any time by contacting <a href="mailto:help@pageconnect.io">help@pageconnect.io</a>. We may suspend or terminate your account if you breach these terms, with or without notice depending on the severity of the breach.</p>
+    <p>Upon termination, your data is retained for 30 days before permanent deletion, during which time you may request an export.</p>
+  </div>
+
+  <div class="section">
+    <h2>12. Changes to these terms</h2>
+    <p>We may update these Terms of Service from time to time. We will notify registered users by email of material changes at least 14 days before they take effect. Continued use of PageConnect after the effective date constitutes acceptance of the updated terms.</p>
+  </div>
+
+  <div class="section">
+    <h2>13. Governing law</h2>
+    <p>These terms are governed by the laws of Bangladesh. Any disputes shall be resolved in the courts of Bangladesh. International sellers acknowledge that PageConnect operates primarily under Bangladeshi jurisdiction.</p>
+  </div>
+
+  <div class="section">
+    <h2>14. Contact</h2>
+    <p>For any questions about these Terms of Service, contact us at <a href="mailto:help@pageconnect.io">help@pageconnect.io</a>. We aim to respond within 14 business days.</p>
+  </div>
+
+  <div class="legal-note">
+    <p>These Terms of Service were last updated on 19 May 2026. PageConnect reserves the right to update these terms at any time with appropriate notice to registered users.</p>
+  </div>
+
+</div>
+
+<div class="foot">
+  <p>© 2026 PageConnect. All rights reserved.</p>
+  <div class="foot-links">
+    <a href="/">Home</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="mailto:help@pageconnect.io">Contact</a>
+  </div>
+</div>
+
+</body>
+</html>
