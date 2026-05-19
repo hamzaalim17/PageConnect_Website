@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PageConnect.io — Your orders. Your sales. Your data. All in one place.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0B1F3A;
+  --navy-deep: #071528;
+  --navy-700: #1A2F4D;
+  --navy-500: #364963;
+  --navy-400: #6B7A90;
+  --teal: #2DD4BF;
+  --teal-deep: #14B8A6;
+  --teal-50: #ECFDF8;
+  --blue: #4F9CF9;
+  --white: #FFFFFF;
+  --warm-white: #F7F9FC;
+  --paper: #EEF2F7;
+  --line: #E2E8F0;
+  --mute: #6B7A90;
+  --success: #16A34A;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-display);
+  background: var(--white);
+  color: var(--navy);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(7,21,40,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 0 48px;
+  display: flex; align-items: center; height: 64px;
+  gap: 0;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo .wordmark {
+  font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: #fff;
+}
+.nav-logo .wordmark .page { color: var(--blue); }
+.nav-logo .wordmark .io { color: var(--teal); font-family: var(--font-mono); font-size: 14px; }
+.nav-links { display: flex; align-items: center; gap: 32px; margin-left: auto; }
+.nav-links a {
+  color: rgba(255,255,255,0.65); text-decoration: none;
+  font-size: 14px; font-weight: 500; transition: color .15s;
+}
+.nav-links a:hover { color: #fff; }
+.nav-cta {
+  margin-left: 32px; display: flex; align-items: center; gap: 12px;
+}
+.btn-nav-secondary {
+  padding: 8px 16px; border-radius: 7px;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff; font: 14px/1 var(--font-display); font-weight: 500;
+  text-decoration: none; transition: border-color .15s;
+}
+.btn-nav-secondary:hover { border-color: rgba(255,255,255,0.5); }
+.btn-nav-primary {
+  padding: 8px 18px; border-radius: 7px;
+  background: var(--teal); color: var(--navy);
+  font: 14px/1 var(--font-display); font-weight: 600;
+  text-decoration: none; transition: background .15s;
+}
+.btn-nav-primary:hover { background: var(--teal-deep); }
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy-deep);
+  padding: 160px 48px 120px;
+  position: relative; overflow: hidden;
+  min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+}
+.hero-bg-mark {
+  position: absolute; right: -80px; top: 50%; transform: translateY(-50%);
+  opacity: 0.04; pointer-events: none;
+}
+.hero-bg-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-inner { position: relative; max-width: 1200px; margin: 0 auto; width: 100%; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 28px;
+}
+.hero-eyebrow::before {
+  content: ''; width: 24px; height: 1px; background: var(--teal);
+}
+.hero-h1 {
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 700; line-height: 1;
+  letter-spacing: -0.035em;
+  color: #fff; margin-bottom: 28px;
+  max-width: 880px;
+}
+.hero-h1 em { color: var(--teal); font-style: normal; }
+.hero-sub {
+  font-size: 20px; line-height: 1.6; font-weight: 400;
+  color: rgba(255,255,255,0.65);
+  max-width: 580px; margin-bottom: 52px;
+}
+.hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 80px; }
+.btn-hero-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 15px 28px; border-radius: 10px;
+  background: var(--teal); color: var(--navy);
+  font: 16px/1 var(--font-display); font-weight: 600;
+  text-decoration: none; transition: background .15s, transform .1s;
+}
+.btn-hero-primary:hover { background: var(--teal-deep); transform: translateY(-1px); }
+.btn-hero-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 15px 28px; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2); color: #fff;
+  font: 16px/1 var(--font-display); font-weight: 500;
+  text-decoration: none; transition: border-color .15s;
+}
+.btn-hero-secondary:hover { border-color: rgba(255,255,255,0.5); }
+.hero-trial-note {
+  font-family: var(--font-mono); font-size: 12px;
+  color: rgba(255,255,255,0.4); letter-spacing: 0.04em;
+}
+.hero-stats {
+  display: flex; gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 40px;
+}
+.hero-stat {
+  padding: 0 48px 0 0;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  margin-right: 48px;
+}
+.hero-stat:last-child { border-right: 0; }
+.hero-stat .num {
+  font-size: 32px; font-weight: 700; letter-spacing: -0.025em; color: #fff;
+  margin-bottom: 4px;
+}
+.hero-stat .num span { color: var(--teal); }
+.hero-stat .label {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ── PROBLEM ── */
+.problem {
+  background: var(--warm-white);
+  padding: 120px 48px;
+}
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-eyebrow {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--teal-deep);
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 20px;
+}
+.section-eyebrow::before {
+  content: ''; width: 24px; height: 1px; background: var(--teal-deep);
+}
+.section-h2 {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700; line-height: 1.05;
+  letter-spacing: -0.025em; margin-bottom: 20px;
+}
+.section-sub {
+  font-size: 18px; line-height: 1.6; color: var(--mute);
+  max-width: 600px; margin-bottom: 64px;
+}
+.problem-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px; background: var(--line);
+  border-radius: 16px; overflow: hidden;
+}
+.problem-item {
+  background: var(--white); padding: 32px 28px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.problem-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: #FEE2E2; color: #991B1B;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.problem-title {
+  font-size: 16px; font-weight: 600; letter-spacing: -0.01em;
+}
+.problem-text {
+  font-size: 14px; line-height: 1.6; color: var(--mute);
+}
+
+/* ── SOLUTION ── */
+.solution {
+  background: var(--navy);
+  padding: 120px 48px;
+  position: relative; overflow: hidden;
+}
+.solution-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 60% 50% at 80% 50%, rgba(45,212,191,0.04), transparent);
+}
+.solution-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 14px; border-radius: 999px;
+  background: rgba(45,212,191,0.1); border: 1px solid rgba(45,212,191,0.2);
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.08em; color: var(--teal);
+  margin-bottom: 32px;
+}
+.solution-h2 {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700; line-height: 1.02;
+  letter-spacing: -0.03em; color: #fff;
+  margin-bottom: 24px; max-width: 720px;
+}
+.solution-h2 em { color: var(--teal); font-style: normal; }
+.solution-sub {
+  font-size: 18px; line-height: 1.6;
+  color: rgba(255,255,255,0.6);
+  max-width: 560px; margin-bottom: 0;
+}
+
+/* ── FEATURES ── */
+.features {
+  background: var(--white);
+  padding: 120px 48px;
+}
+.features-header { margin-bottom: 72px; }
+.features-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px; background: var(--line);
+  border-radius: 20px; overflow: hidden;
+}
+.feature-card {
+  background: var(--white); padding: 40px;
+  display: flex; flex-direction: column; gap: 20px;
+  transition: background .15s;
+}
+.feature-card:hover { background: var(--warm-white); }
+.feature-icon-wrap {
+  width: 52px; height: 52px; border-radius: 12px;
+  background: var(--teal-50); color: var(--teal-deep);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.feature-title {
+  font-size: 20px; font-weight: 600; letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.feature-desc { font-size: 14px; line-height: 1.65; color: var(--mute); }
+.feature-tags {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px;
+}
+.feature-tag {
+  font-family: var(--font-mono); font-size: 10px;
+  font-weight: 500; letter-spacing: 0.05em;
+  padding: 3px 8px; border-radius: 4px;
+  background: rgba(11,31,58,0.06); color: var(--navy-500);
+}
+.feature-tag.highlight {
+  background: var(--teal-50); color: var(--teal-deep);
+}
+
+/* ── HOW IT WORKS ── */
+.how {
+  background: var(--navy-deep);
+  padding: 120px 48px;
+}
+.how-steps {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px; margin-top: 72px;
+  position: relative;
+}
+.how-steps::before {
+  content: '';
+  position: absolute; top: 36px; left: calc(16.67% + 16px); right: calc(16.67% + 16px);
+  height: 1px; background: rgba(45,212,191,0.2);
+  pointer-events: none;
+}
+.step {
+  display: flex; flex-direction: column; gap: 20px;
+  position: relative;
+}
+.step-num {
+  width: 72px; height: 72px; border-radius: 16px;
+  background: rgba(45,212,191,0.08);
+  border: 1px solid rgba(45,212,191,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-size: 20px; font-weight: 600;
+  color: var(--teal);
+  position: relative; z-index: 1;
+}
+.step-title {
+  font-size: 22px; font-weight: 600; letter-spacing: -0.01em; color: #fff;
+}
+.step-text {
+  font-size: 15px; line-height: 1.65;
+  color: rgba(255,255,255,0.55);
+}
+.step-detail {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.06em; color: var(--teal);
+  margin-top: 4px;
+}
+
+/* ── PRICING ── */
+.pricing {
+  background: var(--warm-white);
+  padding: 120px 48px;
+}
+.pricing-toggle-wrap {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 64px; flex-wrap: wrap;
+}
+.toggle-row {
+  display: flex; align-items: center; gap: 0;
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: 8px; overflow: hidden;
+}
+.toggle-btn {
+  padding: 8px 20px; font-size: 13px; font-weight: 500;
+  font-family: var(--font-display);
+  border: none; background: transparent; cursor: pointer;
+  color: var(--mute); transition: background .12s, color .12s;
+}
+.toggle-btn.active { background: var(--navy); color: #fff; }
+.annual-badge {
+  font-family: var(--font-mono); font-size: 10px;
+  font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 6px;
+  background: var(--teal-50); color: var(--teal-deep);
+}
+.pricing-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 16px;
+}
+.plan-card {
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: 16px; padding: 32px; display: flex;
+  flex-direction: column; gap: 0; position: relative;
+  overflow: hidden;
+}
+.plan-card.popular {
+  border-color: var(--teal); background: var(--navy);
+}
+.plan-popular-badge {
+  position: absolute; top: 16px; right: 16px;
+  font-family: var(--font-mono); font-size: 9px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 4px 8px; border-radius: 4px;
+  background: var(--teal); color: var(--navy);
+}
+.plan-name {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--mute); margin-bottom: 16px;
+}
+.plan-card.popular .plan-name { color: var(--teal); }
+.plan-price {
+  margin-bottom: 8px;
+}
+.plan-price .amount {
+  font-size: 40px; font-weight: 700; letter-spacing: -0.025em;
+  color: var(--navy);
+}
+.plan-card.popular .plan-price .amount { color: #fff; }
+.plan-price .currency {
+  font-size: 20px; font-weight: 600; color: var(--mute);
+  vertical-align: top; margin-top: 8px; display: inline-block;
+}
+.plan-card.popular .plan-price .currency { color: rgba(255,255,255,0.5); }
+.plan-price .period {
+  font-size: 14px; color: var(--mute);
+}
+.plan-card.popular .plan-price .period { color: rgba(255,255,255,0.5); }
+.plan-usd {
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--mute); margin-bottom: 24px;
+}
+.plan-card.popular .plan-usd { color: rgba(255,255,255,0.4); }
+.plan-divider {
+  height: 1px; background: var(--line); margin: 0 0 24px;
+}
+.plan-card.popular .plan-divider { background: rgba(255,255,255,0.1); }
+.plan-features {
+  list-style: none; display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 32px; flex: 1;
+}
+.plan-feature {
+  font-size: 13px; line-height: 1.4; color: var(--navy-500);
+  display: flex; align-items: flex-start; gap: 8px;
+}
+.plan-card.popular .plan-feature { color: rgba(255,255,255,0.75); }
+.plan-feature-icon { color: var(--success); flex-shrink: 0; margin-top: 1px; }
+.plan-card.popular .plan-feature-icon { color: var(--teal); }
+.plan-feature-x { color: var(--line); flex-shrink: 0; margin-top: 1px; }
+.btn-plan {
+  display: block; text-align: center;
+  padding: 12px; border-radius: 8px;
+  font: 14px/1 var(--font-display); font-weight: 600;
+  text-decoration: none; transition: all .15s;
+  border: 1px solid var(--line); color: var(--navy);
+}
+.btn-plan:hover { border-color: var(--navy); background: var(--navy); color: #fff; }
+.plan-card.popular .btn-plan {
+  background: var(--teal); color: var(--navy);
+  border-color: transparent;
+}
+.plan-card.popular .btn-plan:hover { background: var(--teal-deep); }
+.pricing-note {
+  text-align: center; margin-top: 32px;
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--mute); letter-spacing: 0.04em; line-height: 1.7;
+}
+
+/* ── TRACK PORTAL ── */
+.track {
+  background: var(--white);
+  padding: 120px 48px;
+}
+.track-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 96px; align-items: center;
+}
+.track-demo {
+  background: var(--warm-white); border-radius: 20px;
+  border: 1px solid var(--line); overflow: hidden;
+}
+.track-demo-bar {
+  background: var(--navy); padding: 12px 20px;
+  display: flex; align-items: center; gap: 8px;
+}
+.track-demo-dots { display: flex; gap: 6px; }
+.track-demo-dot { width: 12px; height: 12px; border-radius: 50%; }
+.track-demo-url {
+  flex: 1; margin: 0 12px;
+  background: rgba(255,255,255,0.08); border-radius: 4px;
+  padding: 4px 12px;
+  font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.5);
+}
+.track-demo-body { padding: 28px 24px; }
+.track-demo-title {
+  font-size: 16px; font-weight: 600; text-align: center; margin-bottom: 6px;
+}
+.track-demo-sub {
+  font-size: 13px; color: var(--mute); text-align: center; margin-bottom: 20px;
+}
+.track-demo-input-wrap {
+  display: flex; gap: 8px; margin-bottom: 20px;
+}
+.track-demo-input {
+  flex: 1; padding: 10px 14px; border-radius: 8px;
+  border: 1px solid var(--line); font-family: var(--font-mono);
+  font-size: 13px; color: var(--navy); background: var(--white);
+}
+.track-demo-btn {
+  padding: 10px 16px; border-radius: 8px;
+  background: var(--navy); color: #fff;
+  font: 13px/1 var(--font-display); font-weight: 600; border: none;
+  cursor: pointer;
+}
+.order-card {
+  background: var(--white); border-radius: 10px; border: 1px solid var(--line);
+  padding: 16px 18px; margin-bottom: 10px;
+}
+.order-card-top {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 10px;
+}
+.order-id {
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--mute); letter-spacing: 0.06em;
+}
+.order-status {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.06em; padding: 3px 8px; border-radius: 4px;
+}
+.status-shipped { background: var(--teal-50); color: var(--teal-deep); }
+.status-processing { background: #FEF3C7; color: #92400E; }
+.order-product { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+.order-price { font-size: 16px; font-weight: 700; color: var(--navy); }
+.order-courier {
+  font-family: var(--font-mono); font-size: 11px; color: var(--mute);
+  margin-top: 8px; display: flex; align-items: center; gap: 6px;
+}
+
+/* ── INTERNATIONAL ── */
+.intl {
+  background: linear-gradient(135deg, var(--navy) 0%, #0D2548 100%);
+  padding: 120px 48px;
+  position: relative; overflow: hidden;
+}
+.intl-flags {
+  display: flex; gap: 12px; margin-bottom: 48px; flex-wrap: wrap;
+}
+.flag-chip {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 14px; border-radius: 8px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85);
+}
+.flag-emoji { font-size: 18px; }
+.intl-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px; background: rgba(255,255,255,0.06);
+  border-radius: 16px; overflow: hidden;
+  margin-top: 48px;
+}
+.intl-item {
+  background: rgba(11,31,58,0.5); padding: 28px 32px;
+}
+.intl-item-icon {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 10px;
+}
+.intl-item-title {
+  font-size: 17px; font-weight: 600; color: #fff; margin-bottom: 8px;
+}
+.intl-item-text { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.55); }
+
+/* ── FAQ ── */
+.faq {
+  background: var(--white); padding: 120px 48px;
+}
+.faq-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
+  margin-top: 64px;
+}
+.faq-item {
+  padding: 28px 32px; border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+.faq-item:nth-child(2n) { border-right: 0; }
+.faq-item:nth-last-child(-n+2) { border-bottom: 0; }
+.faq-q {
+  font-size: 15px; font-weight: 600; letter-spacing: -0.005em;
+  margin-bottom: 10px; color: var(--navy);
+}
+.faq-a { font-size: 14px; line-height: 1.65; color: var(--mute); }
+.faq-a strong { color: var(--navy); }
+.faq-a a { color: var(--teal-deep); }
+
+/* ── FINAL CTA ── */
+.final-cta {
+  background: var(--navy-deep); padding: 120px 48px;
+  text-align: center; position: relative; overflow: hidden;
+}
+.final-cta-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(45,212,191,0.05), transparent);
+}
+.final-cta-inner { position: relative; max-width: 720px; margin: 0 auto; }
+.final-cta-label {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--teal); display: flex; align-items: center;
+  justify-content: center; gap: 12px; margin-bottom: 24px;
+}
+.final-cta-label::before, .final-cta-label::after {
+  content: ''; width: 24px; height: 1px; background: var(--teal);
+}
+.final-cta-h2 {
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 700; letter-spacing: -0.03em; line-height: 1.05;
+  color: #fff; margin-bottom: 20px;
+}
+.final-cta-h2 em { color: var(--teal); font-style: normal; }
+.final-cta-sub {
+  font-size: 18px; line-height: 1.6;
+  color: rgba(255,255,255,0.55); margin-bottom: 48px;
+}
+.final-cta-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.final-cta-note {
+  font-family: var(--font-mono); font-size: 11px;
+  color: rgba(255,255,255,0.3); letter-spacing: 0.04em; margin-top: 20px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy-deep);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 64px 48px 40px;
+}
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-top {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 64px; margin-bottom: 56px;
+}
+.footer-brand .tagline {
+  font-size: 14px; line-height: 1.6;
+  color: rgba(255,255,255,0.45); margin-top: 16px; max-width: 240px;
+}
+.footer-brand .email {
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--teal); margin-top: 20px; display: block;
+  text-decoration: none;
+}
+.footer-col-title {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4); margin-bottom: 16px;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-links a {
+  font-size: 14px; color: rgba(255,255,255,0.6);
+  text-decoration: none; transition: color .12s;
+}
+.footer-links a:hover { color: #fff; }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-copy {
+  font-family: var(--font-mono); font-size: 11px;
+  color: rgba(255,255,255,0.3); letter-spacing: 0.04em;
+}
+.footer-legal {
+  display: flex; gap: 24px;
+}
+.footer-legal a {
+  font-family: var(--font-mono); font-size: 11px;
+  color: rgba(255,255,255,0.3); text-decoration: none;
+  letter-spacing: 0.04em; transition: color .12s;
+}
+.footer-legal a:hover { color: rgba(255,255,255,0.7); }
+
+/* ── PLAN PRICE SWITCH ── */
+.price-bdt { display: block; }
+.price-usd { display: none; }
+.showing-usd .price-bdt { display: none; }
+.showing-usd .price-usd { display: block; }
+
+/* ── REVEAL ANIMATIONS ── */
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ── COURIERS ── */
+.couriers {
+  background: var(--warm-white); padding: 72px 48px;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.couriers-inner { max-width: 1200px; margin: 0 auto; }
+.couriers-label {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--mute); text-align: center; margin-bottom: 28px;
+}
+.couriers-row {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  justify-content: center; align-items: center;
+}
+.courier-chip {
+  padding: 8px 16px; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--white);
+  font-size: 13px; font-weight: 500; color: var(--navy-500);
+}
+
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .nav-links, .nav-cta { display: none; }
+  .hero, .problem, .solution, .features, .how, .pricing, .track, .intl, .faq, .final-cta { padding: 80px 24px; }
+  footer { padding: 48px 24px 32px; }
+  .hero-h1 { font-size: 42px; }
+  .problem-grid, .features-grid, .intl-grid, .faq-grid { grid-template-columns: 1fr; }
+  .how-steps, .pricing-grid, .footer-top { grid-template-columns: 1fr; }
+  .how-steps::before { display: none; }
+  .track-inner { grid-template-columns: 1fr; }
+  .hero-stats { flex-wrap: wrap; }
+  .hero-stat { padding: 0 32px 0 0; }
+  .couriers { padding: 48px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
+      <path d="M22 14L22 86" stroke="white" stroke-width="12" stroke-linecap="round"/>
+      <path d="M22 14L60 14A28 28 0 0 1 60 70L38 70" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="37" y="44" width="7" height="14" rx="1.5" fill="#2DD4BF"/>
+      <rect x="47" y="36" width="7" height="22" rx="1.5" fill="#2DD4BF"/>
+      <rect x="57" y="28" width="7" height="30" rx="1.5" fill="#2DD4BF"/>
+    </svg>
+    <span class="wordmark"><span class="page">Page</span>Connect<span class="io">.io</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#track">Track Portal</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="nav-cta">
+    <a href="https://pageconnect.io/track" class="btn-nav-secondary">Track an order</a>
+    <a href="https://pageconnect-app.vercel.app" class="btn-nav-primary">Start free trial</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="top">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-mark">
+    <svg width="680" height="680" viewBox="0 0 100 100" fill="none" style="color:white">
+      <path d="M22 14L22 86" stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
+      <path d="M22 14L60 14A28 28 0 0 1 60 70L38 70" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="37" y="44" width="7" height="14" rx="1.5" fill="rgba(45,212,191,0.4)"/>
+      <rect x="47" y="36" width="7" height="22" rx="1.5" fill="rgba(45,212,191,0.4)"/>
+      <rect x="57" y="28" width="7" height="30" rx="1.5" fill="rgba(45,212,191,0.4)"/>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">The operating system for F-commerce sellers</div>
+    <h1 class="hero-h1">Your orders. Your sales.<br><em>All in one place.</em></h1>
+    <p class="hero-sub">PageConnect replaces the notebook, the Excel sheet, and the WhatsApp chaos. Manage orders, inventory, analytics, and customers — from your phone.</p>
+    <div class="hero-actions">
+      <a href="https://pageconnect-app.vercel.app" class="btn-hero-primary">
+        Start 14-day free trial
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="https://pageconnect.io/track" class="btn-hero-secondary">
+        Track an order
+      </a>
+    </div>
+    <p class="hero-trial-note">NO CREDIT CARD REQUIRED · 14-DAY FREE TRIAL · ALL PRO FEATURES UNLOCKED</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num">৳<span>499</span></div>
+        <div class="label">Starting from / month</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num"><span>∞</span></div>
+        <div class="label">Unlimited orders &amp; products</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num"><span>4</span></div>
+        <div class="label">Channels tracked in one app</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num"><span>BD + 🌏</span></div>
+        <div class="label">Bangladesh &amp; international</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COURIERS ── -->
+<div class="couriers">
+  <div class="couriers-inner">
+    <p class="couriers-label">Works with the couriers you already use</p>
+    <div class="couriers-row">
+      <span class="courier-chip">Pathao</span>
+      <span class="courier-chip">Steadfast</span>
+      <span class="courier-chip">RedX</span>
+      <span class="courier-chip">Sundarban</span>
+      <span class="courier-chip">eCourier</span>
+      <span class="courier-chip">AusPost</span>
+      <span class="courier-chip">Royal Mail</span>
+      <span class="courier-chip">USPS</span>
+      <span class="courier-chip">Canada Post</span>
+      <span class="courier-chip">DHL</span>
+      <span class="courier-chip">FedEx</span>
+      <span class="courier-chip">UPS</span>
+      <span class="courier-chip">+ more</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── PROBLEM ── -->
+<section class="problem" id="problem">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">The problem</div>
+    <h2 class="section-h2 reveal">F-commerce sellers manage<br>millions of orders by hand.</h2>
+    <p class="section-sub reveal">Notebooks. WhatsApp groups. Excel sheets — always wrong. The result: lost orders, angry customers, no idea of your actual profit.</p>
+    <div class="problem-grid reveal">
+      <div class="problem-item">
+        <div class="problem-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
+        </div>
+        <div class="problem-title">Orders lost in inbox</div>
+        <p class="problem-text">Taking orders through Facebook messages means orders get buried, forgotten, or duplicated. No order ID, no status trail.</p>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="problem-title">Stock counts are guesswork</div>
+        <p class="problem-text">Excel sheets updated manually — if remembered at all. Selling out of stock you don't have. Stockouts you don't know about.</p>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <div class="problem-title">No idea of actual profit</div>
+        <p class="problem-text">Revenue minus bKash transfers doesn't equal profit. You don't know your best product, peak time, or real return rate.</p>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="problem-title">Customer service by phone call</div>
+        <p class="problem-text">Customers ask "where is my order?" You spend 30 minutes a day calling couriers to find out. There's no tracking link to share.</p>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <div class="problem-title">Payment chaos</div>
+        <p class="problem-text">bKash, Nagad, cash on delivery — manually tracked in different notebooks. Who paid? Who didn't? You check every morning.</p>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="problem-title">No receipts, no trust</div>
+        <p class="problem-text">No proof of purchase for your customers. No professional receipt. Nothing to show when a dispute happens.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOLUTION ── -->
+<section class="solution">
+  <div class="solution-bg"></div>
+  <div class="section-inner" style="position:relative">
+    <div class="solution-badge reveal">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg>
+      The fix
+    </div>
+    <h2 class="solution-h2 reveal">PageConnect replaces all of it — <em>in one mobile-first app.</em></h2>
+    <p class="solution-sub reveal">One place for every order, every customer, every product, every payment — with a public tracking portal your customers can use right now.</p>
+  </div>
+</section>
+
+<!-- ── FEATURES ── -->
+<section class="features" id="features">
+  <div class="section-inner">
+    <div class="features-header">
+      <div class="section-eyebrow reveal">Features</div>
+      <h2 class="section-h2 reveal">Everything a serious<br>F-commerce seller needs.</h2>
+      <p class="section-sub reveal">Built from the ground up for sellers operating through Facebook, WhatsApp, and social media — not for big warehouses.</p>
+    </div>
+    <div class="features-grid reveal">
+      <div class="feature-card">
+        <div class="feature-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M7 6V4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
+        </div>
+        <div>
+          <div class="feature-title">Order Management</div>
+          <p class="feature-desc">Add a new order in 3 steps: customer → product → delivery. Auto-generated order codes. Full status pipeline from Received to Closed. Copy address in one tap for your courier.</p>
+        </div>
+        <div class="feature-tags">
+          <span class="feature-tag highlight">Unlimited orders</span>
+          <span class="feature-tag">Status tracking</span>
+          <span class="feature-tag">Returns</span>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <div class="feature-title">Customer Management</div>
+          <p class="feature-desc">Customer database auto-builds from your orders. Look up returning customers by phone. Full Bangladesh address fields (thana, district, division) and international addresses.</p>
+        </div>
+        <div class="feature-tags">
+          <span class="feature-tag highlight">Phone lookup</span>
+          <span class="feature-tag">Order history</span>
+          <span class="feature-tag">WhatsApp / Facebook</span>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        </div>
+        <div>
+          <div class="feature-title">Inventory Management</div>
+          <p class="feature-desc">Product catalogue with variants (size, colour). Stock counts deduct on order confirmation automatically — and reinstate on return. Low stock alerts when you need them.</p>
+        </div>
+        <div class="feature-tags">
+          <span class="feature-tag highlight">Unlimited products</span>
+          <span class="feature-tag">Variants</span>
+          <span class="feature-tag">Stock log</span>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16l4-4 3 3 6-7"/></svg>
+        </div>
+        <div>
+          <div class="feature-title">Analytics</div>
+          <p class="feature-desc">Revenue and order charts by day, week, month, or custom range. Breakdown by product, courier, payment method, and order source. Year-over-year comparison built in.</p>
+        </div>
+        <div class="feature-tags">
+          <span class="feature-tag">Revenue charts</span>
+          <span class="feature-tag">Peak time analysis</span>
+          <span class="feature-tag highlight">Growth plan+</span>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div>
+          <div class="feature-title">E-Receipts &amp; PDF</div>
+          <p class="feature-desc">Digital receipt generated for every order. Your logo, shop name, and contact on every receipt. Customers access via the tracking portal. PDF download included.</p>
+        </div>
+        <div class="feature-tags">
+          <span class="feature-tag">Seller letterhead</span>
+          <span class="feature-tag">Verified badge</span>
+          <span class="feature-tag highlight">Growth plan+</span>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="feature-title">Goals &amp; Finance</div>
+          <p class="feature-desc">Set monthly revenue and order goals with progress rings. Record income and expenses, generate a P&amp;L statement. Streak tracker for consecutive months hitting goal.</p>
+        </div>
+        <div class="feature-tags">
+          <span class="feature-tag">Monthly goals</span>
+          <span class="feature-tag">P&amp;L statement</span>
+          <span class="feature-tag highlight">Growth plan+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal" style="color:rgba(255,255,255,0.4)">
+      <span style="color:var(--teal)">How it works</span>
+    </div>
+    <h2 class="section-h2 reveal" style="color:#fff">Three steps. Then you're running.</h2>
+    <p class="section-sub reveal" style="color:rgba(255,255,255,0.5)">No setup fees. No contracts. No developer needed. Start with your email and shop name.</p>
+    <div class="how-steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Sign up</div>
+          <p class="step-text">Create your account with just your email and shop name. No credit card required. All Pro features unlocked for 14 days.</p>
+          <div class="step-detail">14-DAY TRIAL · NO CARD NEEDED</div>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">Add your orders</div>
+          <p class="step-text">Create products, add your first order in 3 steps. Customer details auto-save for next time. Start your inventory count.</p>
+          <div class="step-detail">3 STEPS PER ORDER</div>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">Manage everything</div>
+          <p class="step-text">Update order statuses, track stock, see your analytics. Your customers can track their orders at pageconnect.io/track right away.</p>
+          <div class="step-detail">LIVE TRACKING PORTAL INCLUDED</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRACK PORTAL ── -->
+<section class="track" id="track">
+  <div class="track-inner section-inner" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center">
+    <div>
+      <div class="section-eyebrow reveal">Order Tracking Portal</div>
+      <h2 class="section-h2 reveal" style="max-width:480px">Your customers track their orders — without calling you.</h2>
+      <p class="section-sub reveal" style="margin-bottom:32px">Every seller on PageConnect gets a free public tracking portal at <strong>pageconnect.io/track</strong>. Customers enter their phone number and see all active orders instantly. No login required.</p>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:36px" class="reveal">
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:15px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin-top:2px"><path d="M5 12l5 5L20 7"/></svg>
+          Real-time order status from Received to Shipped
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:15px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin-top:2px"><path d="M5 12l5 5L20 7"/></svg>
+          Courier tracking number + direct link to courier website
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:15px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin-top:2px"><path d="M5 12l5 5L20 7"/></svg>
+          Download PDF receipt per order
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:15px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin-top:2px"><path d="M5 12l5 5L20 7"/></svg>
+          WhatsApp, Facebook and call buttons to reach seller
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:15px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0;margin-top:2px"><path d="M5 12l5 5L20 7"/></svg>
+          Order history across all PageConnect sellers in one place
+        </li>
+      </ul>
+      <a href="https://pageconnect.io/track" class="btn-hero-primary" style="display:inline-flex">Try the tracking portal</a>
+    </div>
+    <div class="track-demo reveal">
+      <div class="track-demo-bar">
+        <div class="track-demo-dots">
+          <div class="track-demo-dot" style="background:#ff5f57"></div>
+          <div class="track-demo-dot" style="background:#febc2e"></div>
+          <div class="track-demo-dot" style="background:#28c840"></div>
+        </div>
+        <div class="track-demo-url">pageconnect.io/track</div>
+      </div>
+      <div class="track-demo-body">
+        <div class="track-demo-title">Track your order</div>
+        <div class="track-demo-sub">Enter the phone number you used to order</div>
+        <div class="track-demo-input-wrap">
+          <input class="track-demo-input" type="text" value="+88 017 ████ ████" readonly>
+          <button class="track-demo-btn">Track</button>
+        </div>
+        <div class="order-card">
+          <div class="order-card-top">
+            <div class="order-id">ORD-2026-4821</div>
+            <span class="order-status status-shipped">Shipped</span>
+          </div>
+          <div class="order-product">Embroidered Kurti — M, Blue</div>
+          <div class="order-price">৳ 850</div>
+          <div class="order-courier">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Steadfast · TRK-88291
+          </div>
+        </div>
+        <div class="order-card">
+          <div class="order-card-top">
+            <div class="order-id">ORD-2026-4783</div>
+            <span class="order-status status-processing">Processing</span>
+          </div>
+          <div class="order-product">Handmade Earrings Set</div>
+          <div class="order-price">৳ 320</div>
+          <div class="order-courier">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Pathao · Pending assignment
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING ── -->
+<section class="pricing" id="pricing">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">Pricing</div>
+    <h2 class="section-h2 reveal">Start free. Scale when you're ready.</h2>
+    <p class="section-sub reveal">All plans include unlimited orders, unlimited products, and the free tracking portal. No hidden fees.</p>
+    <div class="pricing-toggle-wrap reveal">
+      <div class="toggle-row">
+        <button class="toggle-btn active" onclick="setPricingCurrency('bdt', this)">৳ BDT</button>
+        <button class="toggle-btn" onclick="setPricingCurrency('usd', this)">$ USD</button>
+      </div>
+      <div class="toggle-row">
+        <button class="toggle-btn active" id="monthly-btn" onclick="setPricingPeriod('monthly', this)">Monthly</button>
+        <button class="toggle-btn" id="annual-btn" onclick="setPricingPeriod('annual', this)">Annual</button>
+      </div>
+      <span class="annual-badge">Save ~20% annually</span>
+    </div>
+
+    <div class="pricing-grid reveal" id="pricing-grid">
+      <!-- Starter -->
+      <div class="plan-card">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price">
+          <div class="price-bdt">
+            <span class="amount" id="starter-price">৳499</span>
+            <span class="period"> / month</span>
+          </div>
+          <div class="price-usd">
+            <span class="currency">$</span><span class="amount" id="starter-price-usd">12</span>
+            <span class="period"> / month</span>
+          </div>
+        </div>
+        <div class="plan-usd">
+          <span class="price-bdt">~$12 USD</span>
+          <span class="price-usd">~৳1,320 BDT</span>
+        </div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Unlimited orders</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Unlimited products</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Customer management</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Basic inventory</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Basic analytics</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Free tracking portal</li>
+          <li class="plan-feature"><span class="plan-feature-x" style="color:#CBD5E1">—</span> <span style="color:#CBD5E1">PDF receipts</span></li>
+          <li class="plan-feature"><span class="plan-feature-x" style="color:#CBD5E1">—</span> <span style="color:#CBD5E1">Goals &amp; Finance</span></li>
+        </ul>
+        <a href="https://pageconnect-app.vercel.app" class="btn-plan">Start free trial</a>
+      </div>
+      <!-- Growth — popular -->
+      <div class="plan-card popular">
+        <div class="plan-popular-badge">Most popular</div>
+        <div class="plan-name">Growth</div>
+        <div class="plan-price">
+          <div class="price-bdt">
+            <span class="amount" id="growth-price">৳999</span>
+            <span class="period"> / month</span>
+          </div>
+          <div class="price-usd">
+            <span class="currency" style="color:rgba(255,255,255,0.4)">$</span><span class="amount" id="growth-price-usd">22</span>
+            <span class="period"> / month</span>
+          </div>
+        </div>
+        <div class="plan-usd">
+          <span class="price-bdt">~$22 USD</span>
+          <span class="price-usd">~৳2,420 BDT</span>
+        </div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Everything in Starter</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> PDF receipts &amp; download</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Full analytics</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Goals page</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Finance &amp; P&amp;L</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> BDT / USD toggle</li>
+          <li class="plan-feature"><span class="plan-feature-x" style="color:rgba(255,255,255,0.25)">—</span> <span style="color:rgba(255,255,255,0.3)">Events</span></li>
+          <li class="plan-feature"><span class="plan-feature-x" style="color:rgba(255,255,255,0.25)">—</span> <span style="color:rgba(255,255,255,0.3)">Export reports</span></li>
+        </ul>
+        <a href="https://pageconnect-app.vercel.app" class="btn-plan">Start free trial</a>
+      </div>
+      <!-- Pro -->
+      <div class="plan-card">
+        <div class="plan-name">Pro</div>
+        <div class="plan-price">
+          <div class="price-bdt">
+            <span class="amount" id="pro-price">৳1,999</span>
+            <span class="period"> / month</span>
+          </div>
+          <div class="price-usd">
+            <span class="currency">$</span><span class="amount" id="pro-price-usd">29</span>
+            <span class="period"> / month</span>
+          </div>
+        </div>
+        <div class="plan-usd">
+          <span class="price-bdt">~$29 USD</span>
+          <span class="price-usd">~৳3,190 BDT</span>
+        </div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Everything in Growth</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Events (pop-up, fair, live)</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Export PDF reports</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Priority support</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Event P&amp;L</li>
+          <li class="plan-feature"><span class="plan-feature-x" style="color:#CBD5E1">—</span> <span style="color:#CBD5E1">Staff accounts</span></li>
+          <li class="plan-feature"><span class="plan-feature-x" style="color:#CBD5E1">—</span> <span style="color:#CBD5E1">Dedicated support</span></li>
+          <li class="plan-feature"><span class="plan-feature-x" style="color:#CBD5E1">—</span> <span style="color:#CBD5E1">White-label (planned)</span></li>
+        </ul>
+        <a href="https://pageconnect-app.vercel.app" class="btn-plan">Start free trial</a>
+      </div>
+      <!-- Business -->
+      <div class="plan-card">
+        <div class="plan-name">Business</div>
+        <div class="plan-price">
+          <div class="price-bdt">
+            <span class="amount" id="biz-price">৳3,999</span>
+            <span class="period"> / month</span>
+          </div>
+          <div class="price-usd">
+            <span class="currency">$</span><span class="amount" id="biz-price-usd">59</span>
+            <span class="period"> / month</span>
+          </div>
+        </div>
+        <div class="plan-usd">
+          <span class="price-bdt">~$59 USD</span>
+          <span class="price-usd">~৳6,490 BDT</span>
+        </div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Everything in Pro</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Staff accounts</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Dedicated support</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> White-label (planned)</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> "Taken by" staff tracking</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Multi-staff order management</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Power seller features</li>
+          <li class="plan-feature"><span class="plan-feature-icon">✓</span> Everything, unlimited</li>
+        </ul>
+        <a href="https://pageconnect-app.vercel.app" class="btn-plan">Start free trial</a>
+      </div>
+    </div>
+    <p class="pricing-note reveal">All plans start with a <strong>14-day free trial</strong> — no credit card required.<br>After the trial: 7-day grace period. Cancel anytime. Annual plans billed once per year.</p>
+  </div>
+</section>
+
+<!-- ── INTERNATIONAL ── -->
+<section class="intl" id="international">
+  <div class="section-inner" style="position:relative">
+    <div class="section-eyebrow reveal" style="color:rgba(255,255,255,0.35)">
+      <span style="color:var(--teal)">For diaspora sellers</span>
+    </div>
+    <h2 class="section-h2 reveal" style="color:#fff;max-width:700px">Selling South Asian products abroad? PageConnect has an international mode.</h2>
+    <p class="section-sub reveal" style="color:rgba(255,255,255,0.55)">Bangladeshi sellers in Australia, UK, USA, Canada, and Germany — selling food, clothing, and lifestyle products to diaspora communities. We built for you too.</p>
+    <div class="intl-flags reveal">
+      <span class="flag-chip"><span class="flag-emoji">🇦🇺</span> Australia</span>
+      <span class="flag-chip"><span class="flag-emoji">🇬🇧</span> United Kingdom</span>
+      <span class="flag-chip"><span class="flag-emoji">🇺🇸</span> United States</span>
+      <span class="flag-chip"><span class="flag-emoji">🇨🇦</span> Canada</span>
+      <span class="flag-chip"><span class="flag-emoji">🇩🇪</span> Germany</span>
+      <span class="flag-chip"><span class="flag-emoji">🌏</span> + more</span>
+    </div>
+    <div class="intl-grid reveal">
+      <div class="intl-item">
+        <div class="intl-item-icon">Currency</div>
+        <div class="intl-item-title">USD billing, BDT/USD toggle</div>
+        <p class="intl-item-text">International mode uses USD pricing. Analytics has a BDT/USD toggle so you can compare across markets.</p>
+      </div>
+      <div class="intl-item">
+        <div class="intl-item-icon">Couriers</div>
+        <div class="intl-item-title">AusPost, Royal Mail, USPS and more</div>
+        <p class="intl-item-text">Full international courier list — DHL, FedEx, UPS, Canada Post. Manual delivery and customer pickup options included.</p>
+      </div>
+      <div class="intl-item">
+        <div class="intl-item-icon">Addresses</div>
+        <div class="intl-item-title">Street, suburb, state, postcode, country</div>
+        <p class="intl-item-text">International address format with full country support. Phone numbers handle +61, +44, +1 and every country code.</p>
+      </div>
+      <div class="intl-item">
+        <div class="intl-item-icon">Tracking</div>
+        <div class="intl-item-title">Works for your overseas customers too</div>
+        <p class="intl-item-text">The pageconnect.io/track portal works globally. Customers in any country can track orders by phone number with full country code support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq" id="faq">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">FAQ</div>
+    <h2 class="section-h2 reveal">Common questions.</h2>
+    <div class="faq-grid reveal">
+      <div class="faq-item">
+        <div class="faq-q">Is my data safe?</div>
+        <p class="faq-a">Yes. Your data is stored on <strong>Supabase</strong> (enterprise PostgreSQL). Each seller's data is completely isolated — other sellers cannot see your orders or customers. We never share or sell data.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What happens after my trial ends?</div>
+        <p class="faq-a">You get a <strong>7-day grace period</strong> after your 14-day trial to subscribe. After that, premium features lock — but your data is never deleted. You choose when to subscribe.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need a credit card to start?</div>
+        <p class="faq-a"><strong>No.</strong> Start your 14-day trial with just your email and shop name. No payment information needed until you decide to subscribe.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is there a limit on orders or products?</div>
+        <p class="faq-a"><strong>No limits.</strong> All plans — including Starter — have unlimited orders and unlimited products. We don't charge per order or per product.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I use PageConnect outside Bangladesh?</div>
+        <p class="faq-a">Yes. We have a dedicated <strong>international seller mode</strong> for sellers in Australia, UK, USA, Canada, Germany and more. Switch at signup or from your settings.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is F-commerce?</div>
+        <p class="faq-a">F-commerce stands for Facebook commerce — selling products through Facebook pages, groups, WhatsApp and social media rather than a traditional website or marketplace.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can my customers track their orders?</div>
+        <p class="faq-a">Yes — from day one. Every seller gets a free public tracking portal at <a href="https://pageconnect.io/track">pageconnect.io/track</a>. No setup needed. Customers enter their phone to see all active orders.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I cancel anytime?</div>
+        <p class="faq-a"><strong>Yes.</strong> No contracts, no lock-in. Cancel anytime from your account settings. Annual plans: pro-rated refund may be considered within the first 30 days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final-cta">
+  <div class="final-cta-bg"></div>
+  <div class="final-cta-inner reveal">
+    <div class="final-cta-label">Get started today</div>
+    <h2 class="final-cta-h2">Replace the chaos.<br><em>Run your business.</em></h2>
+    <p class="final-cta-sub">14-day free trial. All Pro features. No credit card. Cancel anytime.</p>
+    <div class="final-cta-actions">
+      <a href="https://pageconnect-app.vercel.app" class="btn-hero-primary">Start your free trial</a>
+      <a href="https://pageconnect.io/track" class="btn-hero-secondary">Track an order</a>
+    </div>
+    <p class="final-cta-note">Starting from ৳499/month · $12 USD/month · 14-day trial · No credit card</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="nav-logo" style="margin-bottom:4px">
+          <svg width="26" height="26" viewBox="0 0 100 100" fill="none">
+            <path d="M22 14L22 86" stroke="white" stroke-width="12" stroke-linecap="round"/>
+            <path d="M22 14L60 14A28 28 0 0 1 60 70L38 70" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="37" y="44" width="7" height="14" rx="1.5" fill="#2DD4BF"/>
+            <rect x="47" y="36" width="7" height="22" rx="1.5" fill="#2DD4BF"/>
+            <rect x="57" y="28" width="7" height="30" rx="1.5" fill="#2DD4BF"/>
+          </svg>
+          <span class="wordmark"><span class="page">Page</span>Connect<span class="io">.io</span></span>
+        </a>
+        <p class="tagline">The operating system for F-commerce sellers. Orders, inventory, analytics, and customer tracking in one mobile-first app.</p>
+        <a href="mailto:help@pageconnect.io" class="email">help@pageconnect.io</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Product</div>
+        <ul class="footer-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="https://pageconnect.io/track">Track an order</a></li>
+          <li><a href="https://pageconnect.io/sellers">Seller directory</a></li>
+          <li><a href="https://pageconnect-app.vercel.app">App login</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Sellers</div>
+        <ul class="footer-links">
+          <li><a href="https://pageconnect-app.vercel.app">Bangladesh sellers</a></li>
+          <li><a href="#international">International sellers</a></li>
+          <li><a href="https://pageconnect-app.vercel.app">Start free trial</a></li>
+          <li><a href="https://pageconnect.io/customer">Customer portal</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="mailto:help@pageconnect.io">Contact</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms of service</a></li>
+          <li><a href="#">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 PageConnect. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Refunds</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Pricing toggle logic ──
+let currentCurrency = 'bdt';
+let currentPeriod = 'monthly';
+
+const prices = {
+  bdt: { monthly: { starter: '৳499', growth: '৳999', pro: '৳1,999', biz: '৳3,999' },
+          annual:  { starter: '৳399', growth: '৳799', pro: '৳1,599', biz: '৳3,199' } },
+  usd: { monthly: { starter: '12', growth: '22', pro: '29', biz: '59' },
+          annual:  { starter: '9',  growth: '17', pro: '23', biz: '47' } }
+};
+
+function setPricingCurrency(currency, btn) {
+  currentCurrency = currency;
+  document.querySelectorAll('.toggle-row')[0].querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const grid = document.getElementById('pricing-grid');
+  if (currency === 'usd') grid.classList.add('showing-usd');
+  else grid.classList.remove('showing-usd');
+  updatePrices();
+}
+
+function setPricingPeriod(period, btn) {
+  currentPeriod = period;
+  document.querySelectorAll('.toggle-row')[1].querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  updatePrices();
+}
+
+function updatePrices() {
+  const p = prices[currentCurrency][currentPeriod];
+  if (currentCurrency === 'bdt') {
+    document.getElementById('starter-price').textContent = p.starter;
+    document.getElementById('growth-price').textContent = p.growth;
+    document.getElementById('pro-price').textContent = p.pro;
+    document.getElementById('biz-price').textContent = p.biz;
+  } else {
+    document.getElementById('starter-price-usd').textContent = p.starter;
+    document.getElementById('growth-price-usd').textContent = p.growth;
+    document.getElementById('pro-price-usd').textContent = p.pro;
+    document.getElementById('biz-price-usd').textContent = p.biz;
+  }
+}
+
+// ── Scroll reveal ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
