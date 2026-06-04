@@ -600,79 +600,67 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
       </div>
       <!-- CHANNELS SVG DIAGRAM -->
       <div style="display:flex;align-items:center;justify-content:center">
-        <div class="channels-diagram">
-          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:400px">
-            <!-- Connection lines -->
-            <line x1="200" y1="200" x2="200" y2="68" stroke="rgba(45,212,191,0.25)" stroke-width="1.5" stroke-dasharray="4 3"/>
-            <line x1="200" y1="200" x2="330" y2="132" stroke="rgba(45,212,191,0.25)" stroke-width="1.5" stroke-dasharray="4 3"/>
-            <line x1="200" y1="200" x2="330" y2="268" stroke="rgba(45,212,191,0.25)" stroke-width="1.5" stroke-dasharray="4 3"/>
-            <line x1="200" y1="200" x2="200" y2="332" stroke="rgba(45,212,191,0.25)" stroke-width="1.5" stroke-dasharray="4 3"/>
-            <line x1="200" y1="200" x2="70" y2="268" stroke="rgba(45,212,191,0.25)" stroke-width="1.5" stroke-dasharray="4 3"/>
-            <line x1="200" y1="200" x2="70" y2="132" stroke="rgba(45,212,191,0.25)" stroke-width="1.5" stroke-dasharray="4 3"/>
-            <!-- Arrow heads -->
-            <polygon points="200,76 196,90 204,90" fill="rgba(45,212,191,0.4)"/>
-            <polygon points="323,137 315,132 321,142" fill="rgba(45,212,191,0.4)"/>
-            <polygon points="323,263 321,252 315,262" fill="rgba(45,212,191,0.4)"/>
-            <polygon points="200,324 196,310 204,310" fill="rgba(45,212,191,0.4)"/>
-            <polygon points="77,263 79,252 85,262" fill="rgba(45,212,191,0.4)"/>
-            <polygon points="77,137 85,132 79,142" fill="rgba(45,212,191,0.4)"/>
-            <!-- Centre glow -->
-            <circle cx="200" cy="200" r="55" fill="rgba(45,212,191,0.06)" stroke="rgba(45,212,191,0.2)" stroke-width="1"/>
-            <circle cx="200" cy="200" r="38" fill="rgba(45,212,191,0.1)" stroke="rgba(45,212,191,0.3)" stroke-width="1.5"/>
-            <!-- Centre: PageConnect P icon -->
-            <text x="200" y="192" text-anchor="middle" font-family="Space Grotesk, system-ui" font-size="11" font-weight="600" fill="rgba(45,212,191,0.9)" letter-spacing="0">Page</text>
-            <text x="200" y="208" text-anchor="middle" font-family="Space Grotesk, system-ui" font-size="11" font-weight="600" fill="rgba(45,212,191,0.9)">Connect</text>
-
-            <!-- Facebook — top -->
-            <circle cx="200" cy="52" r="34" fill="#1877F2"/>
-            <text x="200" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="white">f</text>
-            <text x="200" y="100" text-anchor="middle" font-family="Space Grotesk, system-ui" font-size="11" font-weight="500" fill="rgba(255,255,255,0.7)">Facebook</text>
-
-            <!-- Instagram — top right -->
-            <circle cx="334" cy="116" r="34" fill="url(#ig-grad)"/>
-            <rect x="321" y="103" width="26" height="26" rx="8" fill="none" stroke="white" stroke-width="2.5"/>
-            <circle cx="334" cy="116" r="6" fill="none" stroke="white" stroke-width="2.5"/>
-            <circle cx="342" cy="108" r="2" fill="white"/>
-            <text x="334" y="164" text-anchor="middle" font-family="Space Grotesk, system-ui" font-size="11" font-weight="500" fill="rgba(255,255,255,0.7)">Instagram</text>
-
-            <!-- WhatsApp — bottom right -->
-            <circle cx="334" cy="284" r="34" fill="#25D366"/>
-            <path d="M334 269a15 15 0 0 1 0 30 14.8 14.8 0 0 1-7.4-2l-5.6 1.5 1.6-5.4A15 15 0 0 1 334 269z" fill="white"/>
-            <path d="M327 280c.3.7 1.4 2 2.2 2.2.8.2 1.4.1 2-.3.6-.4 1.4-1.5 1.7-2 .3-.4.1-.8-.1-1l-1.2-.8c-.3-.2-.5 0-.8.3-.3.3-.6.7-.9.8-.3.1-.6 0-1-.3a8 8 0 0 1-2-2.3c-.2-.4-.1-.6.1-.8l.6-.7c.2-.2.2-.4.1-.6l-.8-1.4c-.2-.4-.5-.3-.7-.3-.3 0-.8.1-1.1.5-.4.4-1.3 1.3-1.2 2.6.1 1.3 1 2.9 1.1 3z" fill="#25D366"/>
-            <text x="334" y="332" text-anchor="middle" font-family="Space Grotesk, system-ui" font-size="11" font-weight="500" fill="rgba(255,255,255,0.7)">WhatsApp</text>
-
-            <!-- Phone Call — bottom -->
-            <circle cx="200" cy="348" r="34" fill="rgba(79,156,249,0.9)"/>
-            <path d="M208 358a1.5 1.5 0 0 1-1.5 0l-2-1.2a1.5 1.5 0 0 1-.5-2.1c.5-.8 1-1.7 1-2.4 0-.7-.4-1.2-.9-1.7l-1-.9a1.5 1.5 0 0 1 0-2.1l1.6-1.6a1.5 1.5 0 0 1 2.1 0l.3.3a9 9 0 0 1 2.6 6.3 9 9 0 0 1-2.6 6.3z" fill="white" transform="translate(-4,-4)"/>
-            <path d="M192 342a9 9 0 0 1 6.3 2.6l.3.3a1.5 1.5 0 0 1 0 2.1l-1.6 1.6a1.5 1.5 0 0 1-2.1 0l-.9-1c-.5-.5-1-1-1.7-1-.7 0-1.6.5-2.4 1a1.5 1.5 0 0 1-2.1-.5l-1.2-2a1.5 1.5 0 0 1 0-1.5 9 9 0 0 1 5.4-2.6z" fill="white" transform="translate(2,-4)"/>
-            <text x="200" y="396" text-anchor="middle" font-family="Space Grotesk, system-ui" font-size="11" font-weight="500" fill="rgba(255,255,255,0.7)">Phone Call</text>
-
-            <!-- Events — bottom left -->
-            <circle cx="66" cy="284" r="34" fill="rgba(168,85,247,0.85)"/>
-            <rect x="52" y="274" width="28" height="22" rx="3" fill="none" stroke="white" stroke-width="2"/>
-            <line x1="52" y1="281" x2="80" y2="281" stroke="white" stroke-width="2"/>
-            <line x1="60" y1="270" x2="60" y2="276" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="72" y1="270" x2="72" y2="276" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-            <text x="66" y="332" text-anchor="middle" font-family="Space Grotesk, system-ui" font-size="11" font-weight="500" fill="rgba(255,255,255,0.7)">Events</text>
-
-            <!-- Walk-in — top left -->
-            <circle cx="66" cy="116" r="34" fill="rgba(245,158,11,0.85)"/>
-            <path d="M66 100a7 7 0 1 1 0 14 7 7 0 0 1 0-14z" fill="white"/>
-            <path d="M55 132c0-6 5-10 11-10s11 4 11 10" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-            <text x="66" y="164" text-anchor="middle" font-family="Space Grotesk, system-ui" font-size="11" font-weight="500" fill="rgba(255,255,255,0.7)">Walk-in</text>
-
-            <!-- Instagram gradient -->
-            <defs>
-              <radialGradient id="ig-grad" cx="30%" cy="107%" r="150%">
-                <stop offset="0%" stop-color="#fdf497"/>
-                <stop offset="5%" stop-color="#fdf497"/>
-                <stop offset="45%" stop-color="#fd5949"/>
-                <stop offset="60%" stop-color="#d6249f"/>
-                <stop offset="90%" stop-color="#285AEB"/>
-              </radialGradient>
-            </defs>
-          </svg>
-        </div>
+        <svg viewBox="0 0 420 440" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:400px">
+          <defs>
+            <radialGradient id="ig-grad" cx="30%" cy="110%" r="150%">
+              <stop offset="0%" stop-color="#fdf497"/>
+              <stop offset="40%" stop-color="#fd5949"/>
+              <stop offset="70%" stop-color="#d6249f"/>
+              <stop offset="100%" stop-color="#285AEB"/>
+            </radialGradient>
+          </defs>
+          <line x1="210" y1="210" x2="210" y2="94" stroke="rgba(45,212,191,0.3)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <line x1="210" y1="210" x2="340" y2="147" stroke="rgba(45,212,191,0.3)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <line x1="210" y1="210" x2="340" y2="277" stroke="rgba(45,212,191,0.3)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <line x1="210" y1="210" x2="210" y2="326" stroke="rgba(45,212,191,0.3)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <line x1="210" y1="210" x2="80" y2="277" stroke="rgba(45,212,191,0.3)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <line x1="210" y1="210" x2="80" y2="147" stroke="rgba(45,212,191,0.3)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <polygon points="210,172 206,158 214,158" fill="rgba(45,212,191,0.55)"/>
+          <polygon points="296,176 284,174 290,163" fill="rgba(45,212,191,0.55)"/>
+          <polygon points="296,248 290,259 284,248" fill="rgba(45,212,191,0.55)"/>
+          <polygon points="210,248 206,262 214,262" fill="rgba(45,212,191,0.55)"/>
+          <polygon points="124,248 130,259 136,248" fill="rgba(45,212,191,0.55)"/>
+          <polygon points="124,176 136,174 130,163" fill="rgba(45,212,191,0.55)"/>
+          <circle cx="210" cy="210" r="52" fill="rgba(45,212,191,0.06)" stroke="rgba(45,212,191,0.2)" stroke-width="1.5"/>
+          <circle cx="210" cy="210" r="36" fill="rgba(45,212,191,0.1)" stroke="rgba(45,212,191,0.3)" stroke-width="1.5"/>
+          <g transform="translate(192,193)">
+            <path d="M8 5 L8 44" stroke="white" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+            <path d="M8 5 L27 5 A13 13 0 0 1 27 31 L18 31" stroke="white" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <rect x="17" y="20" width="3.5" height="7" rx="1" fill="#2DD4BF"/>
+            <rect x="22" y="16" width="3.5" height="11" rx="1" fill="#2DD4BF"/>
+            <rect x="27" y="12" width="3.5" height="15" rx="1" fill="#2DD4BF"/>
+          </g>
+          <circle cx="210" cy="58" r="34" fill="#1877F2"/>
+          <text x="210" y="66" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="900" fill="white" dominant-baseline="central">f</text>
+          <text x="210" y="105" text-anchor="middle" font-family="Space Grotesk,system-ui" font-size="13" font-weight="600" fill="rgba(255,255,255,0.8)">Facebook</text>
+          <circle cx="348" cy="130" r="34" fill="url(#ig-grad)"/>
+          <rect x="334" y="116" width="28" height="28" rx="7" fill="none" stroke="white" stroke-width="2.8"/>
+          <circle cx="348" cy="130" r="7" fill="none" stroke="white" stroke-width="2.5"/>
+          <circle cx="358.5" cy="119.5" r="2.5" fill="white"/>
+          <text x="348" y="177" text-anchor="middle" font-family="Space Grotesk,system-ui" font-size="13" font-weight="600" fill="rgba(255,255,255,0.8)">Instagram</text>
+          <circle cx="348" cy="295" r="34" fill="#25D366"/>
+          <path d="M348 279 a16 16 0 0 0-13 7 a16 16 0 0 0 2 19 l-3 8 8-3 a16 16 0 1 0 6-31z" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M341 288 c0-1 1-2 2-1 l2 2 c1 1 1 2 0 3 c1 2 3 4 5 5 c1 0 2 0 3-1 l2 2 c1 1 0 2-1 2 c-2 1-8-2-11-8 c-1-2-2-4-2-4z" fill="white"/>
+          <text x="348" y="342" text-anchor="middle" font-family="Space Grotesk,system-ui" font-size="13" font-weight="600" fill="rgba(255,255,255,0.8)">WhatsApp</text>
+          <circle cx="210" cy="360" r="34" fill="#4F9CF9"/>
+          <path d="M199 349 c-1-1-2-1-3 0 l-2 2 c-1 1-1 3 0 4 c2 3 5 7 8 10 s7 6 10 8 c1 1 3 1 4 0 l2-2 c1-1 1-2 0-3 l-2-2 c-1-1-2-1-3 0 l-1 1 c-2-1-4-3-6-5 s-4-4-5-6 l1-1 c1-1 1-2 0-3 z" fill="white"/>
+          <text x="210" y="407" text-anchor="middle" font-family="Space Grotesk,system-ui" font-size="13" font-weight="600" fill="rgba(255,255,255,0.8)">Phone Call</text>
+          <circle cx="72" cy="295" r="34" fill="#A855F7"/>
+          <rect x="57" y="282" width="30" height="26" rx="3" fill="none" stroke="white" stroke-width="2.5"/>
+          <line x1="57" y1="290" x2="87" y2="290" stroke="white" stroke-width="2"/>
+          <line x1="65" y1="278" x2="65" y2="284" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="79" y1="278" x2="79" y2="284" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="64" cy="298" r="2" fill="white"/>
+          <circle cx="72" cy="298" r="2" fill="white"/>
+          <circle cx="80" cy="298" r="2" fill="white"/>
+          <circle cx="64" cy="305" r="2" fill="white"/>
+          <circle cx="72" cy="305" r="2" fill="white"/>
+          <text x="72" y="342" text-anchor="middle" font-family="Space Grotesk,system-ui" font-size="13" font-weight="600" fill="rgba(255,255,255,0.8)">Events</text>
+          <circle cx="72" cy="130" r="34" fill="#F59E0B"/>
+          <circle cx="72" cy="116" r="8" fill="none" stroke="white" stroke-width="2.5"/>
+          <path d="M53 148 Q53 132 72 132 Q91 132 91 148" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="72" y="177" text-anchor="middle" font-family="Space Grotesk,system-ui" font-size="13" font-weight="600" fill="rgba(255,255,255,0.8)">Walk-in</text>
+        </svg>
       </div>
     </div>
   </div>
@@ -815,6 +803,8 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
         <a href="https://pageconnect.io/track" class="btn-trial" style="display:inline-flex">Visit tracking portal →</a>
       </div>
       <div class="track-demo rv">
+        <!-- Screenshot placeholder -->
+        <div class="img-ph" style="height:200px;border-radius:0;border:none;border-bottom:1px solid var(--line)"><div class="img-ph-inner"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><div class="img-ph-lbl">Tracking portal screenshot</div><div class="img-ph-sz">600 × 500px — Upload from CMS</div></div></div>
         <div class="track-bar"><div class="track-dot-w"><div class="track-dot"></div><div class="track-dot"></div><div class="track-dot"></div></div><div class="track-url">pageconnect.io/track</div></div>
         <div class="track-body">
           <div class="track-title">Track your order</div>
