@@ -1255,7 +1255,6 @@ function setLang(lang) {
     var el=document.getElementById(id);
     if(el)el.classList.toggle('on', isBn);
   });
-  localStorage.setItem('pc-lang', lang);
 }
 // Mobile drawer
 function openDrawer(){
@@ -1268,16 +1267,7 @@ function closeDrawer(){
   document.getElementById('mob-overlay').classList.remove('open');
   document.body.style.overflow='';
 }
-// Restore language on load — safe with try/catch
-(function(){
-  try{
-    var l=localStorage.getItem('pc-lang');
-    if(l==='bn') setLang('bn');
-  }catch(e){
-    // If anything fails, stay in English and clear bad state
-    try{localStorage.removeItem('pc-lang');}catch(e2){}
-  }
-})();
+// Language defaults to English on every page load
 
 // Scroll reveal
 var obs=new IntersectionObserver(function(entries){
