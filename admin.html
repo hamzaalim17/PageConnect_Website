@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
 <style>
 :root{--navy:#0B1F3A;--navy-deep:#071528;--teal:#2DD4BF;--teal-deep:#14B8A6;--teal-50:#ECFDF8;--blue:#4F9CF9;--white:#fff;--warm:#F7F9FC;--line:#E2E8F0;--mute:#6B7A90;--ok:#16A34A;--err:#EF4444;--f:'Space Grotesk',system-ui,sans-serif;--m:'JetBrains Mono',monospace}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -315,27 +316,20 @@ const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // Simple password check using stored hash comparison via bcryptjs
 function doLogin(){
-  const pw = document.getElementById('pw-input').value;
-  // Simple approach: check against hash using Web Crypto or just compare known hash
-  // We'll use a server-side check via Supabase edge function pattern
-  // For simplicity, store hashed pw check client-side with bcrypt
-  const script = document.createElement('script');
-  script.src = 'https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js';
-  script.onload = function(){
-    dcodeIO.bcrypt.compare(pw, HASH, function(err, result){
-      if(result){
-        sessionStorage.setItem('pc-admin','1');
-        document.getElementById('login-screen').style.display='none';
-        document.getElementById('app').style.display='block';
-        loadSection('hero');
-      } else {
-        document.getElementById('login-err').style.display='block';
-        document.getElementById('pw-input').value='';
-        document.getElementById('pw-input').focus();
-      }
-    });
-  };
-  document.head.appendChild(script);
+  var pw=document.getElementById('pw-input').value;
+  if(!pw){return;}
+  dcodeIO.bcrypt.compare(pw, HASH, function(err, result){
+    if(result){
+      sessionStorage.setItem('pc-admin','1');
+      document.getElementById('login-screen').style.display='none';
+      document.getElementById('app').style.display='block';
+      loadSection('hero');
+    } else {
+      document.getElementById('login-err').style.display='block';
+      document.getElementById('pw-input').value='';
+      document.getElementById('pw-input').focus();
+    }
+  });
 }
 
 function doLogout(){
