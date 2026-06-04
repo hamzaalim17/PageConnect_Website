@@ -73,6 +73,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(7,21,40,.97)
 /* HERO BANNER */
 .hero-wrap{position:relative;width:100%;height:94vh;min-height:560px;overflow:hidden;background:var(--navy-deep);margin-top:64px}
 .h-slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
+.h-slide img{opacity:0;transition:opacity .6s ease}
+.h-slide img.loaded{opacity:1}
+/* Hide placeholder grid when real image loaded */
+.h-slide.has-image .h-ph-grid,.h-slide.has-image .h-ph-icon,.h-slide.has-image .h-ph-label,.h-slide.has-image .h-ph-size{display:none}
 .h-slide.active{opacity:1}
 .h-slide img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .h-slide-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:linear-gradient(135deg,#071528 0%,#0d2848 55%,#071e3d 100%);position:relative}
@@ -487,8 +491,8 @@ html.bn .bn-b{display:block!important}
   .who,.diff,.prob,.sol,.features,.how,.fweb,.track,.cust,.pricing,.intl,.notable,.ai,.testi,.faq,.fin{padding:68px 20px}
   footer{padding:44px 20px 28px}
   .couriers{padding:36px 20px}
-  .hero-text{padding:52px 20px 48px}
-  .ht-h1{font-size:34px}
+  .hero-text{padding:36px 20px 36px}
+  .ht-h1{font-size:28px;line-height:1.1}
   .stats-in{grid-template-columns:1fr 1fr}
   .stat-item:nth-child(2){border-right:none}
   .stat-item:nth-child(3){border-right:1px solid rgba(255,255,255,.07)}
@@ -504,7 +508,7 @@ html.bn .bn-b{display:block!important}
 @media(max-width:560px){
   .prob-grid{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
-  .hero-wrap{height:60vh;min-height:340px}
+  .hero-wrap{height:55vw;min-height:260px;max-height:480px}
   .stats-in{grid-template-columns:1fr 1fr}
   .plans{grid-template-columns:1fr}
   .ht-btns{flex-direction:column;align-items:flex-start}
@@ -655,18 +659,18 @@ html.bn .bn-b{display:block!important}
   <div class="w">
     <div class="sec-eye rv"><span class="en">Who it's for</span><span class="bn">কাদের জন্য</span></div>
     <h2 class="sec-h2 rv"><span class="en">Built for two kinds of sellers.</span><span class="bn">দুই ধরনের সেলারের জন্য তৈরি।</span></h2>
-    <p class="sec-sub rv" style="margin-bottom:0">Whether you're in Bangladesh or selling abroad for your community — PageConnect was built with you in mind.</p>
+    <p class="sec-sub rv" style="margin-bottom:0"><span class="en">Whether you're in Bangladesh or selling abroad for your community — PageConnect was built with you in mind.</span><span class="bn">আপনি বাংলাদেশে হোন বা বিদেশে আপনার কমিউনিটির জন্য বিক্রি করুন — PageConnect আপনাকে মাথায় রেখেই তৈরি।</span></p>
     <div class="who-grid rv">
       <div class="who-card">
         <span class="who-flag">🇧🇩</span>
-        <div class="who-tag">Bangladesh · BDT pricing</div>
-        <div class="who-title">Bangladeshi sellers</div>
+        <div class="who-tag"><span class="en">Bangladesh · BDT pricing</span><span class="bn">বাংলাদেশ · BDT মূল্য</span></div>
+        <div class="who-title"><span class="en">Bangladeshi sellers</span><span class="bn">বাংলাদেশি সেলার</span></div>
         <p class="who-desc"><span class="en">Any seller taking orders and managing customers — F-commerce, home business, boutique, food, handicraft, or anything in between. If you sell through Facebook, WhatsApp, or Instagram, PageConnect is for you.</span><span class="bn">যেকোনো সেলার যারা অর্ডার নেন ও কাস্টমার ম্যানেজ করেন — এফ-কমার্স, হোম বিজনেস, বুটিক, খাবার, হস্তশিল্প বা যেকোনো কিছু। আপনি যদি ফেসবুক, হোয়াটসঅ্যাপ বা ইনস্টাগ্রামে বিক্রি করেন, PageConnect আপনার জন্য।</span></p>
       </div>
       <div class="who-card dk">
         <span class="who-flag">🌏</span>
-        <div class="who-tag">International · USD pricing</div>
-        <div class="who-title">International diaspora sellers</div>
+        <div class="who-tag"><span class="en">International · USD pricing</span><span class="bn">আন্তর্জাতিক · USD মূল্য</span></div>
+        <div class="who-title"><span class="en">International diaspora sellers</span><span class="bn">প্রবাসী বাংলাদেশি সেলার</span></div>
         <p class="who-desc"><span class="en">Bangladeshi sellers in Australia, UK, USA, Canada and beyond — selling to your community abroad. Full international courier support, international address formats, and USD billing built in.</span><span class="bn">অস্ট্রেলিয়া, যুক্তরাজ্য, আমেরিকা, কানাডায় বসবাসরত বাংলাদেশি সেলার — আপনার কমিউনিটির কাছে বিক্রি করুন। আন্তর্জাতিক কুরিয়ার সাপোর্ট, ঠিকানা ফরম্যাট এবং USD বিলিং বিল্ট-ইন।</span></p>
       </div>
     </div>
@@ -679,7 +683,7 @@ html.bn .bn-b{display:block!important}
   <div class="w">
     <div class="diff-inner rv">
       <div class="diff-left">
-        <div class="diff-badge">Why PageConnect is different</div>
+        <div class="diff-badge"><span class="en">Why PageConnect is different</span><span class="bn">PageConnect কেন আলাদা</span></div>
         <h2 class="diff-h2"><span class="en">We're not an e-commerce marketplace. We don't ask you to change a thing.</span><span class="bn">আমরা ই-কমার্স মার্কেটপ্লেস নই। আপনাকে কিছুই বদলাতে হবে না।</span></h2>
         <p class="diff-text">Other platforms want you on their terms — list your products their way, take orders their way, lose the direct conversation with your customer. PageConnect works differently. Your Facebook page, Instagram, and WhatsApp stay exactly as they are. That human connection is your biggest advantage — we'd never take it away.</p>
         <div class="diff-points">
@@ -839,9 +843,9 @@ html.bn .bn-b{display:block!important}
     <h2 class="sec-h2 rv" style="color:#fff"><span class="en">Three steps. Then you're running.</span><span class="bn">তিনটি ধাপ। তারপর শুরু।</span></h2>
     <p class="sec-sub rv" style="color:rgba(255,255,255,.42);margin-bottom:0"><span class="en">No setup fees. No contracts. No developer needed.</span><span class="bn">কোনো সেটআপ ফি নেই। কোনো চুক্তি নেই। ডেভেলপার লাগবে না।</span></p>
     <div class="how-grid">
-      <div class="how-step rv"><div class="how-num">01</div><div><div class="how-title"><span class="en">Sign up</span><span class="bn">সাইন আপ করুন</span></div><p class="how-desc"><span class="en">Create your account with your Facebook page name or shop name and email. No credit card required. All Pro features unlocked for 7 days.</span><span class="bn">আপনার ফেসবুক পেজ নাম বা শপ নাম ও ইমেইল দিয়ে অ্যাকাউন্ট তৈরি করুন। ক্রেডিট কার্ড লাগবে না। ৭ দিন সব প্রো ফিচার আনলক।</span></p><div class="how-tag"><span class="en">7-day trial · no card · no tech setup</span><span class="bn">৭ দিনের ট্রায়াল · কার্ড নেই · টেক সেটআপ নেই</span></div></div></div>
-      <div class="how-step rv"><div class="how-num">02</div><div><div class="how-title"><span class="en">Add your orders</span><span class="bn">অর্ডার যোগ করুন</span></div><p class="how-desc"><span class="en">Add your products, then log your first order in 3 steps. Customer details save for next time. Stock tracking starts immediately. Keep selling exactly the way you always have.</span><span class="bn">প্রোডাক্ট যোগ করুন, তারপর ৩ ধাপে প্রথম অর্ডার লগ করুন। কাস্টমার তথ্য পরের বার সেভ থাকবে। স্টক ট্র্যাকিং সঙ্গে সঙ্গে শুরু।</span></p><div class="how-tag"><span class="en">3 steps per order · no disruption</span><span class="bn">প্রতি অর্ডারে ৩ ধাপ · কোনো পরিবর্তন নেই</span></div></div></div>
-      <div class="how-step rv"><div class="how-num">03</div><div><div class="how-title"><span class="en">Manage everything</span><span class="bn">সব ম্যানেজ করুন</span></div><p class="how-desc"><span class="en">Update statuses, track stock, see analytics and goals. Your customers can track orders at pageconnect.io/track from day one — automatically, for free.</span><span class="bn">স্ট্যাটাস আপডেট করুন, স্টক ট্র্যাক করুন, অ্যানালিটিক্স দেখুন। কাস্টমাররা প্রথম দিন থেকেই অর্ডার ট্র্যাক করতে পারবেন।</span></p><div class="how-tag"><span class="en">Live tracking portal · no extra setup</span><span class="bn">লাইভ ট্র্যাকিং পোর্টাল · অতিরিক্ত সেটআপ নেই</span></div></div></div>
+      <div class="how-step rv"><div class="how-num">০১</div><div><div class="how-title"><span class="en">Sign up</span><span class="bn">সাইন আপ করুন</span></div><p class="how-desc"><span class="en">Create your account with your Facebook page name or shop name and email. No credit card required. All Pro features unlocked for 7 days.</span><span class="bn">আপনার ফেসবুক পেজ নাম বা শপ নাম ও ইমেইল দিয়ে অ্যাকাউন্ট তৈরি করুন। ক্রেডিট কার্ড লাগবে না। ৭ দিন সব প্রো ফিচার আনলক।</span></p><div class="how-tag"><span class="en">7-day trial · no card · no tech setup</span><span class="bn">৭ দিনের ট্রায়াল · কার্ড নেই · টেক সেটআপ নেই</span></div></div></div>
+      <div class="how-step rv"><div class="how-num">০২</div><div><div class="how-title"><span class="en">Add your orders</span><span class="bn">অর্ডার যোগ করুন</span></div><p class="how-desc"><span class="en">Add your products, then log your first order in 3 steps. Customer details save for next time. Stock tracking starts immediately. Keep selling exactly the way you always have.</span><span class="bn">প্রোডাক্ট যোগ করুন, তারপর ৩ ধাপে প্রথম অর্ডার লগ করুন। কাস্টমার তথ্য পরের বার সেভ থাকবে। স্টক ট্র্যাকিং সঙ্গে সঙ্গে শুরু।</span></p><div class="how-tag"><span class="en">3 steps per order · no disruption</span><span class="bn">প্রতি অর্ডারে ৩ ধাপ · কোনো পরিবর্তন নেই</span></div></div></div>
+      <div class="how-step rv"><div class="how-num">০৩</div><div><div class="how-title"><span class="en">Manage everything</span><span class="bn">সব ম্যানেজ করুন</span></div><p class="how-desc"><span class="en">Update statuses, track stock, see analytics and goals. Your customers can track orders at pageconnect.io/track from day one — automatically, for free.</span><span class="bn">স্ট্যাটাস আপডেট করুন, স্টক ট্র্যাক করুন, অ্যানালিটিক্স দেখুন। কাস্টমাররা প্রথম দিন থেকেই অর্ডার ট্র্যাক করতে পারবেন।</span></p><div class="how-tag"><span class="en">Live tracking portal · no extra setup</span><span class="bn">লাইভ ট্র্যাকিং পোর্টাল · অতিরিক্ত সেটআপ নেই</span></div></div></div>
     </div>
   </div>
 </section>
@@ -898,11 +902,11 @@ html.bn .bn-b{display:block!important}
         <div class="img-ph" style="height:200px;border-radius:0;border:none;border-bottom:1px solid var(--line)"><div class="img-ph-inner"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><div class="img-ph-lbl">Tracking portal screenshot</div><div class="img-ph-sz">600 × 500px — Upload from CMS</div></div></div>
         <div class="track-bar"><div class="track-dot-w"><div class="track-dot"></div><div class="track-dot"></div><div class="track-dot"></div></div><div class="track-url">pageconnect.io/track</div></div>
         <div class="track-body">
-          <div class="track-title">Track your order</div>
-          <div class="track-sub">Enter the phone number you used to order</div>
-          <div class="track-row"><input class="track-input" type="text" value="+88 017 ████ ████" readonly><button class="track-btn">Track</button></div>
-          <div class="oc"><div class="oc-top"><div class="oc-id">ORD-2026-4821</div><span class="oc-status s-shipped">Shipped</span></div><div class="oc-prod">Embroidered Kurti — M, Blue</div><div class="oc-price">৳ 850</div><div class="oc-courier"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Steadfast · TRK-88291</div></div>
-          <div class="oc"><div class="oc-top"><div class="oc-id">ORD-2026-4783</div><span class="oc-status s-proc">Processing</span></div><div class="oc-prod">Handmade Earrings Set</div><div class="oc-price">৳ 320</div><div class="oc-courier"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Pathao · Pending assignment</div></div>
+          <div class="track-title"><span class="en">Track your order</span><span class="bn">আপনার অর্ডার ট্র্যাক করুন</span></div>
+          <div class="track-sub"><span class="en">Enter the phone number you used to order</span><span class="bn">অর্ডারে ব্যবহৃত ফোন নম্বর দিন</span></div>
+          <div class="track-row"><input class="track-input" type="text" value="+88 017 ████ ████" readonly><button class="track-btn"><span class="en">Track</span><span class="bn">ট্র্যাক</span></button></div>
+          <div class="oc"><div class="oc-top"><div class="oc-id">ORD-2026-4821</div><span class="oc-status s-shipped"><span class="en">Shipped</span><span class="bn">পাঠানো হয়েছে</span></span></div><div class="oc-prod">Embroidered Kurti — M, Blue</div><div class="oc-price">৳ 850</div><div class="oc-courier"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Steadfast · TRK-88291</div></div>
+          <div class="oc"><div class="oc-top"><div class="oc-id">ORD-2026-4783</div><span class="oc-status s-proc"><span class="en">Processing</span><span class="bn">প্রক্রিয়াধীন</span></span></div><div class="oc-prod">Handmade Earrings Set</div><div class="oc-price">৳ 320</div><div class="oc-courier"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Pathao · Pending assignment</div></div>
         </div>
       </div>
     </div>
@@ -962,18 +966,18 @@ html.bn .bn-b{display:block!important}
       </div>
     </div>
     <div class="intl-flags rv">
-      <span class="intl-flag">🇦🇺 Australia</span>
-      <span class="intl-flag">🇬🇧 United Kingdom</span>
-      <span class="intl-flag">🇺🇸 United States</span>
-      <span class="intl-flag">🇨🇦 Canada</span>
-      <span class="intl-flag">🇩🇪 Germany</span>
-      <span class="intl-flag">🌏 + more</span>
+      <span class="intl-flag">🇦🇺 <span class="en">Australia</span><span class="bn">অস্ট্রেলিয়া</span></span>
+      <span class="intl-flag">🇬🇧 <span class="en">United Kingdom</span><span class="bn">যুক্তরাজ্য</span></span>
+      <span class="intl-flag">🇺🇸 <span class="en">United States</span><span class="bn">আমেরিকা</span></span>
+      <span class="intl-flag">🇨🇦 <span class="en">Canada</span><span class="bn">কানাডা</span></span>
+      <span class="intl-flag">🇩🇪 <span class="en">Germany</span><span class="bn">জার্মানি</span></span>
+      <span class="intl-flag">🌏 <span class="en">+ more</span><span class="bn">+ আরো</span></span>
     </div>
     <div class="intl-grid rv">
-      <div class="intl-cell"><div class="intl-ctag">Currency</div><div class="intl-ctitle"><span class="en">USD billing with BDT/USD toggle</span><span class="bn">USD বিলিং ও BDT/USD টগল</span></div><p class="intl-cdesc"><span class="en">International mode uses USD pricing. Analytics has a BDT/USD toggle so you can compare performance across markets.</span><span class="bn">আন্তর্জাতিক মোডে USD মূল্য। অ্যানালিটিক্সে BDT/USD টগল দিয়ে মার্কেট তুলনা করুন।</span></p></div>
-      <div class="intl-cell"><div class="intl-ctag">Couriers</div><div class="intl-ctitle"><span class="en">AusPost, Royal Mail, USPS and more</span><span class="bn">AusPost, Royal Mail, USPS এবং আরো</span></div><p class="intl-cdesc"><span class="en">Full international courier list — DHL, FedEx, UPS, Canada Post. Manual delivery and customer pickup also supported.</span><span class="bn">সম্পূর্ণ আন্তর্জাতিক কুরিয়ার তালিকা — DHL, FedEx, UPS, Canada Post।</span></p></div>
-      <div class="intl-cell"><div class="intl-ctag">Addresses</div><div class="intl-ctitle"><span class="en">Full international address format</span><span class="bn">পূর্ণ আন্তর্জাতিক ঠিকানা ফরম্যাট</span></div><p class="intl-cdesc"><span class="en">Suburb, state, postcode, country. Every country code supported — +61, +44, +1 and beyond.</span><span class="bn">সাবার্ব, স্টেট, পোস্টকোড, দেশ। +61, +44, +1 সহ সব কান্ট্রি কোড সাপোর্টেড।</span></p></div>
-      <div class="intl-cell"><div class="intl-ctag">Tracking</div><div class="intl-ctitle"><span class="en">Works globally for your customers</span><span class="bn">বিশ্বব্যাপী আপনার কাস্টমারদের জন্য</span></div><p class="intl-cdesc"><span class="en">Customers anywhere in the world can track orders at pageconnect.io/track by phone number. No setup needed.</span><span class="bn">বিশ্বের যেকোনো জায়গা থেকে কাস্টমাররা ফোন নম্বর দিয়ে অর্ডার ট্র্যাক করতে পারবেন।</span></p></div>
+      <div class="intl-cell"><div class="intl-ctag"><span class="en">Currency</span><span class="bn">মুদ্রা</span></div><div class="intl-ctitle"><span class="en">USD billing with BDT/USD toggle</span><span class="bn">USD বিলিং ও BDT/USD টগল</span></div><p class="intl-cdesc"><span class="en">International mode uses USD pricing. Analytics has a BDT/USD toggle so you can compare performance across markets.</span><span class="bn">আন্তর্জাতিক মোডে USD মূল্য। অ্যানালিটিক্সে BDT/USD টগল দিয়ে মার্কেট তুলনা করুন।</span></p></div>
+      <div class="intl-cell"><div class="intl-ctag"><span class="en">Couriers</span><span class="bn">কুরিয়ার</span></div><div class="intl-ctitle"><span class="en">AusPost, Royal Mail, USPS and more</span><span class="bn">AusPost, Royal Mail, USPS এবং আরো</span></div><p class="intl-cdesc"><span class="en">Full international courier list — DHL, FedEx, UPS, Canada Post. Manual delivery and customer pickup also supported.</span><span class="bn">সম্পূর্ণ আন্তর্জাতিক কুরিয়ার তালিকা — DHL, FedEx, UPS, Canada Post।</span></p></div>
+      <div class="intl-cell"><div class="intl-ctag"><span class="en">Addresses</span><span class="bn">ঠিকানা</span></div><div class="intl-ctitle"><span class="en">Full international address format</span><span class="bn">পূর্ণ আন্তর্জাতিক ঠিকানা ফরম্যাট</span></div><p class="intl-cdesc"><span class="en">Suburb, state, postcode, country. Every country code supported — +61, +44, +1 and beyond.</span><span class="bn">সাবার্ব, স্টেট, পোস্টকোড, দেশ। +61, +44, +1 সহ সব কান্ট্রি কোড সাপোর্টেড।</span></p></div>
+      <div class="intl-cell"><div class="intl-ctag"><span class="en">Tracking</span><span class="bn">ট্র্যাকিং</span></div><div class="intl-ctitle"><span class="en">Works globally for your customers</span><span class="bn">বিশ্বব্যাপী আপনার কাস্টমারদের জন্য</span></div><p class="intl-cdesc"><span class="en">Customers anywhere in the world can track orders at pageconnect.io/track by phone number. No setup needed.</span><span class="bn">বিশ্বের যেকোনো জায়গা থেকে কাস্টমাররা ফোন নম্বর দিয়ে অর্ডার ট্র্যাক করতে পারবেন।</span></p></div>
     </div>
     <div class="intl-contact rv">
       <div class="intl-contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
@@ -1031,7 +1035,7 @@ html.bn .bn-b{display:block!important}
   <div class="w">
     <div class="ai-in rv">
       <div>
-        <div class="ai-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>Built on technology</div>
+        <div class="ai-badge"><span class="en">Built on technology</span><span class="bn">প্রযুক্তিতে নির্মিত</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
         <h2 class="ai-h2"><span class="en">Built on technology. <em>Driven by sellers.</em></span><span class="bn">প্রযুক্তিতে নির্মিত। <em>সেলারদের দ্বারা পরিচালিত।</em></span></h2>
         <p class="ai-desc"><span class="en">PageConnect is built on the latest AI and technology — not to replace the human touch, but to make you more capable. Every new feature starts with a real seller problem.</span><span class="bn">PageConnect সর্বশেষ AI ও প্রযুক্তিতে নির্মিত — মানবিক স্পর্শ প্রতিস্থাপন করতে নয়, বরং আপনাকে আরো শক্তিশালী করতে।</span></p>
         <div class="ai-pts">
@@ -1143,13 +1147,13 @@ html.bn .bn-b{display:block!important}
           <a href="mailto:help@pageconnect.io" class="soc-icon" title="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
         </div>
       </div>
-      <div><div class="foot-col-title">Platform</div><ul class="foot-links"><li><a href="#features">Features</a></li><li><a href="#pricing">Pricing</a></li><li><a href="https://pageconnect.io/track">Track an order</a></li><li><a href="https://pageconnect.io/sellers">Seller directory</a></li><li><a href="https://pageconnect.io/customer">Customer portal</a></li><li><a href="https://pageconnect-app.vercel.app/dashboard">Seller sign in</a></li></ul></div>
-      <div><div class="foot-col-title">Sellers</div><ul class="foot-links"><li><a href="https://pageconnect-app.vercel.app/dashboard"><span class="en">Start free trial</span><span class="bn">ফ্রি ট্রায়াল শুরু করুন</span></a></li><li><a href="#who">Bangladesh sellers</a></li><li><a href="#international">International sellers</a></li><li><a href="#website"><span class="en">Free website</span><span class="bn">ফ্রি ওয়েবসাইট</span></a></li><li><a href="#track">Order tracking</a></li></ul></div>
-      <div><div class="foot-col-title">Company</div><ul class="foot-links"><li><a href="#faq">FAQ</a></li><li><a href="mailto:help@pageconnect.io">Contact us</a></li><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/terms.html">Terms of service</a></li><li><a href="/terms.html#refunds">Refund policy</a></li></ul></div>
+      <div><div class="foot-col-title"><span class="en">Platform</span><span class="bn">প্ল্যাটফর্ম</span></div><ul class="foot-links"><li><a href="#features">Features</a></li><li><a href="#pricing">Pricing</a></li><li><a href="https://pageconnect.io/track">Track an order</a></li><li><a href="https://pageconnect.io/sellers"><span class="en">Seller directory</span><span class="bn">সেলার ডিরেক্টরি</span></a></li><li><a href="https://pageconnect.io/customer"><span class="en">Customer portal</span><span class="bn">কাস্টমার পোর্টাল</span></a></li><li><a href="https://pageconnect-app.vercel.app/dashboard"><span class="en">Seller sign in</span><span class="bn">সেলার সাইন ইন</span></a></li></ul></div>
+      <div><div class="foot-col-title"><span class="en">Sellers</span><span class="bn">সেলার</span></div><ul class="foot-links"><li><a href="https://pageconnect-app.vercel.app/dashboard"><span class="en">Start free trial</span><span class="bn">ফ্রি ট্রায়াল শুরু করুন</span></a></li><li><a href="#who"><span class="en">Bangladesh sellers</span><span class="bn">বাংলাদেশি সেলার</span></a></li><li><a href="#international"><span class="en">International sellers</span><span class="bn">আন্তর্জাতিক সেলার</span></a></li><li><a href="#website"><span class="en">Free website</span><span class="bn">ফ্রি ওয়েবসাইট</span></a></li><li><a href="#track"><span class="en">Order tracking</span><span class="bn">অর্ডার ট্র্যাকিং</span></a></li></ul></div>
+      <div><div class="foot-col-title"><span class="en">Company</span><span class="bn">কোম্পানি</span></div><ul class="foot-links"><li><a href="#faq">FAQ</a></li><li><a href="mailto:help@pageconnect.io"><span class="en">Contact us</span><span class="bn">যোগাযোগ করুন</span></a></li><li><a href="/privacy.html"><span class="en">Privacy policy</span><span class="bn">গোপনীয়তা নীতি</span></a></li><li><a href="/terms.html"><span class="en">Terms of service</span><span class="bn">সেবার শর্তাবলী</span></a></li><li><a href="/terms.html#refunds"><span class="en">Refund policy</span><span class="bn">ফেরত নীতি</span></a></li></ul></div>
     </div>
     <div class="foot-bot">
       <div class="foot-copy">© 2026 PageConnect. <span class="en">All rights reserved.</span><span class="bn">সর্বস্বত্ব সংরক্ষিত।</span></div>
-      <div class="foot-ll"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/terms.html#refunds">Refunds</a></div>
+      <div class="foot-ll"><a href="/privacy.html"><span class="en">Privacy</span><span class="bn">গোপনীয়তা</span></a><a href="/terms.html"><span class="en">Terms</span><span class="bn">শর্তাবলী</span></a><a href="/terms.html#refunds"><span class="en">Refunds</span><span class="bn">ফেরত</span></a></div>
     </div>
   </div>
 </footer>
@@ -1206,8 +1210,19 @@ function updateP(){
   }
 }
 
-// Hero slider
+// Hero slider — with touch swipe support
 var hIdx=0,hTotal=5,hTimer;
+// Touch swipe
+var hTouchX=0;
+document.addEventListener('DOMContentLoaded',function(){
+  var wrap=document.querySelector('.hero-wrap');
+  if(!wrap) return;
+  wrap.addEventListener('touchstart',function(e){hTouchX=e.touches[0].clientX;},{passive:true});
+  wrap.addEventListener('touchend',function(e){
+    var diff=hTouchX-e.changedTouches[0].clientX;
+    if(Math.abs(diff)>50){hMove(diff>0?1:-1);}
+  },{passive:true});
+});
 function showH(n){
   document.querySelectorAll('.h-slide').forEach(function(s,i){s.classList.toggle('active',i===n);});
   document.querySelectorAll('.h-dot').forEach(function(d,i){d.classList.toggle('on',i===n);});
@@ -1309,9 +1324,11 @@ document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
       div.className='h-slide'+(i===0?' active':'');
       div.id='hsl'+i;
       var img=document.createElement('img');
-      img.src=s.image_url;
       img.alt='Banner '+(i+1);
       img.style.cssText='width:100%;height:100%;object-fit:cover;object-position:center;display:block';
+      img.onload=function(){this.classList.add('loaded');};
+      img.src=s.image_url;
+      div.classList.add('has-image');
       div.appendChild(img);
       // Insert before arrows
       var firstArrow=wrap.querySelector('.h-arrow-l');
