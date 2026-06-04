@@ -29,7 +29,7 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --navy:#0B1F3A;--navy-deep:#071528;--navy-700:#1A2F4D;--navy-500:#364963;
@@ -43,8 +43,10 @@
   --shadow-lg:0 8px 40px rgba(11,31,58,.14);
   --shadow-teal:0 8px 28px rgba(45,212,191,.2);
   --r8:8px;--r12:12px;--r16:16px;--r20:20px;
+  --bn:'Hind Siliguri',sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body.bn,body.bn .ht-h1,body.bn .ht-sub,body.bn .sec-h2,body.bn .sec-sub,body.bn p,body.bn li,body.bn .fcard-title,body.bn .fcard-desc,body.bn .faq-q,body.bn .faq-a,body.bn .tcard-quote,body.bn .tcard-name,body.bn .who-title,body.bn .who-desc,body.bn .how-title,body.bn .how-desc,body.bn .diff-h2,body.bn .diff-text,body.bn .sol-h2,body.bn .sol-p,body.bn .fweb-desc,body.bn .cust-title,body.bn .cust-desc,body.bn .intl-ctitle,body.bn .intl-cdesc,body.bn .ai-h2,body.bn .ai-desc,body.bn .fin-h2,body.bn .fin-sub,body.bn .foot-brand-desc{font-family:var(--bn)}
 html{scroll-behavior:smooth}
 body{font-family:var(--f);background:var(--white);color:var(--navy);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
@@ -442,10 +444,48 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 .foot-ll a{font-family:var(--m);font-size:11px;color:rgba(255,255,255,.25);text-decoration:none;letter-spacing:.04em;transition:color .15s}
 .foot-ll a:hover{color:rgba(255,255,255,.6)}
 
+
+/* LANG TOGGLE — both desktop and mobile */
+.lang-tog{display:flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:6px;overflow:hidden;flex-shrink:0}
+.lang-btn{padding:6px 11px;font-size:12px;font-weight:600;font-family:var(--m);border:none;background:transparent;cursor:pointer;color:rgba(255,255,255,.5);transition:all .15s;letter-spacing:.04em;line-height:1}
+.lang-btn.on{background:var(--teal);color:var(--navy-deep)}
+
+/* MOBILE NAV */
+.mob-nav-right{display:none;align-items:center;gap:10px;margin-left:auto}
+.hamburger{width:40px;height:40px;border-radius:var(--r8);border:1px solid rgba(255,255,255,.15);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;transition:background .15s;flex-shrink:0}
+.hamburger:hover{background:rgba(255,255,255,.08)}
+/* Slide-in drawer */
+.mob-drawer{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100vh;background:var(--navy-deep);z-index:300;transition:right .3s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;box-shadow:-8px 0 40px rgba(0,0,0,.4);border-left:1px solid rgba(255,255,255,.06)}
+.mob-drawer.open{right:0}
+.mob-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:290;opacity:0;pointer-events:none;transition:opacity .3s ease;backdrop-filter:blur(2px)}
+.mob-overlay.open{opacity:1;pointer-events:all}
+.mob-drawer-head{padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.mob-close{width:36px;height:36px;border-radius:var(--r8);border:1px solid rgba(255,255,255,.12);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);transition:background .15s}
+.mob-close:hover{background:rgba(255,255,255,.08);color:#fff}
+.mob-links{flex:1;padding:12px 0;overflow-y:auto}
+.mob-link{display:block;padding:14px 24px;color:rgba(255,255,255,.7);text-decoration:none;font-size:16px;font-weight:500;border-bottom:1px solid rgba(255,255,255,.05);transition:color .15s,background .15s}
+.mob-link:hover{color:#fff;background:rgba(255,255,255,.04)}
+.mob-link:last-child{border-bottom:none}
+.mob-drawer-foot{padding:20px 24px;border-top:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;gap:10px;flex-shrink:0}
+.mob-track{display:block;text-align:center;padding:12px;border-radius:var(--r8);border:1px solid rgba(255,255,255,.2);color:#fff;font:15px/1 var(--f);font-weight:500;text-decoration:none;transition:border-color .15s}
+.mob-track:hover{border-color:rgba(255,255,255,.5)}
+.mob-trial{display:block;text-align:center;padding:13px;border-radius:var(--r8);background:var(--teal);color:var(--navy-deep);font:15px/1 var(--f);font-weight:700;text-decoration:none;transition:background .15s}
+.mob-trial:hover{background:var(--teal-deep)}
+.mob-si{display:block;text-align:center;padding:11px;border-radius:var(--r8);background:var(--navy-700);color:#fff;font:14px/1 var(--f);font-weight:500;text-decoration:none;transition:background .15s}
+.mob-si:hover{background:var(--navy-500)}
+
+/* BN/EN text classes */
+.en{display:inline}.bn{display:none}
+body.bn .en{display:none}
+body.bn .bn{display:inline}
+.en-b{display:block}.bn-b{display:none}
+body.bn .en-b{display:none}
+body.bn .bn-b{display:block}
+
 /* RESPONSIVE */
 @media(max-width:1100px){.plans{grid-template-columns:1fr 1fr}.feat-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:900px){
-  nav{padding:0 20px}.nl,.nc{display:none}
+  nav{padding:0 20px}.nl,.nc{display:none}.mob-nav-right{display:flex}
   .who,.diff,.prob,.sol,.features,.how,.fweb,.track,.cust,.pricing,.intl,.notable,.ai,.testi,.faq,.fin{padding:68px 20px}
   footer{padding:44px 20px 28px}
   .couriers{padding:36px 20px}
@@ -487,19 +527,71 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
     </svg>
     <span class="logo-wm"><span class="lp">Page</span>Connect<span class="lio">.io</span></span>
   </a>
+  <!-- Desktop links -->
   <div class="nl">
-    <a href="#features">Features</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#track">Tracking</a>
-    <a href="#customer">Customers</a>
+    <a href="#features"><span class="en">Features</span><span class="bn">ফিচার</span></a>
+    <a href="#pricing"><span class="en">Pricing</span><span class="bn">মূল্য</span></a>
+    <a href="#track"><span class="en">Tracking</span><span class="bn">ট্র্যাকিং</span></a>
+    <a href="#customer"><span class="en">Customers</span><span class="bn">কাস্টমার</span></a>
     <a href="#faq">FAQ</a>
   </div>
+  <!-- Desktop CTAs + lang toggle -->
   <div class="nc">
-    <a href="https://pageconnect-app.vercel.app/dashboard" class="n-si">Seller sign in →</a>
-    <a href="https://pageconnect.io/track" class="n-track">Track an order</a>
-    <a href="https://pageconnect-app.vercel.app/dashboard" class="n-trial">Start free trial</a>
+    <div class="lang-tog">
+      <button class="lang-btn on" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btn-bn" onclick="setLang('bn')">বাং</button>
+    </div>
+    <a href="https://pageconnect-app.vercel.app/dashboard" class="n-si"><span class="en">Seller sign in →</span><span class="bn">সাইন ইন →</span></a>
+    <a href="https://pageconnect.io/track" class="n-track"><span class="en">Track an order</span><span class="bn">অর্ডার ট্র্যাক</span></a>
+    <a href="https://pageconnect-app.vercel.app/dashboard" class="n-trial"><span class="en">Start free trial</span><span class="bn">ফ্রি ট্রায়াল</span></a>
+  </div>
+  <!-- Mobile right side: lang toggle + hamburger -->
+  <div class="mob-nav-right">
+    <div class="lang-tog">
+      <button class="lang-btn on" id="mob-btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="mob-btn-bn" onclick="setLang('bn')">বাং</button>
+    </div>
+    <button class="hamburger" onclick="openDrawer()" aria-label="Open menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </div>
 </nav>
+
+<!-- MOBILE OVERLAY -->
+<div class="mob-overlay" id="mob-overlay" onclick="closeDrawer()"></div>
+
+<!-- MOBILE DRAWER -->
+<div class="mob-drawer" id="mob-drawer">
+  <div class="mob-drawer-head">
+    <a href="#top" class="logo" onclick="closeDrawer()">
+      <svg width="26" height="26" viewBox="0 0 100 100" fill="none">
+        <path d="M22 14L22 86" stroke="white" stroke-width="12" stroke-linecap="round"/>
+        <path d="M22 14L60 14A28 28 0 0 1 60 70L38 70" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="37" y="44" width="7" height="14" rx="1.5" fill="#2DD4BF"/>
+        <rect x="47" y="36" width="7" height="22" rx="1.5" fill="#2DD4BF"/>
+        <rect x="57" y="28" width="7" height="30" rx="1.5" fill="#2DD4BF"/>
+      </svg>
+      <span class="logo-wm"><span class="lp">Page</span>Connect<span class="lio">.io</span></span>
+    </a>
+    <button class="mob-close" onclick="closeDrawer()" aria-label="Close menu">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="mob-links">
+    <a href="#features" class="mob-link" onclick="closeDrawer()"><span class="en">Features</span><span class="bn">ফিচার</span></a>
+    <a href="#pricing" class="mob-link" onclick="closeDrawer()"><span class="en">Pricing</span><span class="bn">মূল্য</span></a>
+    <a href="#track" class="mob-link" onclick="closeDrawer()"><span class="en">Order tracking</span><span class="bn">অর্ডার ট্র্যাকিং</span></a>
+    <a href="#customer" class="mob-link" onclick="closeDrawer()"><span class="en">Customer portal</span><span class="bn">কাস্টমার পোর্টাল</span></a>
+    <a href="#website" class="mob-link" onclick="closeDrawer()"><span class="en">Free website</span><span class="bn">ফ্রি ওয়েবসাইট</span></a>
+    <a href="#international" class="mob-link" onclick="closeDrawer()"><span class="en">International sellers</span><span class="bn">আন্তর্জাতিক সেলার</span></a>
+    <a href="#faq" class="mob-link" onclick="closeDrawer()">FAQ</a>
+  </div>
+  <div class="mob-drawer-foot">
+    <a href="https://pageconnect-app.vercel.app/dashboard" class="mob-si" onclick="closeDrawer()"><span class="en">Seller sign in →</span><span class="bn">সেলার সাইন ইন →</span></a>
+    <a href="https://pageconnect.io/track" class="mob-track" onclick="closeDrawer()"><span class="en">Track an order</span><span class="bn">অর্ডার ট্র্যাক করুন</span></a>
+    <a href="https://pageconnect-app.vercel.app/dashboard" class="mob-trial" onclick="closeDrawer()"><span class="en">Start 7-day free trial</span><span class="bn">৭ দিনের ফ্রি ট্রায়াল শুরু করুন</span></a>
+  </div>
+</div>
 
 <!-- HERO BANNER -->
 <div class="hero-wrap" id="top">
@@ -526,44 +618,44 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 <!-- HERO TEXT — EPIC -->
 <section class="hero-text">
   <div class="ht-in rv">
-    <div class="ht-eye">The operating system for F-commerce sellers</div>
-    <h1 class="ht-h1">Built for sellers who want to <em>grow,</em> not just survive.</h1>
-    <p class="ht-sub">Manage your orders, track your stock, and make data-driven decisions — on your phone, tablet, or laptop. No app download, no setup. Just open your browser and you're ready.</p>
+    <div class="ht-eye"><span class="en">The operating system for F-commerce sellers</span><span class="bn">এফ-কমার্স সেলারদের অপারেটিং সিস্টেম</span></div>
+    <h1 class="ht-h1"><span class="en-b">Built for sellers who want to <em>grow,</em> not just survive.</span><span class="bn-b">যারা শুধু টিকে থাকতে নয়, <em>এগিয়ে যেতে</em> চান — তাদের জন্য।</span></h1>
+    <p class="ht-sub"><span class="en-b">Manage your orders, track your stock, and make data-driven decisions — on your phone, tablet, or laptop. No app download, no setup. Just open your browser and you're ready.</span><span class="bn-b">আপনার অর্ডার ম্যানেজ করুন, স্টক ট্র্যাক করুন এবং ডেটার উপর ভিত্তি করে সিদ্ধান্ত নিন — ফোন, ট্যাবলেট বা ল্যাপটপে। কোনো অ্যাপ ডাউনলোড নেই, কোনো সেটআপ নেই।</span></p>
     <div class="ht-btns">
-      <a href="https://pageconnect-app.vercel.app/dashboard" class="btn-trial">Start 7-day free trial <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg></a>
-      <a href="https://pageconnect.io/track" class="btn-track">Track an order</a>
-      <a href="https://pageconnect-app.vercel.app/dashboard" class="btn-portal">Seller portal <span class="pa">→ Sign in</span></a>
+      <a href="https://pageconnect-app.vercel.app/dashboard" class="btn-trial"><span class="en">Start 7-day free trial</span><span class="bn">৭ দিনের ফ্রি ট্রায়াল</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg></a>
+      <a href="https://pageconnect.io/track" class="btn-track"><span class="en">Track an order</span><span class="bn">অর্ডার ট্র্যাক করুন</span></a>
+      <a href="https://pageconnect-app.vercel.app/dashboard" class="btn-portal"><span class="en">Seller portal</span><span class="bn">সেলার পোর্টাল</span> <span class="pa">→ <span class="en">Sign in</span><span class="bn">সাইন ইন</span></span></a>
     </div>
-    <p class="ht-note">NO CREDIT CARD REQUIRED &nbsp;·&nbsp; 7-DAY FREE TRIAL &nbsp;·&nbsp; ALL PRO FEATURES UNLOCKED</p>
+    <p class="ht-note"><span class="en">NO CREDIT CARD REQUIRED &nbsp;·&nbsp; 7-DAY FREE TRIAL &nbsp;·&nbsp; ALL PRO FEATURES UNLOCKED</span><span class="bn">কোনো ক্রেডিট কার্ড লাগবে না &nbsp;·&nbsp; ৭ দিনের ফ্রি ট্রায়াল &nbsp;·&nbsp; সব প্রো ফিচার আনলক</span></p>
   </div>
 </section>
 
 <!-- STATS STRIP -->
 <div class="stats-strip">
   <div class="stats-in">
-    <div class="stat-item rv"><div class="stat-num" id="geo-price">$12</div><div class="stat-label">from / month<br>no contracts</div></div>
-    <div class="stat-item rv"><div class="stat-num">7</div><div class="stat-label">day free trial<br>no credit card</div></div>
-    <div class="stat-item rv"><div class="stat-num">All</div><div class="stat-label">Facebook · WhatsApp · Instagram<br>Call · Walk-in · Events</div></div>
-    <div class="stat-item rv"><div class="stat-num">BD+🌏</div><div class="stat-label">Bangladesh &amp;<br>international sellers</div></div>
+    <div class="stat-item rv"><div class="stat-num" id="geo-price">$12</div><div class="stat-label"><span class="en">from / month<br>no contracts</span><span class="bn">মাসিক<br>কোনো চুক্তি নেই</span></div></div>
+    <div class="stat-item rv"><div class="stat-num">7</div><div class="stat-label"><span class="en">day free trial<br>no credit card</span><span class="bn">দিনের ফ্রি ট্রায়াল<br>কার্ড লাগবে না</span></div></div>
+    <div class="stat-item rv"><div class="stat-num">All</div><div class="stat-label">Facebook · WhatsApp · Instagram<br><span class="en">Call · Walk-in · Events</span><span class="bn">কল · ওয়াক-ইন · ইভেন্ট</span></div></div>
+    <div class="stat-item rv"><div class="stat-num">BD+🌏</div><div class="stat-label"><span class="en">Bangladesh &amp;<br>international sellers</span><span class="bn">বাংলাদেশ ও<br>আন্তর্জাতিক সেলার</span></div></div>
   </div>
 </div>
 
 <!-- COURIERS -->
 <div class="couriers">
   <div class="w">
-    <p class="courier-label">Works with every courier you already use</p>
+    <p class="courier-label"><span class="en">Works with every courier you already use</span><span class="bn">আপনার পরিচিত সব কুরিয়ারের সাথে কাজ করে</span></p>
     <div class="courier-pills">
       <span class="cpill">Pathao</span><span class="cpill">Steadfast</span><span class="cpill">RedX</span><span class="cpill">Sundarban</span><span class="cpill">eCourier</span><span class="cpill">AusPost</span><span class="cpill">Royal Mail</span><span class="cpill">USPS</span><span class="cpill">Canada Post</span><span class="cpill">DHL</span><span class="cpill">FedEx</span><span class="cpill">UPS</span><span class="cpill">Self delivery</span><span class="cpill">Customer pickup</span><span class="cpill">Friend / volunteer</span>
     </div>
-    <p class="courier-note">No lock-in — your courier agreements stay exactly as they are.</p>
+    <p class="courier-note"><span class="en">No lock-in — your courier agreements stay exactly as they are.</span><span class="bn">কোনো বাঁধাধরা নেই — আপনার কুরিয়ার চুক্তি আগের মতোই থাকবে।</span></p>
   </div>
 </div>
 
 <!-- WHO IT'S FOR -->
 <section class="who" id="who">
   <div class="w">
-    <div class="sec-eye rv">Who it's for</div>
-    <h2 class="sec-h2 rv">Built for two kinds of sellers.</h2>
+    <div class="sec-eye rv"><span class="en">Who it's for</span><span class="bn">কাদের জন্য</span></div>
+    <h2 class="sec-h2 rv"><span class="en">Built for two kinds of sellers.</span><span class="bn">দুই ধরনের সেলারের জন্য তৈরি।</span></h2>
     <p class="sec-sub rv" style="margin-bottom:0">Whether you're in Bangladesh or selling abroad for your community — PageConnect was built with you in mind.</p>
     <div class="who-grid rv">
       <div class="who-card">
@@ -589,7 +681,7 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
     <div class="diff-inner rv">
       <div class="diff-left">
         <div class="diff-badge">Why PageConnect is different</div>
-        <h2 class="diff-h2">We're not an e-commerce marketplace. We don't ask you to change a thing.</h2>
+        <h2 class="diff-h2"><span class="en">We're not an e-commerce marketplace. We don't ask you to change a thing.</span><span class="bn">আমরা ই-কমার্স মার্কেটপ্লেস নই। আপনাকে কিছুই বদলাতে হবে না।</span></h2>
         <p class="diff-text">Other platforms want you on their terms — list your products their way, take orders their way, lose the direct conversation with your customer. PageConnect works differently. Your Facebook page, Instagram, and WhatsApp stay exactly as they are. That human connection is your biggest advantage — we'd never take it away.</p>
         <div class="diff-points">
           <div class="diff-point">Facebook, Instagram and WhatsApp completely untouched</div>
@@ -669,8 +761,8 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 <!-- PROBLEM -->
 <section class="prob" id="problem">
   <div class="w">
-    <div class="sec-eye rv">The problem</div>
-    <h2 class="sec-h2 rv">F-commerce sellers manage thousands of orders — by hand.</h2>
+    <div class="sec-eye rv"><span class="en">The problem</span><span class="bn">সমস্যা</span></div>
+    <h2 class="sec-h2 rv"><span class="en">F-commerce sellers manage thousands of orders — by hand.</span><span class="bn">এফ-কমার্স সেলাররা হাজারো অর্ডার ম্যানেজ করেন — হাতে হাতে।</span></h2>
     <p class="sec-sub rv">Notebooks. WhatsApp groups. Excel sheets — always wrong. Lost orders, angry customers, no idea of actual profit, and no data to grow from.</p>
     <div class="prob-grid rv">
       <div class="pcard"><div class="pcard-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><div class="pcard-title">Orders lost in inbox</div><p class="pcard-desc">Facebook messages get buried, forgotten, or duplicated. No order ID, no status trail, no proof of what was ordered.</p></div>
@@ -716,8 +808,8 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 <!-- FEATURES -->
 <section class="features" id="features">
   <div class="w">
-    <div class="sec-eye rv">Features</div>
-    <h2 class="sec-h2 rv">Everything a serious seller needs to grow.</h2>
+    <div class="sec-eye rv"><span class="en">Features</span><span class="bn">ফিচারসমূহ</span></div>
+    <h2 class="sec-h2 rv"><span class="en">Everything a serious seller needs to grow.</span><span class="bn">একজন সিরিয়াস সেলারের যা দরকার।</span></h2>
     <p class="sec-sub rv" style="margin-bottom:0">Works on your phone, tablet, and desktop. Built for sellers operating through Facebook, WhatsApp, Instagram, and social media.</p>
     <div class="feat-grid rv">
       <div class="fcard"><div class="fcard-body"><div class="fcard-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M7 6V4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></div><div class="fcard-title">Order Management</div><p class="fcard-desc">Log orders from any source — Facebook inbox, WhatsApp, phone, walk-in, or event. Paste &amp; parse auto-fills customer details from a copied message. Multi-product cart per order. Full pipeline from Received to Delivered.</p></div><div class="fcard-tags"><span class="ftag hi">All sources</span><span class="ftag new">Paste &amp; parse</span><span class="ftag">PDF receipts</span><span class="ftag">Activity log</span></div></div>
@@ -744,8 +836,8 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 <!-- HOW IT WORKS -->
 <section class="how">
   <div class="w">
-    <div class="sec-eye lt rv">How it works</div>
-    <h2 class="sec-h2 rv" style="color:#fff">Three steps. Then you're running.</h2>
+    <div class="sec-eye lt rv"><span class="en">How it works</span><span class="bn">কিভাবে কাজ করে</span></div>
+    <h2 class="sec-h2 rv" style="color:#fff"><span class="en">Three steps. Then you're running.</span><span class="bn">তিনটি ধাপ। তারপর শুরু।</span></h2>
     <p class="sec-sub rv" style="color:rgba(255,255,255,.42);margin-bottom:0">No setup fees. No contracts. No developer needed.</p>
     <div class="how-grid">
       <div class="how-step rv"><div class="how-num">01</div><div><div class="how-title">Sign up</div><p class="how-desc">Create your account with your Facebook page name or shop name and email. No credit card required. All Pro features unlocked for 7 days.</p><div class="how-tag">7-day trial · no card · no tech setup</div></div></div>
@@ -758,8 +850,8 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 <!-- FREE WEBSITE -->
 <section class="fweb" id="website">
   <div class="w">
-    <div class="sec-eye rv">Free website</div>
-    <h2 class="sec-h2 rv">Your own website. Customisable and running in 5 minutes.</h2>
+    <div class="sec-eye rv"><span class="en">Free website</span><span class="bn">ফ্রি ওয়েবসাইট</span></div>
+    <h2 class="sec-h2 rv"><span class="en">Your own website. Customisable and running in 5 minutes.</span><span class="bn">আপনার নিজের ওয়েবসাইট। ৫ মিনিটে চালু।</span></h2>
     <p class="sec-sub rv" style="margin-bottom:0">Included on every plan — no extra cost, no coding, no tech setup. Looks like it cost ৳50,000 to build. It's free.</p>
     <div class="fweb-in rv">
       <div>
@@ -790,8 +882,8 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
   <div class="w">
     <div class="track-in">
       <div>
-        <div class="sec-eye rv">Order tracking portal</div>
-        <h2 class="sec-h2 rv">Your customers track their orders — without calling you.</h2>
+        <div class="sec-eye rv"><span class="en">Order tracking portal</span><span class="bn">অর্ডার ট্র্যাকিং পোর্টাল</span></div>
+        <h2 class="sec-h2 rv"><span class="en">Your customers track their orders — without calling you.</span><span class="bn">আপনার কাস্টমাররা অর্ডার ট্র্যাক করেন — আপনাকে কল না করেই।</span></h2>
         <p style="font-size:15px;line-height:1.8;color:var(--mute);margin-bottom:22px" class="rv">Every seller gets a free public tracking portal at <strong style="color:var(--navy)">pageconnect.io/track</strong>. From the moment you confirm an order to delivery, customers have full visibility.</p>
         <ul class="ck rv">
           <li><svg class="ck-ok" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg>Real-time order status from Received to Delivered</li>
@@ -800,7 +892,7 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
           <li><svg class="ck-ok" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg>WhatsApp, Facebook, and call buttons to reach seller directly</li>
           <li><svg class="ck-ok" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg>Free on every plan — no configuration needed</li>
         </ul>
-        <a href="https://pageconnect.io/track" class="btn-trial" style="display:inline-flex">Visit tracking portal →</a>
+        <a href="https://pageconnect.io/track" class="btn-trial" style="display:inline-flex"><span class="en">Visit tracking portal →</span><span class="bn">ট্র্যাকিং পোর্টাল দেখুন →</span></a>
       </div>
       <div class="track-demo rv">
         <!-- Screenshot placeholder -->
@@ -821,8 +913,8 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 <!-- CUSTOMER -->
 <section class="cust" id="customer">
   <div class="w">
-    <div class="sec-eye rv">Customer portal</div>
-    <h2 class="sec-h2 rv">More than tracking — a complete experience for your customers.</h2>
+    <div class="sec-eye rv"><span class="en">Customer portal</span><span class="bn">কাস্টমার পোর্টাল</span></div>
+    <h2 class="sec-h2 rv"><span class="en">More than tracking — a complete experience for your customers.</span><span class="bn">শুধু ট্র্যাকিং নয় — আপনার কাস্টমারদের জন্য সম্পূর্ণ অভিজ্ঞতা।</span></h2>
     <p class="sec-sub rv" style="margin-bottom:0">Free for customers, permanently. Separate from seller accounts.</p>
     <div class="cust-grid rv">
       <div class="cust-card"><div class="cust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="cust-title">Every order. Every receipt. All in one place.</div><p class="cust-desc">Create a free account at pageconnect.io/customer and get your complete purchase history across every PageConnect seller. Download receipts, track spending, always have proof of purchase. Free forever.</p><a href="https://pageconnect.io/customer" class="btn-teal">Create free account →</a></div>
@@ -835,14 +927,14 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 <!-- PRICING -->
 <section class="pricing" id="pricing">
   <div class="w">
-    <div class="sec-eye rv">Pricing</div>
-    <h2 class="sec-h2 rv">Start free. Scale when you're ready.</h2>
+    <div class="sec-eye rv"><span class="en">Pricing</span><span class="bn">মূল্য</span></div>
+    <h2 class="sec-h2 rv"><span class="en">Start free. Scale when you're ready.</span><span class="bn">ফ্রিতে শুরু করুন। প্রস্তুত হলে বাড়ান।</span></h2>
     <p class="sec-sub rv" style="margin-bottom:24px">All plans include your full product catalogue, all your orders, a free tracking portal, and a free website. No hidden fees.</p>
     <div class="p-note rv"><strong>Note on pricing:</strong> Pricing is adjusted by region to make PageConnect accessible to every seller, everywhere. Select your currency below.</div>
     <div class="p-togs rv">
       <div class="tog-grp"><button class="tog-btn on" onclick="setCur('bdt',this)">৳ BDT</button><button class="tog-btn" onclick="setCur('usd',this)">$ USD</button></div>
-      <div class="tog-grp"><button class="tog-btn on" onclick="setPer('monthly',this)">Monthly</button><button class="tog-btn" onclick="setPer('annual',this)">Annual</button></div>
-      <span class="save-badge">Save ~20% annually</span>
+      <div class="tog-grp"><button class="tog-btn on" onclick="setPer('monthly',this)"><span class="en">Monthly</span><span class="bn">মাসিক</span></button><button class="tog-btn" onclick="setPer('annual',this)"><span class="en">Annual</span><span class="bn">বার্ষিক</span></button></div>
+      <span class="save-badge"><span class="en">Save ~20% annually</span><span class="bn">বার্ষিকে ~২০% সাশ্রয়</span></span>
     </div>
     <div class="plans rv" id="plans-grid">
       <div class="plan"><div class="plan-name">Starter</div><div class="plan-price"><div class="p-bdt"><span class="am" id="p-s-b">৳499</span><span class="pe"> / month</span></div><div class="p-usd"><span class="cu">$</span><span class="am" id="p-s-u">12</span><span class="pe"> / month</span></div></div><div class="plan-div"></div><ul class="plan-feats"><li class="plan-feat"><span class="f-yes">✓</span>Manage all your orders</li><li class="plan-feat"><span class="f-yes">✓</span>Full product catalogue &amp; stock</li><li class="plan-feat"><span class="f-yes">✓</span>Customer management</li><li class="plan-feat"><span class="f-yes">✓</span>Basic analytics</li><li class="plan-feat"><span class="f-yes">✓</span>Free tracking portal</li><li class="plan-feat"><span class="f-yes">✓</span>Free website</li><li class="plan-feat"><span class="f-no" style="color:#CBD5E1">—</span><span style="color:#CBD5E1">PDF receipts</span></li><li class="plan-feat"><span class="f-no" style="color:#CBD5E1">—</span><span style="color:#CBD5E1">Goals &amp; Finance</span></li></ul><a href="https://pageconnect-app.vercel.app/dashboard" class="plan-cta">Start free trial</a></div>
@@ -857,8 +949,8 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 <!-- INTERNATIONAL -->
 <section class="intl" id="international">
   <div class="w">
-    <div class="sec-eye lt rv">For international sellers</div>
-    <h2 class="sec-h2 rv" style="color:#fff">Selling abroad? PageConnect works for you too.</h2>
+    <div class="sec-eye lt rv"><span class="en">For international sellers</span><span class="bn">আন্তর্জাতিক সেলারদের জন্য</span></div>
+    <h2 class="sec-h2 rv" style="color:#fff"><span class="en">Selling abroad? PageConnect works for you too.</span><span class="bn">বিদেশে বিক্রি করছেন? PageConnect আপনার জন্যও।</span></h2>
     <p style="font-size:16px;line-height:1.75;color:rgba(255,255,255,.48);max-width:580px;margin-bottom:0" class="rv">Bangladeshi sellers based abroad — PageConnect has an international mode built specifically for you. Sell to your diaspora community, manage orders in USD, and use the couriers you already work with.</p>
     <!-- Photo placeholder — Option A: above grid -->
     <div class="intl-photo rv">
@@ -894,8 +986,8 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 <!-- NOTABLE SELLERS -->
 <section class="notable">
   <div class="w">
-    <div class="sec-eye rv">Notable sellers</div>
-    <h2 class="sec-h2 rv">Trusted by sellers across Bangladesh and beyond.</h2>
+    <div class="sec-eye rv"><span class="en">Notable sellers</span><span class="bn">উল্লেখযোগ্য সেলার</span></div>
+    <h2 class="sec-h2 rv"><span class="en">Trusted by sellers across Bangladesh and beyond.</span><span class="bn">বাংলাদেশ ও বিদেশের সেলাররা বিশ্বাস করেন।</span></h2>
   </div>
   <div class="notable-wrap rv">
     <div class="notable-track">
@@ -941,7 +1033,7 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
     <div class="ai-in rv">
       <div>
         <div class="ai-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>Built on technology</div>
-        <h2 class="ai-h2">Built on technology. <em>Driven by sellers.</em></h2>
+        <h2 class="ai-h2"><span class="en">Built on technology. <em>Driven by sellers.</em></span><span class="bn">প্রযুক্তিতে নির্মিত। <em>সেলারদের দ্বারা পরিচালিত।</em></span></h2>
         <p class="ai-desc">PageConnect is built on the latest AI and technology — not to replace the human touch, but to make you more capable. Every new feature starts with a real seller problem.</p>
         <div class="ai-pts">
           <div class="ai-pt"><div class="ai-pt-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 16l4-4 3 3 6-7"/></svg></div><div><div class="ai-pt-title">AI-powered insights, not just charts</div><p class="ai-pt-text">Auto-generated coaching cards in plain seller language. Your data tells you what to do next — in Bangla or English.</p></div></div>
@@ -963,8 +1055,8 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 <!-- TESTIMONIALS -->
 <section class="testi">
   <div class="w">
-    <div class="sec-eye rv">What sellers are saying</div>
-    <h2 class="sec-h2 rv">Real sellers. Real results.</h2>
+    <div class="sec-eye rv"><span class="en">What sellers are saying</span><span class="bn">সেলাররা কী বলছেন</span></div>
+    <h2 class="sec-h2 rv"><span class="en">Real sellers. Real results.</span><span class="bn">সত্যিকারের সেলার। সত্যিকারের ফলাফল।</span></h2>
     <div class="testi-car rv">
       <div class="testi-track" id="testi-track">
         <div class="tcard"><p class="tcard-quote">The Goals page changed everything for me. I can see exactly how far I am from my monthly target — every single day. It keeps me focused.</p><div class="tcard-foot"><div class="tcard-avatar">T</div><div><div class="tcard-name">Tasfia's Closet</div><div class="tcard-role">Seller · Dhaka</div></div></div></div>
@@ -990,7 +1082,7 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 <section class="faq" id="faq">
   <div class="w">
     <div class="sec-eye rv">FAQ</div>
-    <h2 class="sec-h2 rv">Common questions.</h2>
+    <h2 class="sec-h2 rv"><span class="en">Common questions.</span><span class="bn">সাধারণ প্রশ্নসমূহ।</span></h2>
     <div class="faq-grid rv">
       <div class="faq-item"><div class="faq-q">Is my data safe?</div><p class="faq-a">Yes. Your data is stored on <strong>Supabase</strong> (enterprise PostgreSQL). Each seller's data is completely isolated. We never share or sell your data — ever.</p></div>
       <div class="faq-item"><div class="faq-q">What happens after my trial ends?</div><p class="faq-a">You get a <strong>3-day grace period</strong>. After that, premium features lock. Your data is retained for <strong>up to 2 years of inactivity</strong>, after which it may be permanently deleted. You can export your data at any time.</p></div>
@@ -1012,11 +1104,11 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 <section class="fin">
   <div class="fin-glow"></div>
   <div class="fin-in rv">
-    <div class="fin-eye">Get started today</div>
-    <h2 class="fin-h2">Stop running blind.<br><em>Start running a real business.</em></h2>
+    <div class="fin-eye"><span class="en">Get started today</span><span class="bn">আজই শুরু করুন</span></div>
+    <h2 class="fin-h2"><span class="en-b">Stop running blind.<br><em>Start running a real business.</em></span><span class="bn-b">অন্ধকারে চলা বন্ধ করুন।<br><em>সত্যিকারের ব্যবসা শুরু করুন।</em></span></h2>
     <p class="fin-sub">7-day free trial. All Pro features. No credit card. No download. Sign up with your Facebook page name or shop name and you're in.</p>
     <div class="fin-btns">
-      <a href="https://pageconnect-app.vercel.app/dashboard" class="btn-trial">Start your free trial</a>
+      <a href="https://pageconnect-app.vercel.app/dashboard" class="btn-trial"><span class="en">Start your free trial</span><span class="bn">ফ্রি ট্রায়াল শুরু করুন</span></a>
       <a href="https://pageconnect.io/track" class="btn-track" style="border-color:rgba(255,255,255,.2);color:#fff">Track an order</a>
     </div>
     <div class="fin-legal">PageConnect is a management tool. All transactions, payments, and deliveries are solely between the seller and their customers. Courier and delivery responsibilities rest with the assigned courier company. PageConnect does not intervene in, guarantee, or hold liability for any transaction or delivery.</div>
@@ -1029,7 +1121,7 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
     <div class="foot-legal">PageConnect is a management tool only. All transactions, payments, and deliveries are solely between the seller and their customers. Courier and delivery responsibilities rest with the assigned courier company. PageConnect does not intervene in, guarantee, or hold liability for any transaction or delivery.</div>
     <!-- Membership logos — blank by default, CMS controlled -->
     <div class="mem-row" id="mem-row">
-      <span class="mem-label">Member of</span>
+      <span class="mem-label"><span class="en">Member of</span><span class="bn">সদস্য</span></span>
       <div class="mem-slot" id="mem-1"><img src="" alt="Member logo"></div>
       <div class="mem-slot" id="mem-2"><img src="" alt="Member logo"></div>
       <div class="mem-slot" id="mem-3"><img src="" alt="Member logo"></div>
@@ -1042,7 +1134,7 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
           <svg width="28" height="28" viewBox="0 0 100 100" fill="none"><path d="M22 14L22 86" stroke="white" stroke-width="12" stroke-linecap="round"/><path d="M22 14L60 14A28 28 0 0 1 60 70L38 70" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><rect x="37" y="44" width="7" height="14" rx="1.5" fill="#2DD4BF"/><rect x="47" y="36" width="7" height="22" rx="1.5" fill="#2DD4BF"/><rect x="57" y="28" width="7" height="30" rx="1.5" fill="#2DD4BF"/></svg>
           <span style="font-size:17px;font-weight:600;letter-spacing:-.02em;color:#fff"><span style="color:#4F9CF9">Page</span>Connect<span style="color:#2DD4BF;font-family:var(--m);font-size:14px">.io</span></span>
         </a>
-        <p class="foot-brand-desc">The operating system for F-commerce sellers. Orders, inventory, analytics, and customer tracking — all in your browser.</p>
+        <p class="foot-brand-desc"><span class="en">The operating system for F-commerce sellers. Orders, inventory, analytics, and customer tracking — all in your browser.</span><span class="bn">এফ-কমার্স সেলারদের অপারেটিং সিস্টেম। অর্ডার, ইনভেন্টরি, অ্যানালিটিক্স — সব আপনার ব্রাউজারে।</span></p>
         <a href="mailto:help@pageconnect.io" class="foot-email">help@pageconnect.io</a>
         <div class="foot-socials">
           <a href="https://facebook.com/pageconnect.io" target="_blank" rel="noopener" class="soc-icon" title="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
@@ -1057,7 +1149,7 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
       <div><div class="foot-col-title">Company</div><ul class="foot-links"><li><a href="#faq">FAQ</a></li><li><a href="mailto:help@pageconnect.io">Contact us</a></li><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/terms.html">Terms of service</a></li><li><a href="/terms.html#refunds">Refund policy</a></li></ul></div>
     </div>
     <div class="foot-bot">
-      <div class="foot-copy">© 2026 PageConnect. All rights reserved.</div>
+      <div class="foot-copy">© 2026 PageConnect. <span class="en">All rights reserved.</span><span class="bn">সর্বস্বত্ব সংরক্ষিত।</span></div>
       <div class="foot-ll"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/terms.html#refunds">Refunds</a></div>
     </div>
   </div>
@@ -1150,6 +1242,37 @@ window.addEventListener('resize',updT);
   var hasAny=false;
   document.querySelectorAll('.mem-slot').forEach(function(s){if(s.classList.contains('has-logo'))hasAny=true;});
   if(!hasAny){var r=document.getElementById('mem-row');if(r)r.style.display='none';}
+})();
+
+// Language toggle
+function setLang(lang) {
+  var isBn = lang === 'bn';
+  document.body.classList.toggle('bn', isBn);
+  ['btn-en','mob-btn-en'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el)el.classList.toggle('on', !isBn);
+  });
+  ['btn-bn','mob-btn-bn'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el)el.classList.toggle('on', isBn);
+  });
+  localStorage.setItem('pc-lang', lang);
+}
+// Mobile drawer
+function openDrawer(){
+  document.getElementById('mob-drawer').classList.add('open');
+  document.getElementById('mob-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeDrawer(){
+  document.getElementById('mob-drawer').classList.remove('open');
+  document.getElementById('mob-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+// Restore language on load
+(function(){
+  var l=localStorage.getItem('pc-lang');
+  if(l==='bn') setLang('bn');
 })();
 
 // Scroll reveal
