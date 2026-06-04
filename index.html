@@ -157,7 +157,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(7,21,40,.97)
 .diff{background:var(--navy);padding:96px 48px;position:relative;overflow:hidden}
 .diff-blob{position:absolute;right:-80px;top:-80px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.05) 0%,transparent 70%);pointer-events:none}
 .diff-inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.diff-left{}
 .diff-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;background:rgba(45,212,191,.08);border:1px solid rgba(45,212,191,.18);font-family:var(--m);font-size:11px;letter-spacing:.08em;color:var(--teal);margin-bottom:24px}
 .diff-h2{font-size:clamp(24px,3vw,40px);font-weight:700;line-height:1.1;letter-spacing:-.025em;color:#fff;margin-bottom:18px}
 .diff-text{font-size:15px;line-height:1.82;color:rgba(255,255,255,.52);margin-bottom:32px}
@@ -475,9 +474,8 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 .mob-si:hover{background:var(--navy-500)}
 
 /* BN/EN text classes */
+/* Bengali toggle — shows Bengali where translated, English as fallback */
 .bn{display:none}.bn-b{display:none}
-body.bn .en{display:none}
-body.bn .en-b{display:none}
 body.bn .bn{display:inline}
 body.bn .bn-b{display:block}
 
@@ -511,6 +509,7 @@ body.bn .bn-b{display:block}
   .ht-btns{flex-direction:column;align-items:flex-start}
 }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
@@ -1274,6 +1273,174 @@ var obs=new IntersectionObserver(function(entries){
   entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in');});
 },{threshold:0.06,rootMargin:'0px 0px -32px 0px'});
 document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
+
+// ===================== CMS FETCH =====================
+(function(){
+  var SB_URL='https://dsnxhqhuigevnhbgcpvh.supabase.co';
+  var SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRzbnhocWh1aWdldm5oYmdjcHZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg0OTMzMjAsImV4cCI6MjA5NDA2OTMyMH0.tbnzAFalEqbP4DqBaiT-j2jNXdmMwr6tU1B5XDF_5Gs';
+  var sb=supabase.createClient(SB_URL,SB_KEY);
+
+  // Hero slides
+  sb.from('pc_hero_slides').select('*').eq('active',true).order('sort_order').then(function(res){
+    if(!res.data||!res.data.length) return;
+    var slides=res.data;
+    // Replace placeholder slides with real images
+    var wrap=document.querySelector('.hero-wrap');
+    if(!wrap) return;
+    // Remove existing slides
+    wrap.querySelectorAll('.h-slide').forEach(function(s){s.remove();});
+    // Remove existing dots
+    var dotsEl=wrap.querySelector('.h-dots');
+    if(dotsEl) dotsEl.remove();
+    // Add new slides
+    slides.forEach(function(s,i){
+      var div=document.createElement('div');
+      div.className='h-slide'+(i===0?' active':'');
+      div.id='hsl'+i;
+      var img=document.createElement('img');
+      img.src=s.image_url;
+      img.alt='Banner '+(i+1);
+      img.style.cssText='width:100%;height:100%;object-fit:cover;object-position:center;display:block';
+      div.appendChild(img);
+      // Insert before arrows
+      var firstArrow=wrap.querySelector('.h-arrow-l');
+      wrap.insertBefore(div, firstArrow);
+    });
+    // Add dots
+    var dots=document.createElement('div');
+    dots.className='h-dots';
+    slides.forEach(function(s,i){
+      var btn=document.createElement('button');
+      btn.className='h-dot'+(i===0?' on':'');
+      btn.setAttribute('aria-label','Slide '+(i+1));
+      btn.onclick=function(){hTo(i);};
+      dots.appendChild(btn);
+    });
+    wrap.appendChild(dots);
+    // Reset slider total
+    hTotal=slides.length;
+  });
+
+  // Testimonials
+  sb.from('pc_testimonials').select('*').eq('active',true).order('sort_order').then(function(res){
+    if(!res.data||!res.data.length) return;
+    var track=document.getElementById('testi-track');
+    if(!track) return;
+    track.innerHTML=res.data.map(function(t){
+      var avatar=t.avatar_url
+        ?'<img src="'+t.avatar_url+'" alt="'+t.name+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%">'
+        :'<span style="font-size:16px;font-weight:600;color:var(--mute)">'+t.name.charAt(0)+'</span>';
+      return '<div class="tcard">'
+        +'<p class="tcard-quote">'+t.quote+'</p>'
+        +'<div class="tcard-foot">'
+        +'<div class="tcard-avatar">'+avatar+'</div>'
+        +'<div><div class="tcard-name">'+t.name+'</div>'
+        +'<div class="tcard-role">'+t.role+'</div></div>'
+        +'</div></div>';
+    }).join('');
+    tTotal=res.data.length;
+    // Update dots
+    var dotsEl=document.querySelector('.testi-dots');
+    if(dotsEl){
+      dotsEl.innerHTML=res.data.map(function(t,i){
+        return '<button class="testi-dot'+(i===0?' on':'')+'" onclick="goT('+i+')"></button>';
+      }).join('');
+    }
+  });
+
+  // Notable seller logos
+  sb.from('pc_seller_logos').select('*').eq('active',true).order('sort_order').then(function(res){
+    if(!res.data||!res.data.length) return;
+    var track=document.getElementById('notable-track');
+    if(!track) return;
+    var items=res.data;
+    // Double for seamless loop
+    var doubled=items.concat(items);
+    track.innerHTML=doubled.map(function(s){
+      return '<div class="seller-card">'
+        +(s.logo_url?'<img src="'+s.logo_url+'" alt="'+s.name+'">'
+          :'<div class="s-ph"><div class="s-ph-box"></div><div class="s-ph-txt">'+s.name+'</div></div>')
+        +'</div>';
+    }).join('');
+  });
+
+  // Membership logos — show if any exist
+  sb.from('pc_membership_logos').select('*').eq('active',true).order('sort_order').then(function(res){
+    var row=document.getElementById('mem-row');
+    if(!row) return;
+    if(!res.data||!res.data.length){row.style.display='none';return;}
+    row.style.display='flex';
+    var label=row.querySelector('.mem-label');
+    // Remove existing slots
+    row.querySelectorAll('.mem-slot').forEach(function(s){s.remove();});
+    res.data.forEach(function(m){
+      var slot=document.createElement('div');
+      slot.className='mem-slot has-logo';
+      var img=document.createElement('img');
+      img.src=m.logo_url;
+      img.alt=m.name;
+      slot.appendChild(img);
+      row.appendChild(slot);
+    });
+  });
+
+  // Section images
+  sb.from('pc_images').select('*').then(function(res){
+    if(!res.data) return;
+    res.data.forEach(function(img){
+      if(!img.image_url) return;
+      // Find placeholder by data-key or specific img-ph elements
+      var phs=document.querySelectorAll('.img-ph');
+      phs.forEach(function(ph){
+        var lbl=ph.querySelector('.img-ph-lbl');
+        if(!lbl) return;
+        var matches={
+          fix_screenshot:'Dashboard screenshot',
+          abroad_photo:'Bangladeshi seller abroad',
+          website_screenshot:'Shop page screenshot',
+          tracking_screenshot:'Tracking portal screenshot',
+          customer_screenshot:'Customer portal screenshot'
+        };
+        if(lbl.textContent.trim()===matches[img.image_key]){
+          ph.style.background='none';
+          ph.style.border='none';
+          var existing=ph.querySelector('img');
+          if(!existing){
+            var image=document.createElement('img');
+            image.src=img.image_url;
+            image.alt=lbl.textContent;
+            image.style.cssText='width:100%;height:100%;object-fit:cover;object-position:center;position:absolute;inset:0;display:block';
+            ph.appendChild(image);
+          } else {
+            existing.src=img.image_url;
+          }
+          var inner=ph.querySelector('.img-ph-inner');
+          if(inner) inner.style.display='none';
+        }
+      });
+    });
+  });
+
+  // Pricing from CMS
+  sb.from('pc_pricing').select('*').order('sort_order').then(function(res){
+    if(!res.data) return;
+    res.data.forEach(function(p){
+      var bm=document.getElementById('p-'+p.plan_key.charAt(0)+'-b');
+      var ba_el=document.getElementById('p-'+p.plan_key.charAt(0)+'-b');
+      var um=document.getElementById('p-'+p.plan_key.charAt(0)+'-u');
+      // Update the prices object used by toggle
+      if(window.prices){
+        prices.bdt.monthly[p.plan_key.charAt(0)]=p.price_bdt_monthly;
+        prices.bdt.annual[p.plan_key.charAt(0)]=p.price_bdt_annual;
+        prices.usd.monthly[p.plan_key.charAt(0)]=p.price_usd_monthly;
+        prices.usd.annual[p.plan_key.charAt(0)]=p.price_usd_annual;
+      }
+    });
+    updateP();
+  });
+
+})();
+
 </script>
 </body>
 </html>
