@@ -46,7 +46,7 @@
   --bn:'Hind Siliguri',sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body.bn,body.bn .ht-h1,body.bn .ht-sub,body.bn .sec-h2,body.bn .sec-sub,body.bn p,body.bn li,body.bn .fcard-title,body.bn .fcard-desc,body.bn .faq-q,body.bn .faq-a,body.bn .tcard-quote,body.bn .tcard-name,body.bn .who-title,body.bn .who-desc,body.bn .how-title,body.bn .how-desc,body.bn .diff-h2,body.bn .diff-text,body.bn .sol-h2,body.bn .sol-p,body.bn .fweb-desc,body.bn .cust-title,body.bn .cust-desc,body.bn .intl-ctitle,body.bn .intl-cdesc,body.bn .ai-h2,body.bn .ai-desc,body.bn .fin-h2,body.bn .fin-sub,body.bn .foot-brand-desc{font-family:var(--bn)}
+body.bn{font-family:var(--bn)}
 html{scroll-behavior:smooth}
 body{font-family:var(--f);background:var(--white);color:var(--navy);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
@@ -475,11 +475,10 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 .mob-si:hover{background:var(--navy-500)}
 
 /* BN/EN text classes */
-.en{display:inline}.bn{display:none}
-body.bn .en{display:none}
+.en,.en-b{display:revert}.bn,.bn-b{display:none}
+body.bn .en{display:none!important}
+body.bn .en-b{display:none!important}
 body.bn .bn{display:inline}
-.en-b{display:block}.bn-b{display:none}
-body.bn .en-b{display:none}
 body.bn .bn-b{display:block}
 
 /* RESPONSIVE */
