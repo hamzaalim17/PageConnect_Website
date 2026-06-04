@@ -46,7 +46,7 @@
   --bn:'Hind Siliguri',sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body.bn{font-family:var(--bn)}
+body.bn .bn, body.bn .bn-b{font-family:var(--bn)}
 html{scroll-behavior:smooth}
 body{font-family:var(--f);background:var(--white);color:var(--navy);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
@@ -157,7 +157,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(7,21,40,.97)
 .diff{background:var(--navy);padding:96px 48px;position:relative;overflow:hidden}
 .diff-blob{position:absolute;right:-80px;top:-80px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.05) 0%,transparent 70%);pointer-events:none}
 .diff-inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.diff-left{}
 .diff-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;background:rgba(45,212,191,.08);border:1px solid rgba(45,212,191,.18);font-family:var(--m);font-size:11px;letter-spacing:.08em;color:var(--teal);margin-bottom:24px}
 .diff-h2{font-size:clamp(24px,3vw,40px);font-weight:700;line-height:1.1;letter-spacing:-.025em;color:#fff;margin-bottom:18px}
 .diff-text{font-size:15px;line-height:1.82;color:rgba(255,255,255,.52);margin-bottom:32px}
@@ -476,9 +475,9 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 
 /* BN/EN text classes */
 /* Bengali toggle — shows Bengali where translated, English as fallback */
-.bn{display:none}.bn-b{display:none}
-body.bn .bn{display:inline}
-body.bn .bn-b{display:block}
+.bn{display:none!important}.bn-b{display:none!important}
+body.bn .bn{display:inline!important}
+body.bn .bn-b{display:block!important}
 
 /* RESPONSIVE */
 @media(max-width:1100px){.plans{grid-template-columns:1fr 1fr}.feat-grid{grid-template-columns:1fr 1fr}}
