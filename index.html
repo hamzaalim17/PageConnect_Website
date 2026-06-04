@@ -475,9 +475,9 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 .mob-si:hover{background:var(--navy-500)}
 
 /* BN/EN text classes */
-.en,.en-b{display:revert}.bn,.bn-b{display:none}
-body.bn .en{display:none!important}
-body.bn .en-b{display:none!important}
+.bn{display:none}.bn-b{display:none}
+body.bn .en{display:none}
+body.bn .en-b{display:none}
 body.bn .bn{display:inline}
 body.bn .bn-b{display:block}
 
@@ -1268,10 +1268,15 @@ function closeDrawer(){
   document.getElementById('mob-overlay').classList.remove('open');
   document.body.style.overflow='';
 }
-// Restore language on load
+// Restore language on load — safe with try/catch
 (function(){
-  var l=localStorage.getItem('pc-lang');
-  if(l==='bn') setLang('bn');
+  try{
+    var l=localStorage.getItem('pc-lang');
+    if(l==='bn') setLang('bn');
+  }catch(e){
+    // If anything fails, stay in English and clear bad state
+    try{localStorage.removeItem('pc-lang');}catch(e2){}
+  }
 })();
 
 // Scroll reveal
