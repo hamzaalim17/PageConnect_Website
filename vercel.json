@@ -27,8 +27,5 @@
         {"key": "X-XSS-Protection", "value": "1; mode=block"}
       ]
     }
-  ],
-  "errors": [
-    {"statusCode": 404, "destination": "/404.html"}
   ]
 }
