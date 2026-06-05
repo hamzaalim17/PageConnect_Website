@@ -74,6 +74,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(7,21,40,.97)
 .hero-wrap{position:relative;width:100%;height:94vh;min-height:560px;overflow:hidden;background:var(--navy-deep);margin-top:64px}
 .h-slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
 .h-slide img{opacity:0;transition:opacity .6s ease}
+.h-slide-ph{background:linear-gradient(110deg,#0d2340 30%,#142d4a 50%,#0d2340 70%);background-size:200% 100%;animation:shimmer 1.8s infinite}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 .h-slide img.loaded{opacity:1}
 /* Hide placeholder grid when real image loaded */
 .h-slide.has-image .h-ph-grid,.h-slide.has-image .h-ph-icon,.h-slide.has-image .h-ph-label,.h-slide.has-image .h-ph-size{display:none}
@@ -378,23 +380,36 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(7,21,40,.97)
 .ai-stat-num{font-size:34px;font-weight:700;letter-spacing:-.025em;color:var(--teal);margin-bottom:7px}
 .ai-stat-label{font-size:13px;line-height:1.6;color:rgba(255,255,255,.48)}
 
+
+/* CONTACT */
+.contact-sec{background:var(--white);padding:112px 48px;border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:60px;margin-top:44px;align-items:start}
+.contact-form{background:var(--warm);border:1px solid var(--line);border-radius:var(--r16);padding:32px}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-grp{margin-bottom:16px}
+.flabel{display:block;font-size:12px;font-weight:600;color:var(--mute);letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
+.finput{width:100%;padding:11px 14px;border-radius:var(--r8);border:1.5px solid var(--line);background:var(--white);font:14px/1.5 var(--f);color:var(--navy);outline:none;transition:border-color .15s}
+.finput:focus{border-color:var(--teal)}
+textarea.finput{resize:vertical;min-height:100px;line-height:1.6}
+.ci-item{display:flex;align-items:flex-start;gap:14px;padding:20px 0;border-bottom:1px solid var(--line)}
+.ci-item:last-child{border-bottom:none}
+.ci-icon{width:40px;height:40px;border-radius:var(--r8);background:var(--teal-50);color:var(--teal-deep);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ci-label{font-family:var(--m);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
+.ci-val{font-size:14px;font-weight:500;color:var(--navy);text-decoration:none;display:block}
+.ci-val:hover{color:var(--teal-deep)}
+
 /* TESTIMONIALS */
 .testi{background:var(--warm);padding:104px 48px}
-.testi-car{position:relative;margin-top:44px;overflow:hidden}
-.testi-track{display:flex;gap:20px;transition:transform .5s cubic-bezier(.16,1,.3,1)}
-.tcard{background:var(--white);border:1.5px solid var(--line);border-radius:var(--r16);padding:30px;display:flex;flex-direction:column;min-width:calc(33.333% - 14px);flex-shrink:0;transition:box-shadow .2s,border-color .2s}
+.testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}
+.tcard{background:var(--white);border:1.5px solid var(--line);border-radius:var(--r16);padding:28px;display:flex;flex-direction:column;transition:box-shadow .2s,border-color .2s}
 .tcard:hover{box-shadow:var(--shadow-md);border-color:var(--teal-100)}
-.tcard-quote{font-size:15px;line-height:1.75;color:var(--navy);font-style:italic;flex:1;margin-bottom:20px}
-.tcard-quote::before{content:'\201C';color:var(--teal);font-size:32px;font-style:normal;line-height:1;display:block;margin-bottom:8px;font-family:Georgia,serif}
-.tcard-foot{border-top:1px solid var(--line);padding-top:16px;display:flex;align-items:center;gap:12px}
-/* Profile photo circle */
-.tcard-avatar{width:40px;height:40px;border-radius:50%;background:var(--line);flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;color:var(--mute)}
+.tcard-quote{font-size:14px;line-height:1.75;color:var(--navy);font-style:italic;flex:1;margin-bottom:16px}
+.tcard-quote::before{content:'\201C';color:var(--teal);font-size:28px;font-style:normal;line-height:1;display:block;margin-bottom:6px;font-family:Georgia,serif}
+.tcard-foot{border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;gap:12px}
+.tcard-avatar{width:36px;height:36px;border-radius:50%;background:var(--line);flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:var(--mute)}
 .tcard-avatar img{width:100%;height:100%;object-fit:cover;display:block}
-.tcard-name{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:3px}
+.tcard-name{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:2px}
 .tcard-role{font-family:var(--m);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
-.testi-dots{display:flex;justify-content:center;gap:8px;margin-top:24px}
-.testi-dot{width:8px;height:8px;border-radius:50%;background:var(--line);border:none;cursor:pointer;transition:all .2s;padding:0}
-.testi-dot.on{background:var(--teal);width:24px;border-radius:4px}
 
 /* FAQ */
 .faq{background:var(--white);padding:112px 48px}
@@ -488,6 +503,9 @@ html.bn .bn-b{display:block!important}
 @media(max-width:1100px){.plans{grid-template-columns:1fr 1fr}.feat-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:900px){
   nav{padding:0 20px}.nl,.nc{display:none}.mob-nav-right{display:flex}
+  .contact-sec{padding:68px 20px}
+  .contact-grid{grid-template-columns:1fr}
+  .form-row-2{grid-template-columns:1fr}
   .who,.diff,.prob,.sol,.features,.how,.fweb,.track,.cust,.pricing,.intl,.notable,.ai,.testi,.faq,.fin{padding:68px 20px}
   footer{padding:44px 20px 28px}
   .couriers{padding:36px 20px}
@@ -501,17 +519,19 @@ html.bn .bn-b{display:block!important}
   .how-grid::before{display:none}
   .prob-grid{grid-template-columns:1fr 1fr}
   .foot-grid{grid-template-columns:1fr 1fr}
-  .tcard{min-width:100%}
+  .testi-grid{grid-template-columns:1fr}
   .sol-text{padding:68px 0 0}
   .sol-img-wrap{padding:32px 0 68px}
 }
 @media(max-width:560px){
-  .prob-grid{grid-template-columns:1fr}
+  .prob-grid{grid-template-columns:1fr 1fr}
   .foot-grid{grid-template-columns:1fr}
-  .hero-wrap{height:55vw;min-height:260px;max-height:480px}
+  .hero-wrap{height:56vw;min-height:260px;max-height:480px}
   .stats-in{grid-template-columns:1fr 1fr}
   .plans{grid-template-columns:1fr}
-  .ht-btns{flex-direction:column;align-items:flex-start}
+  .ht-btns{flex-direction:column;align-items:stretch;gap:10px}
+  .btn-trial,.btn-track,.btn-portal{width:100%;justify-content:center;padding:14px 20px;font-size:15px}
+  .feat-grid{grid-template-columns:1fr 1fr}
 }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -536,6 +556,7 @@ html.bn .bn-b{display:block!important}
     <a href="#pricing"><span class="en">Pricing</span><span class="bn">মূল্য</span></a>
     <a href="#track"><span class="en">Tracking</span><span class="bn">ট্র্যাকিং</span></a>
     <a href="#customer"><span class="en">Customers</span><span class="bn">কাস্টমার</span></a>
+    <a href="#contact"><span class="en">Contact</span><span class="bn">যোগাযোগ</span></a>
     <a href="#faq">FAQ</a>
   </div>
   <!-- Desktop CTAs + lang toggle -->
@@ -587,6 +608,7 @@ html.bn .bn-b{display:block!important}
     <a href="#customer" class="mob-link" onclick="closeDrawer()"><span class="en">Customer portal</span><span class="bn">কাস্টমার পোর্টাল</span></a>
     <a href="#website" class="mob-link" onclick="closeDrawer()"><span class="en"><span class="en">Free website</span><span class="bn">ফ্রি ওয়েবসাইট</span></span><span class="bn">ফ্রি ওয়েবসাইট</span></a>
     <a href="#international" class="mob-link" onclick="closeDrawer()"><span class="en">International sellers</span><span class="bn">আন্তর্জাতিক সেলার</span></a>
+    <a href="#contact" class="mob-link" onclick="closeDrawer()"><span class="en">Contact us</span><span class="bn">যোগাযোগ করুন</span></a>
     <a href="#faq" class="mob-link" onclick="closeDrawer()">FAQ</a>
   </div>
   <div class="mob-drawer-foot">
@@ -843,9 +865,9 @@ html.bn .bn-b{display:block!important}
     <h2 class="sec-h2 rv" style="color:#fff"><span class="en">Three steps. Then you're running.</span><span class="bn">তিনটি ধাপ। তারপর শুরু।</span></h2>
     <p class="sec-sub rv" style="color:rgba(255,255,255,.42);margin-bottom:0"><span class="en">No setup fees. No contracts. No developer needed.</span><span class="bn">কোনো সেটআপ ফি নেই। কোনো চুক্তি নেই। ডেভেলপার লাগবে না।</span></p>
     <div class="how-grid">
-      <div class="how-step rv"><div class="how-num">০১</div><div><div class="how-title"><span class="en">Sign up</span><span class="bn">সাইন আপ করুন</span></div><p class="how-desc"><span class="en">Create your account with your Facebook page name or shop name and email. No credit card required. All Pro features unlocked for 7 days.</span><span class="bn">আপনার ফেসবুক পেজ নাম বা শপ নাম ও ইমেইল দিয়ে অ্যাকাউন্ট তৈরি করুন। ক্রেডিট কার্ড লাগবে না। ৭ দিন সব প্রো ফিচার আনলক।</span></p><div class="how-tag"><span class="en">7-day trial · no card · no tech setup</span><span class="bn">৭ দিনের ট্রায়াল · কার্ড নেই · টেক সেটআপ নেই</span></div></div></div>
-      <div class="how-step rv"><div class="how-num">০২</div><div><div class="how-title"><span class="en">Add your orders</span><span class="bn">অর্ডার যোগ করুন</span></div><p class="how-desc"><span class="en">Add your products, then log your first order in 3 steps. Customer details save for next time. Stock tracking starts immediately. Keep selling exactly the way you always have.</span><span class="bn">প্রোডাক্ট যোগ করুন, তারপর ৩ ধাপে প্রথম অর্ডার লগ করুন। কাস্টমার তথ্য পরের বার সেভ থাকবে। স্টক ট্র্যাকিং সঙ্গে সঙ্গে শুরু।</span></p><div class="how-tag"><span class="en">3 steps per order · no disruption</span><span class="bn">প্রতি অর্ডারে ৩ ধাপ · কোনো পরিবর্তন নেই</span></div></div></div>
-      <div class="how-step rv"><div class="how-num">০৩</div><div><div class="how-title"><span class="en">Manage everything</span><span class="bn">সব ম্যানেজ করুন</span></div><p class="how-desc"><span class="en">Update statuses, track stock, see analytics and goals. Your customers can track orders at pageconnect.io/track from day one — automatically, for free.</span><span class="bn">স্ট্যাটাস আপডেট করুন, স্টক ট্র্যাক করুন, অ্যানালিটিক্স দেখুন। কাস্টমাররা প্রথম দিন থেকেই অর্ডার ট্র্যাক করতে পারবেন।</span></p><div class="how-tag"><span class="en">Live tracking portal · no extra setup</span><span class="bn">লাইভ ট্র্যাকিং পোর্টাল · অতিরিক্ত সেটআপ নেই</span></div></div></div>
+      <div class="how-step rv"><div class="how-num">01</div><div><div class="how-title"><span class="en">Sign up</span><span class="bn">সাইন আপ করুন</span></div><p class="how-desc"><span class="en">Create your account with your Facebook page name or shop name and email. No credit card required. All Pro features unlocked for 7 days.</span><span class="bn">আপনার ফেসবুক পেজ নাম বা শপ নাম ও ইমেইল দিয়ে অ্যাকাউন্ট তৈরি করুন। ক্রেডিট কার্ড লাগবে না। ৭ দিন সব প্রো ফিচার আনলক।</span></p><div class="how-tag"><span class="en">7-day trial · no card · no tech setup</span><span class="bn">৭ দিনের ট্রায়াল · কার্ড নেই · টেক সেটআপ নেই</span></div></div></div>
+      <div class="how-step rv"><div class="how-num">02</div><div><div class="how-title"><span class="en">Add your orders</span><span class="bn">অর্ডার যোগ করুন</span></div><p class="how-desc"><span class="en">Add your products, then log your first order in 3 steps. Customer details save for next time. Stock tracking starts immediately. Keep selling exactly the way you always have.</span><span class="bn">প্রোডাক্ট যোগ করুন, তারপর ৩ ধাপে প্রথম অর্ডার লগ করুন। কাস্টমার তথ্য পরের বার সেভ থাকবে। স্টক ট্র্যাকিং সঙ্গে সঙ্গে শুরু।</span></p><div class="how-tag"><span class="en">3 steps per order · no disruption</span><span class="bn">প্রতি অর্ডারে ৩ ধাপ · কোনো পরিবর্তন নেই</span></div></div></div>
+      <div class="how-step rv"><div class="how-num">03</div><div><div class="how-title"><span class="en">Manage everything</span><span class="bn">সব ম্যানেজ করুন</span></div><p class="how-desc"><span class="en">Update statuses, track stock, see analytics and goals. Your customers can track orders at pageconnect.io/track from day one — automatically, for free.</span><span class="bn">স্ট্যাটাস আপডেট করুন, স্টক ট্র্যাক করুন, অ্যানালিটিক্স দেখুন। কাস্টমাররা প্রথম দিন থেকেই অর্ডার ট্র্যাক করতে পারবেন।</span></p><div class="how-tag"><span class="en">Live tracking portal · no extra setup</span><span class="bn">লাইভ ট্র্যাকিং পোর্টাল · অতিরিক্ত সেটআপ নেই</span></div></div></div>
     </div>
   </div>
 </section>
@@ -970,7 +992,7 @@ html.bn .bn-b{display:block!important}
       <span class="intl-flag">🇬🇧 <span class="en">United Kingdom</span><span class="bn">যুক্তরাজ্য</span></span>
       <span class="intl-flag">🇺🇸 <span class="en">United States</span><span class="bn">আমেরিকা</span></span>
       <span class="intl-flag">🇨🇦 <span class="en">Canada</span><span class="bn">কানাডা</span></span>
-      <span class="intl-flag">🇩🇪 <span class="en">Germany</span><span class="bn">জার্মানি</span></span>
+      <span class="intl-flag">🇦🇪 <span class="en">UAE</span><span class="bn">সংযুক্ত আরব আমিরাত</span></span>
       <span class="intl-flag">🌏 <span class="en">+ more</span><span class="bn">+ আরো</span></span>
     </div>
     <div class="intl-grid rv">
@@ -981,7 +1003,7 @@ html.bn .bn-b{display:block!important}
     </div>
     <div class="intl-contact rv">
       <div class="intl-contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
-      <div><div class="intl-contact-title"><span class="en">Subscribing from abroad?</span><span class="bn">বিদেশ থেকে সাবস্ক্রাইব করতে চান?</span></div><p class="intl-contact-desc"><span class="en">We offer special subscription arrangements for international sellers — reach out and we'll sort it out directly. <a href="mailto:help@pageconnect.io">Get in touch → help@pageconnect.io</a></span><span class="bn">আন্তর্জাতিক সেলারদের জন্য বিশেষ সাবস্ক্রিপশন ব্যবস্থা আছে। সরাসরি যোগাযোগ করুন। <a href="mailto:help@pageconnect.io">help@pageconnect.io</a></span></p></div>
+      <div><div class="intl-contact-title"><span class="en">Subscribing from abroad?</span><span class="bn">বিদেশ থেকে সাবস্ক্রাইব করতে চান?</span></div><p class="intl-contact-desc"><span class="en">We offer special subscription arrangements for international sellers — fill in the form below and we'll sort it out directly.</span><span class="bn">আন্তর্জাতিক সেলারদের জন্য বিশেষ ব্যবস্থা আছে — নিচের ফর্ম পূরণ করুন, আমরা যোগাযোগ করব।</span> <a href="#contact" onclick="setTimeout(function(){document.getElementById('cf-type').value='international';},100)"><span class="en">Get in touch →</span><span class="bn">যোগাযোগ করুন →</span></a></p></div>
     </div>
   </div>
 </section>
@@ -1060,23 +1082,87 @@ html.bn .bn-b{display:block!important}
   <div class="w">
     <div class="sec-eye rv"><span class="en">What sellers are saying</span><span class="bn">সেলাররা কী বলছেন</span></div>
     <h2 class="sec-h2 rv"><span class="en">Real sellers. Real results.</span><span class="bn">সত্যিকারের সেলার। সত্যিকারের ফলাফল।</span></h2>
-    <div class="testi-car rv">
-      <div class="testi-track" id="testi-track">
+    <div class="testi-grid rv" id="testi-track">
         <div class="tcard"><p class="tcard-quote">The Goals page changed everything for me. I can see exactly how far I am from my monthly target — every single day. It keeps me focused.</p><div class="tcard-foot"><div class="tcard-avatar">T</div><div><div class="tcard-name">Tasfia's Closet</div><div class="tcard-role">Seller · Dhaka</div></div></div></div>
         <div class="tcard"><p class="tcard-quote">My stock used to be a nightmare. Now it updates automatically every time I confirm an order. I haven't oversold once since I started using PageConnect.</p><div class="tcard-foot"><div class="tcard-avatar">F</div><div><div class="tcard-name">Fashion Seller</div><div class="tcard-role">Seller · Chittagong</div></div></div></div>
         <div class="tcard"><p class="tcard-quote">The analytics showed me that 60% of my revenue comes from one product. I never knew that before PageConnect. Now I know exactly where to invest.</p><div class="tcard-foot"><div class="tcard-avatar">R</div><div><div class="tcard-name">Rina's Boutique</div><div class="tcard-role">Seller · Sylhet</div></div></div></div>
         <div class="tcard"><p class="tcard-quote">I can see my full order history and receipts across every seller I've bought from. No more digging through messages looking for what I ordered.</p><div class="tcard-foot"><div class="tcard-avatar">C</div><div><div class="tcard-name">Verified Customer</div><div class="tcard-role">Customer · Dhaka</div></div></div></div>
         <div class="tcard"><p class="tcard-quote">Running a BD fashion business from Melbourne — the international mode, USD billing and AusPost support made managing everything so much simpler.</p><div class="tcard-foot"><div class="tcard-avatar">S</div><div><div class="tcard-name">Sultana's Crafts</div><div class="tcard-role">Seller · Melbourne, Australia</div></div></div></div>
         <div class="tcard"><p class="tcard-quote">My free website on PageConnect looks more professional than pages I've seen built by expensive developers. Set up in 5 minutes, completely free.</p><div class="tcard-foot"><div class="tcard-avatar">J</div><div><div class="tcard-name">Jewellery Seller</div><div class="tcard-role">Seller · Mirpur</div></div></div></div>
-      </div>
     </div>
-    <div class="testi-dots">
-      <button class="testi-dot on" onclick="goT(0)"></button>
-      <button class="testi-dot" onclick="goT(1)"></button>
-      <button class="testi-dot" onclick="goT(2)"></button>
-      <button class="testi-dot" onclick="goT(3)"></button>
-      <button class="testi-dot" onclick="goT(4)"></button>
-      <button class="testi-dot" onclick="goT(5)"></button>
+  </div>
+</section>
+
+<!-- CONTACT US -->
+<section class="contact-sec" id="contact">
+  <div class="w">
+    <div class="sec-eye rv"><span class="en">Get in touch</span><span class="bn">যোগাযোগ করুন</span></div>
+    <h2 class="sec-h2 rv"><span class="en">Have a question? We'd love to hear from you.</span><span class="bn">প্রশ্ন আছে? আমরা শুনতে চাই।</span></h2>
+    <p class="sec-sub rv" style="margin-bottom:0"><span class="en">Whether you're interested in PageConnect, need help, or want to subscribe from abroad — fill in the form and we'll get back to you.</span><span class="bn">PageConnect সম্পর্কে আগ্রহী, সাহায্য দরকার, বা বিদেশ থেকে সাবস্ক্রাইব করতে চান — ফর্ম পূরণ করুন, আমরা যোগাযোগ করব।</span></p>
+    <div class="contact-grid rv">
+      <div class="contact-form-wrap">
+        <div class="contact-form">
+          <div class="form-row-2">
+            <div class="form-grp">
+              <label class="flabel"><span class="en">Your name</span><span class="bn">আপনার নাম</span></label>
+              <input type="text" id="cf-name" class="finput" placeholder="Tasfia Ahmed">
+            </div>
+            <div class="form-grp">
+              <label class="flabel"><span class="en">Phone number</span><span class="bn">ফোন নম্বর</span></label>
+              <input type="text" id="cf-phone" class="finput" placeholder="+880 17...">
+            </div>
+          </div>
+          <div class="form-grp">
+            <label class="flabel"><span class="en">Email address (optional)</span><span class="bn">ইমেইল (ঐচ্ছিক)</span></label>
+            <input type="text" id="cf-email" class="finput" placeholder="you@example.com">
+          </div>
+          <div class="form-grp">
+            <label class="flabel"><span class="en">What's this about?</span><span class="bn">বিষয়</span></label>
+            <select id="cf-type" class="finput">
+              <option value="general"><span class="en">General question</span></option>
+              <option value="interest"><span class="en">I'm interested in PageConnect</span></option>
+              <option value="international"><span class="en">Subscribing from abroad</span></option>
+              <option value="support"><span class="en">I need help</span></option>
+            </select>
+          </div>
+          <div class="form-grp">
+            <label class="flabel"><span class="en">Message</span><span class="bn">বার্তা</span></label>
+            <textarea id="cf-msg" class="finput" rows="4" placeholder="Tell us what you need..."></textarea>
+          </div>
+          <button class="btn-trial" onclick="submitContact()" id="cf-btn" style="width:100%;justify-content:center">
+            <span class="en">Send message</span><span class="bn">বার্তা পাঠান</span>
+          </button>
+          <div id="cf-success" style="display:none;margin-top:14px;padding:14px 18px;background:var(--teal-50);border:1px solid var(--teal-100);border-radius:var(--r8);font-size:14px;color:var(--teal-deep)">
+            <span class="en">✓ Message sent! We'll get back to you within 24 hours.</span><span class="bn">✓ বার্তা পাঠানো হয়েছে! আমরা ২৪ ঘণ্টার মধ্যে যোগাযোগ করব।</span>
+          </div>
+          <div id="cf-error" style="display:none;margin-top:14px;padding:14px 18px;background:#FEE2E2;border-radius:var(--r8);font-size:14px;color:#991B1B">
+            <span class="en">Something went wrong. Please email us at help@pageconnect.io</span><span class="bn">কিছু একটা ভুল হয়েছে। help@pageconnect.io-তে ইমেইল করুন।</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-info">
+        <div class="ci-item">
+          <div class="ci-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <div class="ci-label"><span class="en">Email us</span><span class="bn">ইমেইল করুন</span></div>
+            <a href="mailto:help@pageconnect.io" class="ci-val">help@pageconnect.io</a>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.5 2 2 0 0 1 3.59 1.31h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg></div>
+          <div>
+            <div class="ci-label"><span class="en">Facebook</span><span class="bn">ফেসবুক</span></div>
+            <a href="https://facebook.com/pageconnect.io" target="_blank" class="ci-val">facebook.com/pageconnect.io</a>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div>
+            <div class="ci-label"><span class="en">Response time</span><span class="bn">সাড়া দেওয়ার সময়</span></div>
+            <div class="ci-val"><span class="en">Within 24 hours</span><span class="bn">২৪ ঘণ্টার মধ্যে</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1121,7 +1207,7 @@ html.bn .bn-b{display:block!important}
 <!-- FOOTER -->
 <footer>
   <div class="foot-in">
-    <div class="foot-legal"><span class="en">PageConnect is a management tool only. All transactions, payments, and deliveries are solely between the seller and their customers. Courier and delivery responsibilities rest with the assigned courier company. PageConnect does not intervene in, guarantee, or hold liability for any transaction or delivery.</span><span class="bn">PageConnect শুধুমাত্র একটি ম্যানেজমেন্ট টুল। সমস্ত লেনদেন, পেমেন্ট এবং ডেলিভারি সম্পূর্ণরূপে সেলার এবং তাদের কাস্টমারদের মধ্যে। PageConnect কোনো দায়িত্ব বহন করে না।</span></div>
+    
     <!-- Membership logos — blank by default, CMS controlled -->
     <div class="mem-row" id="mem-row">
       <span class="mem-label"><span class="en">Member of</span><span class="bn">সদস্য</span></span>
@@ -1149,7 +1235,8 @@ html.bn .bn-b{display:block!important}
       </div>
       <div><div class="foot-col-title"><span class="en">Platform</span><span class="bn">প্ল্যাটফর্ম</span></div><ul class="foot-links"><li><a href="#features">Features</a></li><li><a href="#pricing">Pricing</a></li><li><a href="https://pageconnect.io/track">Track an order</a></li><li><a href="https://pageconnect.io/sellers"><span class="en">Seller directory</span><span class="bn">সেলার ডিরেক্টরি</span></a></li><li><a href="https://pageconnect.io/customer"><span class="en">Customer portal</span><span class="bn">কাস্টমার পোর্টাল</span></a></li><li><a href="https://pageconnect-app.vercel.app/dashboard"><span class="en">Seller sign in</span><span class="bn">সেলার সাইন ইন</span></a></li></ul></div>
       <div><div class="foot-col-title"><span class="en">Sellers</span><span class="bn">সেলার</span></div><ul class="foot-links"><li><a href="https://pageconnect-app.vercel.app/dashboard"><span class="en">Start free trial</span><span class="bn">ফ্রি ট্রায়াল শুরু করুন</span></a></li><li><a href="#who"><span class="en">Bangladesh sellers</span><span class="bn">বাংলাদেশি সেলার</span></a></li><li><a href="#international"><span class="en">International sellers</span><span class="bn">আন্তর্জাতিক সেলার</span></a></li><li><a href="#website"><span class="en">Free website</span><span class="bn">ফ্রি ওয়েবসাইট</span></a></li><li><a href="#track"><span class="en">Order tracking</span><span class="bn">অর্ডার ট্র্যাকিং</span></a></li></ul></div>
-      <div><div class="foot-col-title"><span class="en">Company</span><span class="bn">কোম্পানি</span></div><ul class="foot-links"><li><a href="#faq">FAQ</a></li><li><a href="mailto:help@pageconnect.io"><span class="en">Contact us</span><span class="bn">যোগাযোগ করুন</span></a></li><li><a href="/privacy.html"><span class="en">Privacy policy</span><span class="bn">গোপনীয়তা নীতি</span></a></li><li><a href="/terms.html"><span class="en">Terms of service</span><span class="bn">সেবার শর্তাবলী</span></a></li><li><a href="/terms.html#refunds"><span class="en">Refund policy</span><span class="bn">ফেরত নীতি</span></a></li></ul></div>
+      <div><div class="foot-col-title"><span class="en">Company</span><span class="bn">কোম্পানি</span></div><ul class="foot-links"><li><a href="#contact"><span class="en">Contact</span><span class="bn">যোগাযোগ</span></a>
+    <a href="#faq">FAQ</a></li><li><a href="mailto:help@pageconnect.io"><span class="en">Contact us</span><span class="bn">যোগাযোগ করুন</span></a></li><li><a href="/privacy.html"><span class="en">Privacy policy</span><span class="bn">গোপনীয়তা নীতি</span></a></li><li><a href="/terms.html"><span class="en">Terms of service</span><span class="bn">সেবার শর্তাবলী</span></a></li><li><a href="/terms.html#refunds"><span class="en">Refund policy</span><span class="bn">ফেরত নীতি</span></a></li></ul></div>
     </div>
     <div class="foot-bot">
       <div class="foot-copy">© 2026 PageConnect. <span class="en">All rights reserved.</span><span class="bn">সর্বস্বত্ব সংরক্ষিত।</span></div>
@@ -1233,23 +1320,7 @@ function hTo(n){showH(n);resetHT();}
 function resetHT(){clearInterval(hTimer);hTimer=setInterval(function(){hMove(1);},7000);}
 hTimer=setInterval(function(){hMove(1);},7000);
 
-// Testimonials
-var tIdx=0,tTotal=6,tTimer;
-function updT(){
-  var track=document.getElementById('testi-track');
-  var cards=track.querySelectorAll('.tcard');
-  if(!cards.length)return;
-  var perView=window.innerWidth<900?1:3;
-  var maxIdx=Math.max(0,tTotal-perView);
-  if(tIdx>maxIdx)tIdx=maxIdx;
-  var w=cards[0].offsetWidth+20;
-  track.style.transform='translateX(-'+(tIdx*w)+'px)';
-  document.querySelectorAll('.testi-dot').forEach(function(d,i){d.classList.toggle('on',i===tIdx);});
-}
-function goT(n){tIdx=n;updT();resetTT();}
-function resetTT(){clearInterval(tTimer);tTimer=setInterval(function(){tIdx=(tIdx+1)%tTotal;updT();},4500);}
-tTimer=setInterval(function(){tIdx=(tIdx+1)%tTotal;updT();},4500);
-window.addEventListener('resize',updT);
+// Testimonials — static 2x2 grid, no carousel needed
 
 // Membership row — hide if no logos
 (function(){
@@ -1300,11 +1371,52 @@ var obs=new IntersectionObserver(function(entries){
 },{threshold:0.06,rootMargin:'0px 0px -32px 0px'});
 document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
 
+// ===================== CONTACT FORM =====================
+var SB_URL='https://dsnxhqhuigevnhbgcpvh.supabase.co';
+var SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRzbnhocWh1aWdldm5oYmdjcHZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg0OTMzMjAsImV4cCI6MjA5NDA2OTMyMH0.tbnzAFalEqbP4DqBaiT-j2jNXdmMwr6tU1B5XDF_5Gs';
+
+async function submitContact(){
+  var name=document.getElementById('cf-name').value.trim();
+  var phone=document.getElementById('cf-phone').value.trim();
+  var email=document.getElementById('cf-email').value.trim();
+  var type=document.getElementById('cf-type').value;
+  var msg=document.getElementById('cf-msg').value.trim();
+  if(!name||!msg){alert('Please fill in your name and message.');return;}
+  var btn=document.getElementById('cf-btn');
+  btn.style.opacity='.6';btn.style.pointerEvents='none';
+  try{
+    var sbClient=supabase.createClient(SB_URL,SB_KEY);
+    await sbClient.from('pc_contact_submissions').insert({name:name,phone:phone||null,email:email||null,type:type,message:msg});
+    document.getElementById('cf-success').style.display='block';
+    document.getElementById('cf-error').style.display='none';
+    document.getElementById('cf-name').value='';
+    document.getElementById('cf-phone').value='';
+    document.getElementById('cf-email').value='';
+    document.getElementById('cf-msg').value='';
+  }catch(e){
+    document.getElementById('cf-error').style.display='block';
+  }
+  btn.style.opacity='';btn.style.pointerEvents='';
+}
+
 // ===================== CMS FETCH =====================
 (function(){
-  var SB_URL='https://dsnxhqhuigevnhbgcpvh.supabase.co';
-  var SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRzbnhocWh1aWdldm5oYmdjcHZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg0OTMzMjAsImV4cCI6MjA5NDA2OTMyMH0.tbnzAFalEqbP4DqBaiT-j2jNXdmMwr6tU1B5XDF_5Gs';
   var sb=supabase.createClient(SB_URL,SB_KEY);
+  var isMobile=window.innerWidth<768;
+  var isBn=document.documentElement.classList.contains('bn')||
+           document.querySelector('html.bn')!==null;
+  // Detect current language from toggle state
+  function getLang(){return document.getElementById('btn-bn')&&document.getElementById('btn-bn').classList.contains('on')?'bn':'en';}
+  function getImgUrl(slide){
+    var lang=getLang();
+    var mob=isMobile;
+    if(mob&&lang==='bn'&&slide.image_url_bn_mobile) return slide.image_url_bn_mobile;
+    if(mob&&lang==='en'&&slide.image_url_en_mobile) return slide.image_url_en_mobile;
+    if(mob&&slide.image_url_en_mobile) return slide.image_url_en_mobile;
+    if(!mob&&lang==='bn'&&slide.image_url_bn_desktop) return slide.image_url_bn_desktop;
+    if(!mob&&lang==='en'&&slide.image_url_en_desktop) return slide.image_url_en_desktop;
+    return slide.image_url||slide.image_url_en_desktop||slide.image_url_bn_desktop||null;
+  }
 
   // Hero slides
   sb.from('pc_hero_slides').select('*').eq('active',true).order('sort_order').then(function(res){
@@ -1323,13 +1435,16 @@ document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
       var div=document.createElement('div');
       div.className='h-slide'+(i===0?' active':'');
       div.id='hsl'+i;
-      var img=document.createElement('img');
-      img.alt='Banner '+(i+1);
-      img.style.cssText='width:100%;height:100%;object-fit:cover;object-position:center;display:block';
-      img.onload=function(){this.classList.add('loaded');};
-      img.src=s.image_url;
-      div.classList.add('has-image');
-      div.appendChild(img);
+      var imgUrl=getImgUrl(s);
+      if(imgUrl){
+        var img=document.createElement('img');
+        img.alt='Banner '+(i+1);
+        img.style.cssText='width:100%;height:100%;object-fit:cover;object-position:center;display:block;opacity:0;transition:opacity .5s ease';
+        img.onload=function(){this.style.opacity='1';};
+        img.src=imgUrl;
+        div.classList.add('has-image');
+        div.appendChild(img);
+      }
       // Insert before arrows
       var firstArrow=wrap.querySelector('.h-arrow-l');
       wrap.insertBefore(div, firstArrow);
@@ -1354,6 +1469,7 @@ document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
     if(!res.data||!res.data.length) return;
     var track=document.getElementById('testi-track');
     if(!track) return;
+    track.className='testi-grid rv in';
     track.innerHTML=res.data.map(function(t){
       var avatar=t.avatar_url
         ?'<img src="'+t.avatar_url+'" alt="'+t.name+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%">'
