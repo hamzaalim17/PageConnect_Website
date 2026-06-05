@@ -33,7 +33,8 @@ body{font-family:var(--f);background:var(--warm);color:var(--navy);-webkit-font-
 .sidebar{position:fixed;top:0;left:0;bottom:0;width:220px;background:var(--navy-deep);border-right:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;z-index:10}
 .sidebar-logo{padding:20px 20px 16px;border-bottom:1px solid rgba(255,255,255,.06)}
 .sidebar-logo span{font-size:15px;font-weight:600;color:#fff;letter-spacing:-.02em}
-.sidebar-logo .p{color:var(--blue)}.sidebar-logo .io{color:var(--teal);font-family:var(--m);font-size:12px}
+.sidebar-logo .p{color:#4F9CF9}.sidebar-logo .io{color:#2DD4BF;font-family:var(--m);font-size:12px}
+.sidebar-logo svg path,.sidebar-logo svg rect{stroke:white;fill:#2DD4BF}
 .sidebar-tag{font-family:var(--m);font-size:10px;color:rgba(255,255,255,.28);letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
 .sidebar-nav{flex:1;padding:12px 0;overflow-y:auto}
 .nav-item{display:flex;align-items:center;gap:10px;padding:11px 20px;color:rgba(255,255,255,.5);font-size:13px;font-weight:500;cursor:pointer;transition:color .15s,background .15s;border-left:2px solid transparent}
@@ -143,7 +144,7 @@ tr:hover td{background:var(--warm)}
 <div id="app">
   <div class="sidebar">
     <div class="sidebar-logo">
-      <div><span class="p">Page</span>Connect<span class="io">.io</span></div>
+      <div style="color:#fff"><span class="p" style="color:#4F9CF9">Page</span><span style="color:#fff">Connect</span><span class="io" style="color:#2DD4BF;font-family:var(--m);font-size:12px">.io</span></div>
       <div class="sidebar-tag">Admin Panel</div>
     </div>
     <div class="sidebar-nav">
