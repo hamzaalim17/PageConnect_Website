@@ -4,210 +4,133 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Service — PageConnect.io</title>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+<meta name="description" content="PageConnect Terms of Service. Read our terms before using PageConnect.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0B1F3A;--navy-deep:#071528;--teal:#2DD4BF;--teal-deep:#14B8A6;--teal-50:#ECFDF8;--blue:#4F9CF9;--white:#FFFFFF;--warm:#F7F9FC;--line:#E2E8F0;--mute:#6B7A90;--f:'Space Grotesk',system-ui,sans-serif;--m:'JetBrains Mono',ui-monospace,monospace}
+:root{--navy:#0B1F3A;--navy-deep:#071528;--teal:#2DD4BF;--teal-deep:#14B8A6;--teal-50:#ECFDF8;--white:#fff;--warm:#F7F9FC;--line:#E2E8F0;--mute:#6B7A90;--f:'Space Grotesk',system-ui,sans-serif;--bn:'Hind Siliguri',sans-serif;--m:'JetBrains Mono',monospace}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--f);background:var(--white);color:var(--navy);-webkit-font-smoothing:antialiased}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(7,21,40,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06);padding:0 48px;display:flex;align-items:center;height:64px}
+body{font-family:var(--f);background:var(--white);color:var(--navy);-webkit-font-smoothing:antialiased;line-height:1.7}
+body.bn{font-family:var(--bn)}
+.bn{display:none}.bn-b{display:none}
+nav{background:var(--navy-deep);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.wm{font-size:17px;font-weight:600;letter-spacing:-.02em;color:#fff}
-.wm .p{color:var(--blue)}.wm .io{color:var(--teal);font-family:var(--m);font-size:14px}
-.nav-back{margin-left:auto;padding:8px 16px;border-radius:7px;border:1px solid rgba(255,255,255,.2);color:#fff;font:14px/1 var(--f);font-weight:500;text-decoration:none;transition:border-color .15s}
-.nav-back:hover{border-color:rgba(255,255,255,.5)}
-.hero{background:var(--navy-deep);padding:120px 48px 80px;border-bottom:1px solid rgba(255,255,255,.06)}
-.hero-inner{max-width:800px;margin:0 auto}
-.hero-tag{font-family:var(--m);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:10px;margin-bottom:20px}
-.hero-tag::before{content:'';width:24px;height:1px;background:var(--teal)}
-.hero-h1{font-size:clamp(32px,5vw,52px);font-weight:700;line-height:1.08;letter-spacing:-.025em;color:#fff;margin-bottom:16px}
-.hero-sub{font-size:15px;color:rgba(255,255,255,.45);font-family:var(--m);letter-spacing:.04em}
-.content{max-width:800px;margin:0 auto;padding:72px 48px 96px}
-.section{margin-bottom:52px}
-.section h2{font-size:20px;font-weight:600;letter-spacing:-.01em;color:var(--navy);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line)}
-.section p{font-size:15px;line-height:1.8;color:var(--mute);margin-bottom:14px}
-.section p:last-child{margin-bottom:0}
-.section ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
-.section ul li{font-size:15px;line-height:1.65;color:var(--mute);display:flex;align-items:flex-start;gap:10px}
-.section ul li::before{content:'→';color:var(--teal-deep);flex-shrink:0;font-weight:600}
-.section strong{color:var(--navy)}
-.section a{color:var(--teal-deep);text-decoration:none}
-.section a:hover{text-decoration:underline}
-.highlight-box{background:var(--teal-50);border:1px solid rgba(20,184,166,.2);border-radius:12px;padding:24px 28px;margin-bottom:14px}
+.logo-wm{font-size:16px;font-weight:600;color:#fff;letter-spacing:-.02em}
+.logo-wm .p{color:#4F9CF9}.logo-wm .io{color:var(--teal);font-family:var(--m);font-size:13px}
+.nav-r{display:flex;align-items:center;gap:12px}
+.lang-tog{display:flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:6px;overflow:hidden}
+.lang-btn{padding:6px 11px;font-size:12px;font-weight:600;font-family:var(--m);border:none;background:transparent;cursor:pointer;color:rgba(255,255,255,.5);transition:all .15s}
+.lang-btn.on{background:var(--teal);color:var(--navy-deep)}
+.back-link{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .15s}
+.back-link:hover{color:#fff}
+.container{max-width:760px;margin:0 auto;padding:64px 32px 96px}
+.doc-eye{font-family:var(--m);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:12px}
+.doc-title{font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-.025em;margin-bottom:8px;line-height:1.08}
+.doc-meta{font-family:var(--m);font-size:12px;color:var(--mute);margin-bottom:48px;letter-spacing:.04em}
+h2{font-size:20px;font-weight:700;letter-spacing:-.01em;margin-top:40px;margin-bottom:14px;color:var(--navy);padding-bottom:10px;border-bottom:1px solid var(--line)}
+h3{font-size:16px;font-weight:600;margin-top:24px;margin-bottom:10px;color:var(--navy)}
+p{font-size:15px;line-height:1.8;color:var(--mute);margin-bottom:14px}
+p strong{color:var(--navy)}
+ul,ol{margin:12px 0 14px 20px}
+li{font-size:15px;line-height:1.8;color:var(--mute);margin-bottom:6px}
+a{color:var(--teal-deep);text-decoration:none}
+a:hover{text-decoration:underline}
+.highlight-box{background:var(--teal-50);border:1px solid rgba(20,184,166,.2);border-radius:10px;padding:20px 24px;margin:24px 0}
 .highlight-box p{color:var(--navy);margin-bottom:0}
-.warning-box{background:#FEF3C7;border:1px solid #FCD34D;border-radius:12px;padding:24px 28px;margin-bottom:14px}
-.warning-box p{color:#92400E;margin-bottom:0;font-size:15px;line-height:1.7}
-.legal-note{background:var(--warm);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:8px;padding:18px 22px;margin-bottom:14px}
-.legal-note p{font-size:14px;color:var(--mute);margin-bottom:0}
-.foot{background:var(--navy-deep);padding:40px 48px;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
-.foot p{font-family:var(--m);font-size:11px;color:rgba(255,255,255,.28);letter-spacing:.04em;margin-bottom:10px}
-.foot-links{display:flex;justify-content:center;gap:24px}
-.foot-links a{font-family:var(--m);font-size:11px;color:rgba(255,255,255,.28);text-decoration:none;letter-spacing:.04em;transition:color .12s}
-.foot-links a:hover{color:rgba(255,255,255,.7)}
-@media(max-width:768px){nav{padding:0 20px}.hero{padding:100px 20px 60px}.content{padding:48px 20px 72px}.foot{padding:32px 20px}}
+@media(max-width:600px){nav{padding:0 20px}.container{padding:40px 20px 72px}}
 </style>
 </head>
 <body>
-
 <nav>
   <a href="/" class="logo">
-    <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
+    <svg width="26" height="26" viewBox="0 0 100 100" fill="none">
       <path d="M22 14L22 86" stroke="white" stroke-width="12" stroke-linecap="round"/>
       <path d="M22 14L60 14A28 28 0 0 1 60 70L38 70" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
       <rect x="37" y="44" width="7" height="14" rx="1.5" fill="#2DD4BF"/>
       <rect x="47" y="36" width="7" height="22" rx="1.5" fill="#2DD4BF"/>
       <rect x="57" y="28" width="7" height="30" rx="1.5" fill="#2DD4BF"/>
     </svg>
-    <span class="wm"><span class="p">Page</span>Connect<span class="io">.io</span></span>
+    <span class="logo-wm"><span class="p">Page</span>Connect<span class="io">.io</span></span>
   </a>
-  <a href="/" class="nav-back">← Back to home</a>
+  <div class="nav-r">
+    <div class="lang-tog">
+      <button class="lang-btn on" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btn-bn" onclick="setLang('bn')">বাং</button>
+    </div>
+    <a href="/" class="back-link"><span class="en">← Back to website</span><span class="bn">← ওয়েবসাইটে ফিরুন</span></a>
+  </div>
 </nav>
 
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-tag">Legal</div>
-    <h1 class="hero-h1">Terms of Service</h1>
-    <p class="hero-sub">Effective date: 19 May 2026 &nbsp;·&nbsp; Last updated: 19 May 2026</p>
-  </div>
-</div>
-
-<div class="content">
+<div class="container">
+  <div class="doc-eye"><span class="en">Legal</span><span class="bn">আইনি</span></div>
+  <h1 class="doc-title"><span class="en">Terms of Service</span><span class="bn">সেবার শর্তাবলী</span></h1>
+  <p class="doc-meta"><span class="en">Last updated: June 2026 · Effective immediately</span><span class="bn">সর্বশেষ আপডেট: জুন ২০২৬ · তাৎক্ষণিকভাবে কার্যকর</span></p>
 
   <div class="highlight-box">
-    <p>By using PageConnect, you agree to these terms. Please read them carefully. If you do not agree, do not use the platform.</p>
+    <p><span class="en"><strong>Summary:</strong> PageConnect is a business management tool. We don't process payments between buyers and sellers, and we're not responsible for deliveries. Your data is safe and retained for up to 2 years of inactivity.</span><span class="bn"><strong>সারসংক্ষেপ:</strong> PageConnect একটি ব্যবসা ম্যানেজমেন্ট টুল। আমরা ক্রেতা ও বিক্রেতার মধ্যে পেমেন্ট প্রক্রিয়া করি না এবং ডেলিভারির জন্য দায়ী নই। আপনার ডেটা নিরাপদ এবং ২ বছর পর্যন্ত সংরক্ষিত থাকে।</span></p>
   </div>
 
-  <div class="section">
-    <h2>1. About PageConnect</h2>
-    <p>PageConnect ("we", "us", "our") is a web-based order and business management platform for F-commerce and social commerce sellers. It is operated at <a href="https://pageconnect.io">pageconnect.io</a> and accessible via browser on any device.</p>
-    <p>PageConnect is a <strong>management tool only</strong>. We do not sell products, process payments, deliver goods, or facilitate transactions between sellers and their customers.</p>
-  </div>
+  <h2><span class="en">1. Acceptance of terms</span><span class="bn">১. শর্তাবলী গ্রহণ</span></h2>
+  <p><span class="en">By accessing or using PageConnect ("the Service"), you agree to be bound by these Terms of Service. If you do not agree, please do not use the Service.</span><span class="bn">PageConnect ("সেবা") অ্যাক্সেস বা ব্যবহার করে, আপনি এই সেবার শর্তাবলীতে আবদ্ধ হতে সম্মত হচ্ছেন। আপনি যদি সম্মত না হন, অনুগ্রহ করে সেবাটি ব্যবহার করবেন না।</span></p>
 
-  <div class="section">
-    <h2>2. Eligibility</h2>
-    <p>You must be at least 16 years of age to use PageConnect. By creating an account, you confirm that you meet this requirement and that the information you provide is accurate.</p>
-  </div>
+  <h2><span class="en">2. What PageConnect is</span><span class="bn">২. PageConnect কী</span></h2>
+  <p><span class="en">PageConnect is a web-based order and business management platform for F-commerce and social commerce sellers. We provide tools to manage orders, inventory, customers, analytics, and more.</span><span class="bn">PageConnect এফ-কমার্স ও সোশ্যাল কমার্স সেলারদের জন্য একটি ওয়েব-ভিত্তিক অর্ডার ও ব্যবসা ম্যানেজমেন্ট প্ল্যাটফর্ম। আমরা অর্ডার, ইনভেন্টরি, কাস্টমার, অ্যানালিটিক্স এবং আরো ম্যানেজ করার টুল প্রদান করি।</span></p>
+  <p><span class="en"><strong>PageConnect is a management tool only.</strong> All transactions, payments, and deliveries are solely between the seller and their customers. PageConnect does not intervene in, guarantee, or hold liability for any transaction or delivery.</span><span class="bn"><strong>PageConnect শুধুমাত্র একটি ম্যানেজমেন্ট টুল।</strong> সমস্ত লেনদেন, পেমেন্ট এবং ডেলিভারি সম্পূর্ণরূপে সেলার এবং তাদের কাস্টমারদের মধ্যে। PageConnect কোনো লেনদেন বা ডেলিভারিতে হস্তক্ষেপ করে না, গ্যারান্টি দেয় না বা দায় বহন করে না।</span></p>
 
-  <div class="section">
-    <h2>3. Seller accounts</h2>
-    <p>To use PageConnect as a seller, you must register with a valid email address and shop name or Facebook page name. You are responsible for:</p>
-    <ul>
-      <li>Maintaining the security of your account and password</li>
-      <li>All activity that occurs under your account</li>
-      <li>The accuracy of data you enter into the platform</li>
-      <li>Compliance with all applicable laws in your country</li>
-    </ul>
-    <p>You may not share your account with others or create multiple accounts for the same business without prior written permission.</p>
-  </div>
+  <h2><span class="en">3. Account registration</span><span class="bn">৩. অ্যাকাউন্ট নিবন্ধন</span></h2>
+  <p><span class="en">You must provide accurate information when creating an account. You are responsible for maintaining the confidentiality of your login credentials and for all activities that occur under your account.</span><span class="bn">অ্যাকাউন্ট তৈরি করার সময় আপনাকে সঠিক তথ্য প্রদান করতে হবে। আপনি আপনার লগইন তথ্যের গোপনীয়তা বজায় রাখার জন্য এবং আপনার অ্যাকাউন্টের অধীনে যে সমস্ত কার্যক্রম হয় তার জন্য দায়বদ্ধ।</span></p>
 
-  <div class="section">
-    <h2>4. Free trial and subscription</h2>
-    <p>PageConnect offers a <strong>7-day free trial</strong> with all Pro features unlocked. No credit card is required to start the trial.</p>
-    <p>After the trial ends, a <strong>3-day grace period</strong> applies before premium features lock. Your data is retained for <strong>up to 2 years of inactivity</strong>, after which it may be permanently deleted. You can export your data at any time from your account settings.</p>
-    <p>Subscription plans are billed monthly or annually as selected. Pricing varies by region to ensure accessibility. Prices are displayed in BDT for Bangladesh-based sellers and USD for international sellers.</p>
-    <p>You may cancel your subscription at any time from your account settings. Cancellation takes effect at the end of your current billing period.</p>
-  </div>
+  <h2><span class="en">4. Free trial & subscription</span><span class="bn">৪. ফ্রি ট্রায়াল ও সাবস্ক্রিপশন</span></h2>
+  <p><span class="en">PageConnect offers a <strong>7-day free trial</strong> with all Pro features unlocked. No credit card is required to start the trial.</span><span class="bn">PageConnect <strong>৭ দিনের ফ্রি ট্রায়াল</strong> অফার করে যেখানে সব প্রো ফিচার আনলক থাকে। ট্রায়াল শুরু করতে কোনো ক্রেডিট কার্ড প্রয়োজন নেই।</span></p>
+  <p><span class="en">After the trial ends, a <strong>3-day grace period</strong> applies before premium features lock. Your data is retained for <strong>up to 2 years of inactivity</strong>, after which it may be permanently deleted. You can export your data at any time from your account settings.</span><span class="bn">ট্রায়াল শেষ হওয়ার পর, প্রিমিয়াম ফিচার লক হওয়ার আগে <strong>৩ দিনের গ্রেস পিরিয়ড</strong> প্রযোজ্য। আপনার ডেটা <strong>নিষ্ক্রিয়তার ২ বছর পর্যন্ত</strong> সংরক্ষিত থাকবে, তারপর স্থায়ীভাবে মুছে ফেলা হতে পারে। আপনি যেকোনো সময় আপনার অ্যাকাউন্ট সেটিংস থেকে ডেটা এক্সপোর্ট করতে পারবেন।</span></p>
 
-  <div class="section">
-    <h2>5. Refund policy</h2>
-    <p id="refunds">We offer refunds in the following circumstances:</p>
-    <ul>
-      <li>Annual plan: a pro-rated refund may be issued if requested within 30 days of payment</li>
-      <li>Monthly plan: no refunds for partial months</li>
-      <li>If PageConnect experiences significant downtime or a platform error that materially affects your use, we will consider a credit or refund on a case-by-case basis</li>
-    </ul>
-    <p>To request a refund, contact <a href="mailto:help@pageconnect.io">help@pageconnect.io</a> with your account details and reason.</p>
-  </div>
+  <h2><span class="en">5. Referral program</span><span class="bn">৫. রেফারেল প্রোগ্রাম</span></h2>
+  <p><span class="en">Each seller receives a unique referral code that can be shared with others. The referral discount applies <strong>once per referred seller</strong> — on their first subscription only. Referral commission varies based on the plan the referred seller subscribes to.</span><span class="bn">প্রতিটি সেলার একটি ইউনিক রেফারেল কোড পান যা অন্যদের সাথে শেয়ার করা যায়। রেফারেল ছাড় <strong>প্রতিটি রেফার করা সেলারের জন্য একবার</strong> প্রযোজ্য — শুধুমাত্র তাদের প্রথম সাবস্ক্রিপশনে। রেফার করা সেলার যে প্ল্যানে সাবস্ক্রাইব করেন তার উপর ভিত্তি করে রেফারেল কমিশন পরিবর্তিত হয়।</span></p>
+  <p><span class="en">International sellers have different referral commission rates. PageConnect reserves the right to update the referral program terms at any time.</span><span class="bn">আন্তর্জাতিক সেলারদের জন্য আলাদা রেফারেল কমিশন রেট প্রযোজ্য। PageConnect যেকোনো সময় রেফারেল প্রোগ্রামের শর্তাবলী আপডেট করার অধিকার রাখে।</span></p>
 
-  <div class="section">
-    <h2>6. Liability disclaimer — transactions and deliveries</h2>
-    <div class="warning-box">
-      <p><strong>Important:</strong> PageConnect is a management tool only. All transactions, payments, and deliveries are solely between the seller and their customers. Courier and delivery responsibilities rest entirely with the assigned courier company. PageConnect does not facilitate, guarantee, intervene in, or hold any liability for any transaction, payment, delivery, dispute, or loss arising between sellers, customers, and couriers.</p>
-    </div>
-    <p>Sellers are solely responsible for:</p>
-    <ul>
-      <li>The products they sell and their quality</li>
-      <li>Collecting and processing payments from customers</li>
-      <li>Arranging and managing deliveries with couriers</li>
-      <li>Resolving disputes with customers</li>
-      <li>Compliance with consumer protection laws in their jurisdiction</li>
-      <li>Any taxes applicable to their sales</li>
-    </ul>
-  </div>
+  <h2><span class="en">6. Pricing & payment</span><span class="bn">৬. মূল্য ও পেমেন্ট</span></h2>
+  <p><span class="en">Subscription fees are charged in advance on a monthly or annual basis. Pricing varies by region. All fees are non-refundable unless otherwise stated in our refund policy.</span><span class="bn">সাবস্ক্রিপশন ফি মাসিক বা বার্ষিক ভিত্তিতে অগ্রিম চার্জ করা হয়। মূল্য অঞ্চলভেদে ভিন্ন। আমাদের ফেরত নীতিতে অন্যথায় উল্লেখ না থাকলে সমস্ত ফি অ-ফেরতযোগ্য।</span></p>
 
-  <div class="section">
-    <h2>7. Acceptable use</h2>
-    <p>You agree not to use PageConnect to:</p>
-    <ul>
-      <li>Sell illegal, counterfeit, or prohibited goods</li>
-      <li>Engage in fraud, deception, or misleading practices</li>
-      <li>Violate the intellectual property rights of others</li>
-      <li>Attempt to access other users' data or accounts</li>
-      <li>Reverse engineer, copy, or resell the PageConnect platform</li>
-      <li>Use the platform for any purpose that violates applicable law</li>
-    </ul>
-    <p>We reserve the right to suspend or terminate accounts that violate these terms without prior notice.</p>
-  </div>
+  <h2><span class="en">7. Acceptable use</span><span class="bn">৭. গ্রহণযোগ্য ব্যবহার</span></h2>
+  <p><span class="en">You agree not to misuse PageConnect. This includes attempting to access data belonging to other sellers, reverse-engineering the platform, using it for illegal activities, or uploading malicious content.</span><span class="bn">আপনি PageConnect-এর অপব্যবহার না করতে সম্মত হচ্ছেন। এর মধ্যে অন্য সেলারদের ডেটা অ্যাক্সেস করার চেষ্টা, প্ল্যাটফর্ম রিভার্স-ইঞ্জিনিয়ার করা, অবৈধ কার্যক্রমের জন্য ব্যবহার বা দূষিত কন্টেন্ট আপলোড করা অন্তর্ভুক্ত।</span></p>
 
-  <div class="section">
-    <h2>8. Intellectual property</h2>
-    <p>PageConnect and its design, code, branding, and content are the intellectual property of PageConnect. You may not copy, reproduce, or distribute any part of the platform without written permission.</p>
-    <p>Data you enter into PageConnect — your orders, customers, products — remains yours. We do not claim ownership of your business data.</p>
-  </div>
+  <h2><span class="en">8. Data retention</span><span class="bn">৮. ডেটা সংরক্ষণ</span></h2>
+  <p><span class="en">We retain your data for as long as your account is active. For inactive accounts, data is retained for <strong>up to 2 years of inactivity</strong>, after which it may be permanently deleted. You can export all your data at any time from your account settings. To request early deletion, contact <a href="mailto:help@pageconnect.io">help@pageconnect.io</a>.</span><span class="bn">আপনার অ্যাকাউন্ট সক্রিয় থাকাকালীন আমরা আপনার ডেটা সংরক্ষণ করি। নিষ্ক্রিয় অ্যাকাউন্টের ক্ষেত্রে, ডেটা <strong>নিষ্ক্রিয়তার ২ বছর পর্যন্ত</strong> সংরক্ষিত থাকে, তারপর স্থায়ীভাবে মুছে ফেলা হতে পারে। আপনি যেকোনো সময় আপনার অ্যাকাউন্ট সেটিংস থেকে সমস্ত ডেটা এক্সপোর্ট করতে পারবেন।</span></p>
 
-  <div class="section">
-    <h2>9. Platform availability</h2>
-    <p>We aim to maintain high availability of the PageConnect platform but do not guarantee uninterrupted access. Scheduled maintenance, technical issues, or circumstances beyond our control may cause temporary downtime. We will communicate planned maintenance in advance where possible.</p>
-  </div>
+  <h2><span class="en">9. Free website</span><span class="bn">৯. ফ্রি ওয়েবসাইট</span></h2>
+  <p><span class="en">Each PageConnect seller account includes a free public shop page at pageconnect.io/web/[username]. This feature is subject to fair use. PageConnect reserves the right to remove shop pages that violate our community guidelines. Terms and conditions apply.</span><span class="bn">প্রতিটি PageConnect সেলার অ্যাকাউন্টে pageconnect.io/web/[username]-এ একটি ফ্রি পাবলিক শপ পেজ অন্তর্ভুক্ত। এই ফিচার ন্যায্য ব্যবহার সাপেক্ষে। PageConnect আমাদের কমিউনিটি গাইডলাইন লঙ্ঘন করে এমন শপ পেজ সরিয়ে নেওয়ার অধিকার রাখে।</span></p>
 
-  <div class="section">
-    <h2>10. Limitation of liability</h2>
-    <p>To the maximum extent permitted by law, PageConnect shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the platform, including but not limited to loss of revenue, data, or business opportunity.</p>
-    <p>Our total liability to you for any claim arising from use of the platform shall not exceed the amount you paid to PageConnect in the three months preceding the claim.</p>
-  </div>
+  <h2><span class="en">10. Intellectual property</span><span class="bn">১০. মেধাসম্পদ</span></h2>
+  <p><span class="en">PageConnect and its logos, designs, and software are the intellectual property of PageConnect. You retain ownership of your own data and content uploaded to the platform.</span><span class="bn">PageConnect এবং এর লোগো, ডিজাইন এবং সফটওয়্যার PageConnect-এর মেধাসম্পদ। আপনি প্ল্যাটফর্মে আপলোড করা আপনার নিজস্ব ডেটা ও কন্টেন্টের মালিকানা বজায় রাখেন।</span></p>
 
-  <div class="section">
-    <h2>11. Termination</h2>
-    <p>You may close your account at any time by contacting <a href="mailto:help@pageconnect.io">help@pageconnect.io</a>. We may suspend or terminate your account if you breach these terms, with or without notice depending on the severity of the breach.</p>
-    <p>Upon termination, your data is retained for <strong>up to 2 years of inactivity</strong> before permanent deletion. You can export all your data at any time from your account settings. To request early deletion, contact <a href="mailto:help@pageconnect.io">help@pageconnect.io</a>.</p>
-  </div>
+  <h2 id="refunds"><span class="en">11. Refund policy</span><span class="bn">১১. ফেরত নীতি</span></h2>
+  <p><span class="en">We offer refunds within <strong>7 days</strong> of the initial subscription charge if you are unsatisfied and have not used the premium features extensively. Contact <a href="mailto:help@pageconnect.io">help@pageconnect.io</a> to request a refund. Refund requests after 7 days will be considered on a case-by-case basis.</span><span class="bn">প্রাথমিক সাবস্ক্রিপশন চার্জের <strong>৭ দিনের মধ্যে</strong> যদি আপনি অসন্তুষ্ট হন এবং প্রিমিয়াম ফিচার ব্যাপকভাবে ব্যবহার না করেন তাহলে আমরা ফেরত দিই। ফেরতের অনুরোধ করতে <a href="mailto:help@pageconnect.io">help@pageconnect.io</a>-এ যোগাযোগ করুন।</span></p>
 
-  <div class="section">
-    <h2>12. Changes to these terms</h2>
-    <p>We may update these Terms of Service from time to time. We will notify registered users by email of material changes at least 14 days before they take effect. Continued use of PageConnect after the effective date constitutes acceptance of the updated terms.</p>
-  </div>
+  <h2><span class="en">12. Termination</span><span class="bn">১২. সমাপ্তি</span></h2>
+  <p><span class="en">You may close your account at any time by contacting <a href="mailto:help@pageconnect.io">help@pageconnect.io</a>. We may suspend or terminate your account if you breach these terms.</span><span class="bn">আপনি যেকোনো সময় <a href="mailto:help@pageconnect.io">help@pageconnect.io</a>-এ যোগাযোগ করে আপনার অ্যাকাউন্ট বন্ধ করতে পারেন। আপনি এই শর্তাবলী লঙ্ঘন করলে আমরা আপনার অ্যাকাউন্ট স্থগিত বা বন্ধ করতে পারি।</span></p>
+  <p><span class="en">Upon termination, your data is retained for <strong>up to 2 years of inactivity</strong> before permanent deletion. You can export all your data at any time from your account settings.</span><span class="bn">সমাপ্তির পর, আপনার ডেটা স্থায়ী মুছে ফেলার আগে <strong>নিষ্ক্রিয়তার ২ বছর পর্যন্ত</strong> সংরক্ষিত থাকে।</span></p>
 
-  <div class="section">
-    <h2>13. Governing law</h2>
-    <p>These terms are governed by the laws of Bangladesh. Any disputes shall be resolved in the courts of Bangladesh. International sellers acknowledge that PageConnect operates primarily under Bangladeshi jurisdiction.</p>
-  </div>
+  <h2><span class="en">13. Changes to terms</span><span class="bn">১৩. শর্তাবলী পরিবর্তন</span></h2>
+  <p><span class="en"><strong>PageConnect reserves the right to update pricing, features, policies, and terms at any time.</strong> We will notify registered users of material changes by email. Continued use of the platform after changes constitutes acceptance of the updated terms.</span><span class="bn"><strong>PageConnect যেকোনো সময় মূল্য, ফিচার, নীতি এবং শর্তাবলী আপডেট করার অধিকার রাখে।</strong> আমরা ইমেইলের মাধ্যমে নিবন্ধিত ব্যবহারকারীদের গুরুত্বপূর্ণ পরিবর্তন সম্পর্কে অবহিত করব।</span></p>
 
-  <div class="section">
-    <h2>14. Contact</h2>
-    <p>For any questions about these Terms of Service, contact us at <a href="mailto:help@pageconnect.io">help@pageconnect.io</a>. We aim to respond within 14 business days.</p>
-  </div>
-
-  <div class="legal-note">
-    <p>These Terms of Service were last updated on 19 May 2026. PageConnect reserves the right to update these terms at any time with appropriate notice to registered users.</p>
-  </div>
-
+  <h2><span class="en">14. Contact</span><span class="bn">১৪. যোগাযোগ</span></h2>
+  <p><span class="en">For questions about these terms, contact us at <a href="mailto:help@pageconnect.io">help@pageconnect.io</a></span><span class="bn">এই শর্তাবলী সম্পর্কে প্রশ্নের জন্য <a href="mailto:help@pageconnect.io">help@pageconnect.io</a>-এ যোগাযোগ করুন।</span></p>
 </div>
 
-<div class="foot">
-  <p>© 2026 PageConnect. All rights reserved.</p>
-  <div class="foot-links">
-    <a href="/">Home</a>
-    <a href="/privacy.html">Privacy Policy</a>
-    <a href="/terms.html">Terms of Service</a>
-    <a href="mailto:help@pageconnect.io">Contact</a>
-  </div>
-</div>
-
+<script>
+function setLang(lang){
+  var isBn=lang==='bn';
+  document.querySelectorAll('.en,.en-b').forEach(function(el){
+    el.style.display=isBn?'none':'';
+  });
+  document.querySelectorAll('.bn,.bn-b').forEach(function(el){
+    var isBlock=el.classList.contains('bn-b');
+    el.style.display=isBn?(isBlock?'block':'inline'):'none';
+  });
+  document.getElementById('btn-en').classList.toggle('on',!isBn);
+  document.getElementById('btn-bn').classList.toggle('on',isBn);
+}
+</script>
 </body>
 </html>
