@@ -701,8 +701,6 @@ textarea.finput{resize:vertical;min-height:100px;line-height:1.6}
 .tcard2-role{font-family:var(--m);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:16px}
 .tcard2-quote{font-size:14px;line-height:1.75;color:var(--mute)}
 .testi-dots{display:flex;justify-content:center;gap:8px;margin-top:28px}
-.testi-dot{width:8px;height:8px;border-radius:50%;background:var(--line);border:none;cursor:pointer;padding:0;transition:all .2s}
-.testi-dot.on{background:var(--teal);width:24px;border-radius:4px}
 @media(max-width:600px){.testi-slide{grid-template-columns:1fr}}
 .testi-pages{display:flex;transition:transform .6s cubic-bezier(.16,1,.3,1)}
 .testi-page{display:grid;grid-template-columns:1fr 1fr;gap:20px;min-width:100%;flex-shrink:0}
@@ -833,18 +831,17 @@ html.bn .bn-b{display:block!important}
 }
 @media(max-width:560px){
   .prob-grid{grid-template-columns:1fr 1fr}
+  .feat-grid{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
   .hero-wrap{height:58vw;min-height:220px;max-height:380px}
   .stats-in{grid-template-columns:1fr 1fr}
   .stat-item{padding:18px 10px}
   .stat-num{font-size:20px}
   .stat-label{font-size:9px}
-  .plans{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding:0 20px 20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .plans{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding:0 20px 8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .plans::-webkit-scrollbar{display:none}
-  .plan{scroll-snap-align:center;flex-shrink:0;width:80vw;max-width:320px}
-  .peek-hint{display:flex;justify-content:center;gap:6px;margin-top:12px}
-  .peek-dot{width:6px;height:6px;border-radius:50%;background:var(--line)}
-  .peek-dot.on{background:var(--teal);width:18px;border-radius:3px}
+  .plan{scroll-snap-align:start;flex-shrink:0;width:78vw;max-width:300px}
+
   .ht-btns{flex-direction:column;align-items:stretch;gap:10px;width:100%}
   .btn-trial,.btn-track,.btn-portal{width:100%;justify-content:center;padding:14px 16px;font-size:14px;box-sizing:border-box}
   .feat-grid{grid-template-columns:1fr 1fr;gap:2px}
@@ -1305,7 +1302,6 @@ html.bn .bn-b{display:block!important}
       <div class="plan"><div class="plan-name">Business</div><div class="plan-price"><div class="p-bdt"><span class="am" id="p-b-b">৳3,999</span><span class="pe"> / month</span></div><div class="p-usd"><span class="cu">$</span><span class="am" id="p-b-u">59</span><span class="pe"> / month</span></div></div><div class="plan-div"></div><ul class="plan-feats"><li class="plan-feat"><span class="f-yes">✓</span><span class="en">Everything in Pro</span><span class="bn">Pro-এর সব</span></li><li class="plan-feat"><span class="f-yes">✓</span><span class="en">Staff accounts</span><span class="bn">স্টাফ অ্যাকাউন্ট</span></li><li class="plan-feat"><span class="f-yes">✓</span><span class="en">Dedicated support</span><span class="bn">ডেডিকেটেড সাপোর্ট</span></li><li class="plan-feat"><span class="f-yes">✓</span><span class="en">"Taken by" staff tracking</span><span class="bn">"কে নিয়েছে" স্টাফ ট্র্যাকিং</span></li><li class="plan-feat"><span class="f-yes">✓</span><span class="en">Multi-staff management</span><span class="bn">মাল্টি-স্টাফ ম্যানেজমেন্ট</span></li><li class="plan-feat"><span class="f-yes">✓</span><span class="en">Power seller features</span><span class="bn">পাওয়ার সেলার ফিচার</span></li></ul><a href="https://pageconnect-app.vercel.app/dashboard" class="plan-cta"><span class="en">Start free trial</span><span class="bn">ফ্রি ট্রায়াল শুরু করুন</span></a></div>
     </div>
     <div class="plans-scroll-hint"><span class="on"></span><span></span><span></span><span></span></div>
-    <div class="peek-hint" id="peek-dots"><div class="peek-dot on"></div><div class="peek-dot"></div><div class="peek-dot"></div><div class="peek-dot"></div></div>
     <p class="p-fn rv">All plans start with a <strong>7-day free trial</strong> — no credit card required.<br>After the trial: 3-day grace period before features lock. Cancel anytime.</p>
   </div>
 </section>
@@ -1731,16 +1727,7 @@ function goTesti(n){
 })();
 buildTesti();
 tTimer=setInterval(function(){goTesti((tIdx+1)%tTotal);},5000);
-var testiIdx=0,testiTotal=2,testiTimer;
-function goTesti(n){
-  testiIdx=n;
-  var pages=document.getElementById('testi-pages');
-  if(pages) pages.style.transform='translateX(-'+(n*100)+'%)';
-  document.querySelectorAll('.testi-dot').forEach(function(d,i){d.classList.toggle('on',i===n);});
-  clearInterval(testiTimer);
-  testiTimer=setInterval(function(){goTesti((testiIdx+1)%testiTotal);},5000);
-}
-testiTimer=setInterval(function(){goTesti((testiIdx+1)%testiTotal);},5000);
+
 
 // Membership row — hide if no logos
 (function(){
@@ -1901,6 +1888,16 @@ async function submitContact(){
     return slide.image_url||slide.image_url_en_desktop||slide.image_url_bn_desktop||null;
   }
 
+  // Hero slides — check localStorage cache first for instant load
+  (function(){
+    try{
+      var cached=localStorage.getItem('pc-hero-slides');
+      if(cached){
+        var slides=JSON.parse(cached);
+        if(slides&&slides.length) renderHeroSlides(slides);
+      }
+    }catch(e){}
+  })();
   // Hero slides
   sb.from('pc_hero_slides').select('*').eq('active',true).order('sort_order').then(function(res){
     if(!res.data||!res.data.length) return;
@@ -1944,58 +1941,51 @@ async function submitContact(){
       dots.appendChild(btn);
     });
     wrap.appendChild(dots);
+    // Cache for next visit
+    try{localStorage.setItem('pc-hero-slides',JSON.stringify(slides));}catch(e){}
     // Reset slider total
     hTotal=slides.length;
   });
+
+  function renderHeroSlides(slides){
+    var wrap=document.querySelector('.hero-wrap');
+    if(!wrap) return;
+    wrap.querySelectorAll('.h-slide').forEach(function(s){s.remove();});
+    var dotsEl=wrap.querySelector('.h-dots');if(dotsEl)dotsEl.remove();
+    slides.forEach(function(s,i){
+      var div=document.createElement('div');
+      div.className='h-slide'+(i===0?' active':'');
+      div.id='hsl'+i;
+      var imgUrl=getImgUrl(s);
+      if(imgUrl){
+        var img=document.createElement('img');
+        img.alt='Banner '+(i+1);
+        img.style.cssText='width:100%;height:100%;object-fit:cover;object-position:center;display:block';
+        img.src=imgUrl;
+        div.classList.add('has-image');
+        div.appendChild(img);
+      }
+      var firstArrow=wrap.querySelector('.h-arrow-l');
+      wrap.insertBefore(div,firstArrow);
+    });
+    var dots=document.createElement('div');
+    dots.className='h-dots';
+    slides.forEach(function(s,i){
+      var btn=document.createElement('button');
+      btn.className='h-dot'+(i===0?' on':'');
+      btn.setAttribute('aria-label','Slide '+(i+1));
+      btn.onclick=function(){hTo(i);};
+      dots.appendChild(btn);
+    });
+    wrap.appendChild(dots);
+    hTotal=slides.length;
+  }
 
   // Testimonials
   sb.from('pc_testimonials').select('*').eq('active',true).order('sort_order').then(function(res){
     if(!res.data||!res.data.length) return;
     // Rebuild testi with 2x2 pages from CMS data
-    var testiWrap=document.querySelector('.testi-wrap');
-    if(!testiWrap) return;
-    var items=res.data;
-    // Group into pages of 4
-    var pages=[];
-    for(var i=0;i<items.length;i+=4){pages.push(items.slice(i,i+4));}
-    testiTotal=pages.length;
-    var pagesEl=document.getElementById('testi-pages');
-    if(pagesEl){
-      pagesEl.innerHTML=pages.map(function(pg){
-        return '<div class="testi-page">'+pg.map(function(t){
-          var av=t.avatar_url?'<img loading="lazy" src="'+t.avatar_url+'" alt="'+t.name+'">':t.name.charAt(0);
-          return '<div class="tcard"><p class="tcard-quote">'+t.quote+'</p><div class="tcard-foot"><div class="tcard-avatar">'+av+'</div><div><div class="tcard-name">'+t.name+'</div><div class="tcard-role">'+t.role+'</div></div></div></div>';
-        }).join('')+'</div>';
-      }).join('');
-    }
-    // Update dots
-    var nav=document.querySelector('.testi-nav');
-    if(nav){
-      nav.innerHTML=pages.map(function(p,i){
-        return '<button class="testi-dot'+(i===0?' on':'')+'" onclick="goTesti('+i+')"></button>';
-      }).join('');
-    }
-    var dummy=null; dummy=res.data.map(function(t){
-      var avatar=t.avatar_url
-        ?'<img loading="lazy" src="'+t.avatar_url+'" alt="'+t.name+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%">'
-        :'<span style="font-size:16px;font-weight:600;color:var(--mute)">'+t.name.charAt(0)+'</span>';
-      return '<div class="tcard">'
-        +'<p class="tcard-quote">'+t.quote+'</p>'
-        +'<div class="tcard-foot">'
-        +'<div class="tcard-avatar">'+avatar+'</div>'
-        +'<div><div class="tcard-name">'+t.name+'</div>'
-        +'<div class="tcard-role">'+t.role+'</div></div>'
-        +'</div></div>';
-    }).join('');
-    tTotal=res.data.length;
-    // Update dots
-    var dotsEl=document.querySelector('.testi-dots');
-    if(dotsEl){
-      dotsEl.innerHTML=res.data.map(function(t,i){
-        return '<button class="testi-dot'+(i===0?' on':'')+'" onclick="goT('+i+')"></button>';
-      }).join('');
-    }
-  });
+
 
   // Notable seller logos
   sb.from('pc_seller_logos').select('*').eq('active',true).order('sort_order').then(function(res){
